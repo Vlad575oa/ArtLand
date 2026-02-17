@@ -32,29 +32,17 @@ export default function HomePage() {
               </span>
 
               <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.05] text-[#F0F2F0] drop-shadow-2xl animate-fade-in">
-                {locale === 'ru' ? (
-                  <>
-                    Создаем <br />
+                {t.rich('title', {
+                  living: (chunks) => (
                     <span className="italic text-primary bg-clip-text text-transparent bg-gold-gradient relative inline-block">
-                      живое искусство
+                      {chunks}
                       <svg className="absolute w-full h-3 -bottom-1 left-0 text-primary opacity-40" fill="none" viewBox="0 0 200 9" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2.00025 6.99997C25.7501 2.99999 52.4462 0.999954 87.5002 0.999954C122.554 0.999954 153.75 3.00001 198 7" stroke="currentColor" strokeWidth="2" />
                       </svg>
-                    </span> <br />
-                    на вашем участке
-                  </>
-                ) : (
-                  <>
-                    Cultivating <br />
-                    <span className="italic text-primary bg-clip-text text-transparent bg-gold-gradient relative inline-block">
-                      living art
-                      <svg className="absolute w-full h-3 -bottom-1 left-0 text-primary opacity-40" fill="none" viewBox="0 0 200 9" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2.00025 6.99997C25.7501 2.99999 52.4462 0.999954 87.5002 0.999954C122.554 0.999954 153.75 3.00001 198 7" stroke="currentColor" strokeWidth="2" />
-                      </svg>
-                    </span> <br />
-                    on your land
-                  </>
-                )}
+                    </span>
+                  ),
+                  br: () => <br />
+                })}
               </h1>
 
               <p className="text-lg md:text-xl text-[#B0B8B4] max-w-2xl font-light leading-relaxed pl-1 border-l-2 border-primary/30">
@@ -127,11 +115,9 @@ export default function HomePage() {
                   {t('approach_badge')}
                 </h2>
                 <h3 className="text-4xl md:text-5xl font-serif text-[#F0F2F0] leading-tight">
-                  {locale === 'ru' ? (
-                    <>Этапы создания <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-[#8A9A90]">совершенства</span></>
-                  ) : (
-                    <>Stages of creating <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-[#8A9A90]">perfection</span></>
-                  )}
+                  {t.rich('approach_title', {
+                    perfection: (chunks) => <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-[#8A9A90]">{chunks}</span>
+                  })}
                 </h3>
               </div>
               <p className="text-[#A0ABA5] max-w-md text-base leading-relaxed font-light">

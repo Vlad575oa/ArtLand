@@ -1,6 +1,12 @@
+'use client';
+
+import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 import Link from 'next/link'
 
 export default function PhilosophyPage() {
+    const t = useTranslations('Philosophy');
+
     return (
         <div className="relative z-10 pt-32 pb-20 overflow-hidden">
             {/* Background Decor */}
@@ -11,34 +17,36 @@ export default function PhilosophyPage() {
                 <section className="max-w-7xl mx-auto px-6 lg:px-12 mb-32">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <div className="space-y-8">
-                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-forest-light border border-white/5 text-xs text-primary font-semibold tracking-wider uppercase shadow-soft-neumorph">
+                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-forest-light border border-white/5 text-xs text-primary font-semibold tracking-wider uppercase shadow-soft-neumorph animate-slide-up delay-100">
                                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                                Our Philosophy
+                                {t('badge')}
                             </div>
-                            <h1 className="text-5xl lg:text-7xl font-light text-white leading-[1.1]">
-                                Cultivating <br />
-                                <span className="font-bold text-terracotta">Harmony.</span>
+                            <h1 className="text-5xl lg:text-7xl font-light text-white leading-[1.1] animate-slide-up delay-200">
+                                {t.rich('title_part1', {
+                                    br: () => <br />
+                                })}
+                                <span className="font-bold text-terracotta">{t('title_part2')}</span>
                             </h1>
-                            <p className="text-lg text-sand-dark max-w-md leading-relaxed">
-                                Where nature's ancient wisdom meets architectural precision. We don't just design landscapes; we curate living ecosystems that breathe.
+                            <p className="text-lg text-sand-dark max-w-md leading-relaxed animate-slide-up delay-300">
+                                {t('description')}
                             </p>
-                            <div className="flex items-center gap-6 lg:gap-12 pt-4">
+                            <div className="flex items-center gap-6 lg:gap-12 pt-4 animate-slide-up delay-400">
                                 <div className="p-4 rounded-2xl bg-forest-light/40 shadow-soft-neumorph-inset border border-white/5">
                                     <p className="text-3xl font-bold text-primary">150+</p>
-                                    <p className="text-xs text-sand-dark uppercase tracking-wide">Acres Restored</p>
+                                    <p className="text-xs text-sand-dark uppercase tracking-wide">{t('stats.acres')}</p>
                                 </div>
                                 <div className="p-4 rounded-2xl bg-forest-light/40 shadow-soft-neumorph-inset border border-white/5">
                                     <p className="text-3xl font-bold text-terracotta">12</p>
-                                    <p className="text-xs text-sand-dark uppercase tracking-wide">Global Awards</p>
+                                    <p className="text-xs text-sand-dark uppercase tracking-wide">{t('stats.awards')}</p>
                                 </div>
                                 <div className="p-4 rounded-2xl bg-forest-light/40 shadow-soft-neumorph-inset border border-white/5">
-                                    <p className="text-3xl font-bold text-primary">100%</p>
-                                    <p className="text-xs text-sand-dark uppercase tracking-wide">Native Flora</p>
+                                    <p className="text-3xl font-bold text-primary">90%</p>
+                                    <p className="text-xs text-sand-dark uppercase tracking-wide">{t('stats.flora')}</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="relative">
+                        <div className="relative animate-slide-up delay-500">
                             <div className="aspect-[4/5] rounded-[2rem] overflow-hidden relative shadow-soft-neumorph border-4 border-forest-light/30">
                                 <div className="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent z-10 opacity-60" />
                                 <img
@@ -48,7 +56,7 @@ export default function PhilosophyPage() {
                                 />
                                 <div className="absolute bottom-8 left-8 z-20">
                                     <div className="p-5 bg-background-dark/70 backdrop-blur-md rounded-2xl border border-white/10 max-w-xs shadow-inflated">
-                                        <p className="text-xs text-primary uppercase tracking-widest mb-1">Featured Project</p>
+                                        <p className="text-xs text-primary uppercase tracking-widest mb-1">{t('featured')}</p>
                                         <p className="text-white font-medium">Kyoto Zen Residence</p>
                                     </div>
                                 </div>
@@ -61,15 +69,19 @@ export default function PhilosophyPage() {
                 <div className="leaf-divider" />
 
                 <section className="max-w-7xl mx-auto px-6 lg:px-12 mb-32">
-                    <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-                        <h2 className="text-3xl md:text-4xl font-light text-white">Engineered <span className="font-bold text-primary">Nature.</span></h2>
+                    <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 animate-slide-up delay-200">
+                        <h2 className="text-3xl md:text-4xl font-light text-white">
+                            {t.rich('section2_title', {
+                                nature: (chunks) => <span className="font-bold text-primary">{chunks}</span>
+                            })}
+                        </h2>
                         <p className="text-sand-dark max-w-lg text-sm md:text-base">
-                            Our methodology goes beyond aesthetics. We employ scientific analysis to ensure every plant, stone, and water feature contributes to a self-sustaining biome.
+                            {t('section2_desc')}
                         </p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div className="group relative rounded-[2rem] bg-forest-light shadow-inflated overflow-hidden transition-all duration-500 hover:-translate-y-2">
+                        <div className="group relative rounded-[2rem] bg-forest-light shadow-inflated overflow-hidden transition-all duration-500 hover:-translate-y-2 animate-slide-up delay-300">
                             <div className="p-10 lg:p-14 relative z-10">
                                 <div className="absolute top-[-20px] right-[-20px] opacity-10 group-hover:opacity-15 transition-opacity transform rotate-12">
                                     <span className="material-icons text-[12rem] text-primary">spa</span>
@@ -98,7 +110,7 @@ export default function PhilosophyPage() {
                             </div>
                         </div>
 
-                        <div className="group relative rounded-[2rem] bg-forest-light shadow-inflated overflow-hidden transition-all duration-500 hover:-translate-y-2">
+                        <div className="group relative rounded-[2rem] bg-forest-light shadow-inflated overflow-hidden transition-all duration-500 hover:-translate-y-2 animate-slide-up delay-400">
                             <div className="p-10 lg:p-14 relative z-10">
                                 <div className="absolute top-[-20px] right-[-20px] opacity-10 group-hover:opacity-15 transition-opacity transform rotate-12">
                                     <span className="material-icons text-[12rem] text-terracotta">wb_sunny</span>
@@ -133,8 +145,12 @@ export default function PhilosophyPage() {
 
                 <section className="max-w-7xl mx-auto px-6 lg:px-12 mb-32">
                     <div className="text-center mb-16">
-                        <span className="text-primary text-sm font-semibold tracking-widest uppercase">Our Journey</span>
-                        <h2 className="text-3xl font-light text-white mt-2">Evolution of <span className="font-bold">Sustainability</span></h2>
+                        <span className="text-primary text-sm font-semibold tracking-widest uppercase">{t('journey_badge')}</span>
+                        <h2 className="text-3xl font-light text-white mt-2">
+                            {t.rich('journey_title', {
+                                sustainability: (chunks) => <span className="font-bold">{chunks}</span>
+                            })}
+                        </h2>
                     </div>
                     <div className="relative">
                         <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-2 bg-forest-light rounded-full shadow-soft-neumorph-inset hidden md:block" />
@@ -144,7 +160,7 @@ export default function PhilosophyPage() {
                                 { year: '2015', title: 'The Water Shift', desc: 'Introduced our proprietary hydro-zoning technique, reducing client water usage by an average of 60%.', color: 'primary' },
                                 { year: '2023', title: 'Carbon Neutral', desc: 'Achieved full carbon neutrality across all operations and supply chains. First in the region.', color: 'terracotta' }
                             ].map((item, i) => (
-                                <div key={i} className="relative flex flex-col md:flex-row items-center md:justify-between group">
+                                <div key={i} className="relative flex flex-col md:flex-row items-center md:justify-between group animate-slide-up delay-200">
                                     <div className={`md:w-5/12 text-center ${i % 2 === 0 ? 'md:text-right' : 'md:text-left order-3'} mt-4 md:mt-0 px-6`}>
                                         <div className={`p-6 bg-forest-light rounded-2xl shadow-inflated border-b-4 border-${item.color} inline-block w-full text-left`}>
                                             <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
@@ -168,11 +184,15 @@ export default function PhilosophyPage() {
                 <section className="max-w-7xl mx-auto px-6 lg:px-12 mb-32">
                     <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
                         <div>
-                            <h2 className="text-4xl font-light text-white mb-4">The <span className="font-bold text-primary">Cultivators</span></h2>
-                            <p className="text-sand-dark">Minds dedicated to the art of living architecture.</p>
+                            <h2 className="text-4xl font-light text-white mb-4">
+                                {t.rich('cultivators_title', {
+                                    cultivators: (chunks) => <span className="font-bold text-primary">{chunks}</span>
+                                })}
+                            </h2>
+                            <p className="text-sand-dark">{t('cultivators_desc')}</p>
                         </div>
                         <Link href="/team" className="text-primary hover:text-white transition-colors flex items-center gap-2 group">
-                            View All Members <span className="material-icons text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                            {t('view_all')} <span className="material-icons text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
                         </Link>
                     </div>
 
@@ -212,11 +232,16 @@ export default function PhilosophyPage() {
                 <section className="max-w-7xl mx-auto px-6 lg:px-12">
                     <div className="relative rounded-[3rem] overflow-hidden bg-forest-light p-12 lg:p-24 text-center shadow-inflated border border-white/5">
                         <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(#8fa86e 1.5px, transparent 1.5px)', backgroundSize: '24px 24px' }} />
-                        <div className="relative z-10 max-w-2xl mx-auto">
-                            <h2 className="text-4xl lg:text-5xl font-light text-white mb-6">Ready to shape your <br /><span className="font-bold text-terracotta">Ecosystem?</span></h2>
-                            <p className="text-sand-dark mb-10 text-lg">Let's discuss how we can transform your space into a sustainable legacy.</p>
+                        <div className="relative z-10 max-w-2xl mx-auto animate-slide-up delay-200">
+                            <h2 className="text-4xl lg:text-5xl font-light text-white mb-6">
+                                {t.rich('cta_title', {
+                                    ecosystem: (chunks) => <span className="font-bold text-terracotta">{chunks}</span>,
+                                    br: () => <br />
+                                })}
+                            </h2>
+                            <p className="text-sand-dark mb-10 text-lg">{t('cta_desc')}</p>
                             <button className="gold-btn px-10 py-4 rounded-full text-lg font-semibold hover:scale-105 transition-transform">
-                                Start Your Project
+                                {t('cta_button')}
                             </button>
                         </div>
                     </div>

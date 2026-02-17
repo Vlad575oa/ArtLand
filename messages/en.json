@@ -7,14 +7,15 @@
         "contacts": "Contacts"
     },
     "Hero": {
-        "badge": "Premium Landscape Architecture",
-        "title": "Cultivating Living Art on your land",
-        "subtitle": "Harmony of nature and architecture. We design spaces that breathe with you, combining aesthetics and eco-friendliness.",
-        "cta": "GET A CONSULTATION",
-        "showreel": "Watch showreel",
-        "experience_label": "Experience",
-        "experience_desc": "Premium projects implemented nationwide",
-        "approach_badge": "Our Approach",
+        "badge": "Lush Landscapes",
+        "title": "Cultivating <living>living art</living> <br /> on your land",
+        "subtitle": "Bespoke architectural landscapes where nature meets precision.",
+        "cta": "Start project",
+        "showreel": "Watch Showreel",
+        "experience_label": "Restored land",
+        "experience_desc": "Acres of curated ecosystems across the globe.",
+        "approach_badge": "Our Methodology",
+        "approach_title": "Stages of creating <perfection>perfection</perfection>",
         "approach_desc": "We take on the full cycle of work: from soil analysis to subsequent garden care, guaranteeing a result that will exceed expectations.",
         "approach_step1_title": "Deep Analysis",
         "approach_step1_desc": "Study of terrain, insolation, and soil composition to create a sustainable ecosystem.",
@@ -55,5 +56,114 @@
         "rights": "© 2023 Terraform Landscapes. All rights reserved.",
         "privacy": "Privacy Policy",
         "terms": "Terms of Service"
+    },
+    "Services": {
+        "badge": "Expert Landscape Services",
+        "title": "Cultivating <sanctuary>Sanctuary</sanctuary>",
+        "description": "Where precision engineering meets organic artistry. We sculpt environments that breathe, enduring beyond the seasons.",
+        "explore": "Explore",
+        "details": "Details",
+        "view": "View",
+        "browse": "Browse",
+        "hardscaping_title": "Hardscaping",
+        "hardscaping_desc": "Sculpting earth to create dimension. We manipulate topography to reveal hidden potentials.",
+        "hydro_title": "Hydro Systems",
+        "hydro_desc": "Invisible infrastructure. Precision engineering that manages water flow seamlessly.",
+        "lumination_title": "Lumination",
+        "lumination_desc": "Atmospheric curation. We paint with light to extend beauty into the evening.",
+        "lumination_subtitle": "Garden path lighting",
+        "greening_title": "Greening",
+        "greening_desc": "Botanic curation focused on resilience. A living palette of texture and color.",
+        "process_01_title": "Consultation",
+        "process_01_desc": "Understanding the soul of the site and the desires of the dweller. We begin with deep listening.",
+        "process_02_title": "Curation",
+        "process_02_desc": "Selecting materials that age gracefully. Every stone, light fixture, and sapling is chosen for permanence.",
+        "process_03_title": "Execution",
+        "process_03_desc": "A meticulous installation process where precision meets the unpredictable nature of the wild.",
+        "cta_title": "Ready to transform your <exterior>exterior world</exterior>?",
+        "cta_button": "Book Consultation"
+    },
+    "Projects": {
+        "badge": "Our Curated Works",
+        "title_part1": "Harmonizing nature ",
+        "title_part2": "and architecture.",
+        "description": "We create bespoke landscapes that breathe. Explore our collection of award-winning sustainable gardens and outdoor living spaces.",
+        "categories": {
+            "all": "All Projects",
+            "residential": "Residential",
+            "commercial": "Commercial",
+            "restoration": "Restoration",
+            "estate": "Estate",
+            "urban": "Urban",
+            "coastal": "Coastal"
+        },
+        "view_more": "View More Projects"
+    },
+    "Philosophy": {
+        "badge": "Our Philosophy",
+        "title_part1": "Cultivating ",
+        "title_part2": "Harmony.",
+        "description": "Where nature's ancient wisdom meets architectural precision. We don't just design landscapes; we curate living ecosystems that breathe.",
+        "stats": {
+            "acres": "Acres Restored",
+            "awards": "Global Awards",
+            "flora": "Native Flora"
+        },
+        "featured": "Featured Project",
+        "section2_title": "Engineered <nature>Nature.</nature>",
+        "section2_desc": "Our methodology goes beyond aesthetics. We employ scientific analysis to ensure every plant, stone, and water feature contributes to a self-sustaining biome.",
+        "eco_title": "Eco-Balance Systems",
+        "eco_desc": "We design closed-loop ecosystems where waste becomes nutrient. Our water retention landscapes capture 95% of rainfall, reducing irrigation needs and creating resilient micro-climates.",
+        "eco_list": [
+            "Soil microbiome regeneration",
+            "Integrated pest management",
+            "Carbon-sequestering hardscapes"
+        ],
+        "climatic_title": "Climatic Selection",
+        "climatic_desc": "Every species is chosen based on 50-year climate projections. We prioritize hyper-local natives that thrive in your specific soil chemistry and sun exposure without artificial life support.",
+        "climatic_list": [
+            "Drought-tolerant architectural flora",
+            "Seasonal adaptive planting",
+            "Heat-island reduction strategies"
+        ],
+        "journey_badge": "Our Journey",
+        "journey_title": "Evolution of <sustainability>Sustainability</sustainability>",
+        "cultivators_title": "The <cultivators>Cultivators</cultivators>",
+        "cultivators_desc": "Minds dedicated to the art of living architecture.",
+        "view_all": "View All Members",
+        "cta_title": "Ready to shape your <ecosystem>Ecosystem?</ecosystem>",
+        "cta_desc": "Let's discuss how we can transform your space into a sustainable legacy.",
+        "cta_button": "Start Your Project"
+    },
+    "Contacts": {
+        "badge": "Inquire",
+        "title": "Let's Cultivate Your <living_space>Living Space</living_space>",
+        "description": "Connect with our principal architects to discuss your vision for a sustainable, luxury outdoor living space. We bridge nature and modern architecture.",
+        "form": {
+            "name": "Full Name",
+            "name_placeholder": "John Doe",
+            "email": "Email Address",
+            "email_placeholder": "john@example.com",
+            "location": "Project Location",
+            "location_placeholder": "City, Country",
+            "budget": "Estimated Budget",
+            "budget_select": "Select Range...",
+            "vision": "Project Vision",
+            "vision_placeholder": "Tell us about your space and dreams...",
+            "submit": "Send Inquiry",
+            "privacy_note": "By submitting this form, you agree to our privacy policy regarding your personal data."
+        },
+        "studio_title": "The Studio",
+        "direct_line": "Direct Line",
+        "direct_line_desc": "For immediate architectural inquiries.",
+        "follow_us": "Follow Us"
+    },
+    "About": {
+        "title": "About Company",
+        "description": "Terra Art is a premium landscape design studio with years of experience..."
+    },
+    "Privacy": {
+        "title": "Privacy Policy",
+        "content": "Your privacy is important to us..."
     }
 }

@@ -1,6 +1,12 @@
+'use client';
+
 import Link from 'next/link'
+import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 export default function ServicesPage() {
+    const t = useTranslations('Services');
+
     return (
         <div className="relative min-h-screen flex flex-col pt-32">
             {/* Navigation - Note: We are using the global Navbar via the marketing layout, 
@@ -8,21 +14,23 @@ export default function ServicesPage() {
           Actually, the marketing layout already provides the Navbar. */}
 
             <header className="relative py-20 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto w-full text-center">
-                <span className="inline-block py-1 px-4 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-semibold tracking-widest uppercase mb-6">
-                    Expert Landscape Services
+                <span className="inline-block py-1.5 px-4 rounded-full bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase border border-primary/20 shadow-sm animate-slide-up delay-100">
+                    {t('badge')}
                 </span>
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-light text-white tracking-tight mb-8">
-                    Cultivating <span className="italic font-serif text-primary">Sanctuary</span>
+                <h1 className="text-4xl md:text-6xl lg:text-8xl font-black text-white tracking-tighter leading-none animate-slide-up delay-200">
+                    {t.rich('title', {
+                        sanctuary: (chunks) => <span className="text-primary block">{chunks}</span>
+                    })}
                 </h1>
-                <p className="text-xl md:text-2xl text-sand-dark font-light max-w-2xl mx-auto leading-relaxed">
-                    Where precision engineering meets organic artistry. We sculpt environments that breathe, enduring beyond the seasons.
+                <p className="text-lg md:text-xl text-sand-dark/80 max-w-xl leading-relaxed font-light animate-slide-up delay-300">
+                    {t('description')}
                 </p>
             </header>
 
             <main className="flex-grow px-6 md:px-12 lg:px-24 py-12 max-w-7xl mx-auto w-full">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
                     {/* Service Card 1: Relief Work */}
-                    <div className="group service-card relative overflow-hidden rounded-[2.5rem] bg-earth-moss shadow-soft-volume hover:shadow-lg transition-all duration-500">
+                    <div className="group service-card relative overflow-hidden rounded-[2.5rem] bg-earth-moss shadow-soft-volume hover:-translate-y-2 transition-all duration-500 animate-slide-up delay-400">
                         <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
                         <div className="relative z-10 h-full p-8 flex flex-col items-center text-center min-h-[420px]">
                             <div className="mb-8 mt-4 relative">
@@ -30,9 +38,9 @@ export default function ServicesPage() {
                                     <span className="material-icons text-4xl text-white">terrain</span>
                                 </div>
                             </div>
-                            <h3 className="text-2xl font-medium text-white mb-4 tracking-wide">Hardscaping</h3>
-                            <p className="text-white/80 text-sm font-light leading-relaxed mb-8 flex-grow">
-                                Sculpting earth to create dimension. We manipulate topography to reveal hidden potentials.
+                            <h3 className="text-2xl font-bold text-white mb-3">{t('hardscaping_title')}</h3>
+                            <p className="text-sand-dark text-sm leading-relaxed mb-6 font-light">
+                                {t('hardscaping_desc')}
                             </p>
                             <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none mix-blend-overlay">
                                 <img
@@ -48,7 +56,7 @@ export default function ServicesPage() {
                     </div>
 
                     {/* Service Card 2: Hydro Systems */}
-                    <div className="group service-card relative overflow-hidden rounded-[2.5rem] bg-earth-terra shadow-soft-volume hover:shadow-lg transition-all duration-500">
+                    <div className="group service-card relative overflow-hidden rounded-[2.5rem] bg-earth-terra shadow-soft-volume hover:-translate-y-2 transition-all duration-500 animate-slide-up delay-500">
                         <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-black/10 pointer-events-none" />
                         <div className="relative z-10 h-full p-8 flex flex-col items-center text-center min-h-[420px]">
                             <div className="mb-8 mt-4 relative">
@@ -56,9 +64,9 @@ export default function ServicesPage() {
                                     <span className="material-icons text-4xl text-white">water_drop</span>
                                 </div>
                             </div>
-                            <h3 className="text-2xl font-medium text-white mb-4 tracking-wide">Hydro Systems</h3>
-                            <p className="text-white/80 text-sm font-light leading-relaxed mb-8 flex-grow">
-                                Invisible infrastructure. Precision engineering that manages water flow seamlessly.
+                            <h3 className="text-2xl font-bold text-white mb-3">{t('hydro_title')}</h3>
+                            <p className="text-sand-dark text-sm leading-relaxed mb-6 font-light">
+                                {t('hydro_desc')}
                             </p>
                             <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none mix-blend-overlay">
                                 <img
@@ -74,19 +82,19 @@ export default function ServicesPage() {
                     </div>
 
                     {/* Service Card 3: Lumination */}
-                    <div className="group service-card relative overflow-hidden rounded-[2.5rem] bg-earth-sand shadow-soft-volume hover:shadow-lg transition-all duration-500">
+                    <div className="group service-card relative overflow-hidden rounded-[2.5rem] bg-earth-sand shadow-soft-volume hover:-translate-y-2 transition-all duration-500 animate-slide-up delay-600">
                         <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
                         <div className="relative z-10 h-full p-8 flex flex-col items-center text-center min-h-[420px]">
                             <div className="mb-8 mt-4 relative">
-                                <div className="w-20 h-20 bg-black/10 backdrop-blur-sm rounded-full flex items-center justify-center shadow-icon-float ring-1 ring-black/10 group-hover:scale-110 transition-transform duration-500">
-                                    <span className="material-icons text-4xl text-[#3d322a]">tungsten</span>
+                                <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center shadow-icon-float ring-1 ring-white/30 group-hover:scale-110 transition-transform duration-500">
+                                    <span className="material-icons text-4xl text-white">tungsten</span>
                                 </div>
                             </div>
-                            <h3 className="text-2xl font-medium text-[#3d322a] mb-4 tracking-wide group-hover:shimmer-text transition-all duration-300">Lumination</h3>
-                            <p className="text-[#3d322a]/80 text-sm font-medium leading-relaxed mb-4 flex-grow group-hover:shimmer-text transition-all duration-300">
+                            <h3 className="text-2xl font-medium text-white mb-4 tracking-wide group-hover:shimmer-text transition-all duration-300">Lumination</h3>
+                            <p className="text-white/80 text-sm font-light leading-relaxed mb-4 flex-grow group-hover:shimmer-text transition-all duration-300">
                                 Atmospheric curation. We paint with light to extend beauty into the evening.
                             </p>
-                            <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#3d322a]/40 mb-8 group-hover:shimmer-text transition-all duration-300">
+                            <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/40 mb-8 group-hover:shimmer-text transition-all duration-300">
                                 Garden path lighting
                             </span>
                             <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none mix-blend-overlay">
@@ -96,14 +104,14 @@ export default function ServicesPage() {
                                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3GhDGO_GRmICrS6X2yWmDCOTWWUHoS5U-pzJdmbuKGVxXSUDJg0DUgEg5m3hs6mBSsfc8MqljxHfmcNfGnZSPZCUyjxdbMXK7iZe0-jxGrl8vSTuHsyr2XPiom7jLDoUH2K_PHoJipck6XR7DsnlU-FAeSep6NCy5GwjLhjejVQAVq3YIj0hs1-zFBasV4PhAW_NzoEpTuT6GKH9CX2UdRPyHj0vXTTlKReTBwgJxQD--_wL_p7cxaKqEc6fKSsL82vRCE1-VgQs"
                                 />
                             </div>
-                            <Link className="inline-flex items-center text-xs text-[#3d322a] font-bold tracking-widest uppercase border border-[#3d322a]/30 px-5 py-2 rounded-full hover:bg-[#3d322a] hover:text-earth-sand transition-all duration-300 group-hover:shimmer-text" href="/services/lumination">
+                            <Link className="inline-flex items-center text-xs text-white font-bold tracking-widest uppercase border border-white/30 px-5 py-2 rounded-full hover:bg-white hover:text-earth-sand transition-all duration-300 group-hover:shimmer-text" href="/services/lumination">
                                 View
                             </Link>
                         </div>
                     </div>
 
                     {/* Service Card 4: Flora Select */}
-                    <div className="group service-card relative overflow-hidden rounded-[2.5rem] bg-earth-stone shadow-soft-volume hover:shadow-lg transition-all duration-500">
+                    <div className="group service-card relative overflow-hidden rounded-[2.5rem] bg-earth-stone shadow-soft-volume hover:shadow-lg transition-all duration-500 animate-slide-up delay-700">
                         <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-black/10 pointer-events-none" />
                         <div className="relative z-10 h-full p-8 flex flex-col items-center text-center min-h-[420px]">
                             <div className="mb-8 mt-4 relative">
@@ -132,20 +140,26 @@ export default function ServicesPage() {
 
             <section className="py-20 px-6 md:px-12 lg:px-24 border-t border-white/5 bg-background-dark/30">
                 <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
-                    <div className="flex flex-col gap-4">
-                        <span className="text-5xl font-extralight text-earth-moss">01</span>
-                        <h4 className="text-xl text-white font-medium">Consultation</h4>
-                        <p className="text-slate-400 text-sm leading-relaxed">Understanding the soul of the site and the desires of the dweller. We begin with deep listening.</p>
+                    <div className="p-8 rounded-3xl bg-forest-light/30 border border-white/5 shadow-soft-neumorph animate-slide-up delay-400 group hover:-translate-y-2 hover:shadow-soft-volume transition-all duration-500">
+                        <div className="w-10 h-10 rounded-full bg-earth-moss/20 flex items-center justify-center text-earth-moss font-bold text-xs mb-6 border border-earth-moss/30 group-hover:scale-110 transition-transform duration-300">01</div>
+                        <h4 className="text-white font-bold text-lg mb-2">{t('process_01_title')}</h4>
+                        <p className="text-sand-dark text-sm font-light leading-relaxed">
+                            {t('process_01_desc')}
+                        </p>
                     </div>
-                    <div className="flex flex-col gap-4">
-                        <span className="text-5xl font-extralight text-earth-sand">02</span>
-                        <h4 className="text-xl text-white font-medium">Curation</h4>
-                        <p className="text-slate-400 text-sm leading-relaxed">Selecting materials that age gracefully. Every stone, light fixture, and sapling is chosen for permanence.</p>
+                    <div className="p-8 rounded-3xl bg-forest-light/30 border border-white/5 shadow-soft-neumorph animate-slide-up delay-500 group hover:-translate-y-2 hover:shadow-soft-volume transition-all duration-500">
+                        <div className="w-10 h-10 rounded-full bg-terracotta/20 flex items-center justify-center text-terracotta font-bold text-xs mb-6 border border-terracotta/30 group-hover:scale-110 transition-transform duration-300">02</div>
+                        <h4 className="text-white font-bold text-lg mb-2">{t('process_02_title')}</h4>
+                        <p className="text-sand-dark text-sm font-light leading-relaxed">
+                            {t('process_02_desc')}
+                        </p>
                     </div>
-                    <div className="flex flex-col gap-4">
-                        <span className="text-5xl font-extralight text-earth-terra">03</span>
-                        <h4 className="text-xl text-white font-medium">Execution</h4>
-                        <p className="text-slate-400 text-sm leading-relaxed">A meticulous installation process where precision meets the unpredictable nature of the wild.</p>
+                    <div className="p-8 rounded-3xl bg-forest-light/30 border border-white/5 shadow-soft-neumorph animate-slide-up delay-600 group hover:-translate-y-2 hover:shadow-soft-volume transition-all duration-500">
+                        <div className="w-10 h-10 rounded-full bg-forest-deep flex items-center justify-center text-primary font-bold text-xs mb-6 border border-primary/30 group-hover:scale-110 transition-transform duration-300">03</div>
+                        <h4 className="text-white font-bold text-lg mb-2">{t('process_03_title')}</h4>
+                        <p className="text-sand-dark text-sm font-light leading-relaxed">
+                            {t('process_03_desc')}
+                        </p>
                     </div>
                 </div>
             </section>
@@ -154,25 +168,21 @@ export default function ServicesPage() {
             <section className="relative py-32 px-6 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background-dark/50 z-0" />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
-                <div className="relative z-10 text-center max-w-3xl mx-auto">
-                    <h2 className="text-4xl md:text-6xl font-light text-white mb-8 tracking-tight">
-                        Ready to transform your <br />
-                        <span className="text-primary italic font-serif">exterior world?</span>
-                    </h2>
-                    <Link href="/contacts" className="group relative inline-flex items-center justify-center p-1 rounded-full bg-gradient-to-br from-primary/50 to-primary/10 hover:from-primary hover:to-primary/80 transition-all duration-500 shadow-[0_0_40px_-10px_rgba(143,168,118,0.3)] hover:shadow-[0_0_60px_-10px_rgba(143,168,118,0.6)]">
-                        <div className="bg-background-dark rounded-full px-10 py-5 group-hover:bg-transparent transition-colors duration-300">
-                            <span className="text-xl text-primary group-hover:text-white font-medium tracking-wide flex items-center gap-3">
-                                Book Consultation
-                                <span className="material-icons bg-primary/20 rounded-full p-1 text-sm group-hover:bg-white/20 group-hover:text-white transition-colors">north_east</span>
-                            </span>
-                        </div>
-                    </Link>
+                <div className="relative z-10 p-12 lg:p-20 text-center animate-slide-up delay-200">
+                    <h3 className="text-4xl lg:text-6xl font-black text-white mb-8 tracking-tighter">
+                        {t.rich('cta_title', {
+                            exterior: (chunks) => <span className="text-primary italic block md:inline">{chunks}</span>
+                        })}
+                    </h3>
+                    <button className="gold-btn px-10 py-5 rounded-full text-lg font-bold hover:scale-105 transition-transform shadow-btn">
+                        {t('cta_button')}
+                    </button>
+                </div>
 
-                    <div className="mt-16 flex justify-center gap-8 text-slate-500 text-sm font-medium">
-                        <a className="hover:text-primary transition-colors" href="#">Instagram</a>
-                        <a className="hover:text-primary transition-colors" href="#">Pinterest</a>
-                        <a className="hover:text-primary transition-colors" href="#">LinkedIn</a>
-                    </div>
+                <div className="mt-16 flex justify-center gap-8 text-slate-500 text-sm font-medium">
+                    <a className="hover:text-primary transition-colors" href="#">Instagram</a>
+                    <a className="hover:text-primary transition-colors" href="#">Pinterest</a>
+                    <a className="hover:text-primary transition-colors" href="#">LinkedIn</a>
                 </div>
             </section>
         </div>
