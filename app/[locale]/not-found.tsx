@@ -16,7 +16,7 @@ export default function NotFound() {
                     <img
                         alt="Misty pine forest silhouette"
                         className="w-full h-full object-cover object-bottom opacity-80"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbGyYIGJhdje5qM6O_xB8_l4FhuH1MLYoXHEbNdNnSPm_Xp9x9q3RfHFSr8XvS9lQArd9wDYmxUnGrzDuFNI_P9tzDr5_VIKhomYuVw5XdVkPhYvGMb79dndELKW4VQqFY-ZL-geG9v19E9FYzGQnP4uhKT_J-XCMYlIf_stnwxHJp8IZUNLZjrci3juI-2bDWkzy-WuDmV4fMBhacAnv953qdFCqnfTmx3ym84bc3Bnq0robGddXkRQx7bqKnnYSTWTggPEv4O5A"
+                        src="/images/404.jpg"
                     />
                 </div>
             </div>

@@ -1,6 +1,19 @@
-'use client';
-
 import { useTranslations } from 'next-intl';
+import { generatePageMetadata } from '@/lib/metadata';
+import type { Metadata } from 'next';
+
+type Props = { params: Promise<{ locale: string }> }
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { locale } = await params;
+    return generatePageMetadata({
+        titleRu: 'Политика конфиденциальности | TERRA.ART',
+        titleEn: 'Privacy Policy | TERRA.ART',
+        descriptionRu: 'Политика конфиденциальности TERRA.ART. Защита ваших персональных данных.',
+        descriptionEn: 'TERRA.ART Privacy Policy. Protection of your personal data.',
+        path: '/privacy',
+    }, locale);
+}
 
 export default function PrivacyPage() {
     const t = useTranslations('Privacy');

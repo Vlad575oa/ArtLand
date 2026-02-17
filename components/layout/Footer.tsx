@@ -34,10 +34,11 @@ export const Footer = () => {
                 <div>
                     <h4 className="text-white font-bold mb-6">{t('company')}</h4>
                     <ul className="space-y-4 text-sm text-sand-dark">
+                        <li><Link className="hover:text-primary transition-colors" href="/">{t('home')}</Link></li>
+                        <li><Link className="hover:text-primary transition-colors" href="/projects">{t('portfolio')}</Link></li>
+                        <li><Link className="hover:text-primary transition-colors" href="/services">{t('services')}</Link></li>
                         <li><Link className="hover:text-primary transition-colors" href="/philosophy">{t('philosophy')}</Link></li>
-                        <li><Link className="hover:text-primary transition-colors" href="/projects">{t('projects')}</Link></li>
-                        <li><Link className="hover:text-primary transition-colors" href="/team">{t('team')}</Link></li>
-                        <li><Link className="hover:text-primary transition-colors" href="/careers">{t('careers')}</Link></li>
+                        <li><Link className="hover:text-primary transition-colors" href="/contacts">{t('contacts')}</Link></li>
                     </ul>
                 </div>
                 <div>

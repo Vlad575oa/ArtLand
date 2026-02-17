@@ -1,6 +1,20 @@
-'use client'
-
 import Link from 'next/link'
+import { generatePageMetadata } from '@/lib/metadata';
+import type { Metadata } from 'next';
+
+type Props = { params: Promise<{ locale: string }> }
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { locale } = await params;
+    return generatePageMetadata({
+        titleRu: 'Озеленение и ботаническая курация | TERRA.ART',
+        titleEn: 'Greening & Botanical Curation | TERRA.ART',
+        descriptionRu: 'Профессиональное озеленение территорий. Подбор растений, создание экосистем, уход за садом. TERRA.ART.',
+        descriptionEn: 'Professional greening services. Plant selection, ecosystem creation, garden care. TERRA.ART.',
+        path: '/services/greening',
+        image: '/images/services/greening-hero.jpg',
+    }, locale);
+}
 
 export default function GreeningPage() {
     return (
@@ -18,7 +32,7 @@ export default function GreeningPage() {
                     <img
                         className="w-full h-full object-cover opacity-60"
                         alt="Lush dark green botanical garden"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD9h4lEiiwS-F_T7PanGaIHSpDB8hK3LK6iGOMiPtMZbTcyBW26K_5FcqwDTWUV793J8UBhPOJvdJeI-FJ8VBdB5YjYuK7iwL9xdP6WxXypF0MOzn2kg38lGXX8314SigLn7ZVZvM67iBxOv1hvGPd9NQaE_jsdE4bhLiGC8yx5wXheedyGDNI2BvoeJN-PGAN6jBwq5oBEF9ZZH677T26fYgjKmyLRsbGiMgrUxAMN_KRkMA_Ghv27I3ds_VwRWsIeB7K3MMbHhU"
+                        src="/images/services/greening-hero.jpg"
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-greening-background/90 via-greening-background/70 to-greening-background"></div>
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#0B1410_100%)]"></div>
@@ -54,7 +68,7 @@ export default function GreeningPage() {
                             <img
                                 className="rounded-[2.5rem_0.8rem_2.5rem_0.8rem] w-full h-[500px] object-cover filter brightness-90 group-hover:brightness-100 transition-all duration-700"
                                 alt="Exotic leaf with water drops"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAf6sUSZTDVM9pUqgtmoEHf6VuQE1QryX6kbP7mav_pGAAqj3zVrPltD_erUW5Yyapikw9ZyFjNFhnAq9H3WN5LesXQ11QJMRUnbTNpr6kesjiWljurX54Lx7oOtnfbib7BKY3hTVdsD4gJiHMMnFargwixYXQ7qZsXUKogwyLJU-59NL2n0WubuVMKj0xOEAfjGCTS1ffi-bWJDt9CMmwCxD4w-eb8B7FXSO4tAjC4dKr_M404Zgg3HH9mFFN646faZ4AKTG_8YU8"
+                                src="/images/services/greening-1.jpg"
                             />
                             <div className="absolute bottom-6 left-6 right-6">
                                 <div className="glass-panel p-4 rounded-2xl flex items-center justify-between border-l-4 border-l-greening-moss bg-greening-surface/60 backdrop-blur-md">
@@ -94,7 +108,7 @@ export default function GreeningPage() {
                             <img
                                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60"
                                 alt="Rich dark soil texture"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCXzSFr9vmTFN08dxJeR6OG0dML0lcaeXTJXZJxqH7PDzAu6hdau3ZlwiyIGxCPyHpY6bRtH1wbioSA-WnDQLKVzmaWka2ItETKjUM1MJ089NoEjn-VqRPl_JZ7qADUm1_BKpphYpLaMnQ6C6lsEhZxcxrwKF9cDprAIqXbRlp1slTuuFtY8ghwqnFdCAZH0_l5wmhXSzZsAgKQ5yWpDgeJ0b4A8Z78-Tw4eYJHPTbewXrRSiYLfnejSGre2SpIeP-iX8AB5l8DQk"
+                                src="/images/services/greening-2.jpg"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-greening-background via-transparent to-transparent"></div>
                             <div className="absolute top-8 right-8 w-24 h-24 rounded-full border border-white/10 flex items-center justify-center backdrop-blur-md bg-white/5">
@@ -189,10 +203,10 @@ export default function GreeningPage() {
 
                 <div className="flex overflow-x-auto no-scrollbar gap-8 px-6 pb-20 snap-x snap-mandatory relative z-10">
                     {[
-                        { name: 'Japanese Painted Fern', species: 'Athyrium niponicum', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAQQxKsO_vDNpEab_nNAduZL7Rbf4YThC7g8DW5rJyPcOyX9JGtXIYU4GyGuroxHeXuiCmwh_-_LWOOa8avxJ4wFQaCuEANs4eUfz_51Ot-FJgqHWBgHFpejS0p6L1xWTyuABCgVmKcVOlPMKfxyhYY7m7i_piUeLrKGjvgR4pSwg9rJEC2hBhV8fBcrr5debJHenUieoLEd1klnw1Oplq0baArVpiEccznm939sobIiJGgJTVfTru0MbiHMPEbW1lssTVDJXW70cI', tags: ['Shade', 'Moist'], color: 'greening-moss' },
-                        { name: 'European Olive', species: 'Olea europaea', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA43S5yMOr4BuKoNzZ_AVzvQdL2gL3sP5k37TXBi9PlRNiH53GxrhosnDHKWr96umi6Lg9EbvhqCnykbF7dzYZjjq6O6BOfBNcDPDUodohQnYatTbJi1XLky-GeUiK316QAGGCEBiETvR3ttY8P4bAAYLHaLsv2erwIvUuiH0IviPr7Mmm8xMDNij3LSJZaFg_Z2mgUFCAAOxX7fou6ngTlzByzUvSlAGTg5TLLibg7Vfmn1OSs0b7dQOXqpp5Z6XPBgYRYHwLVoo0', tags: ['Sun', 'Drought'], color: 'greening-terracotta' },
-                        { name: 'Fiddle Leaf Fig', species: 'Ficus lyrata', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCT8U0_N5r2fwgP6JCZkYO9zuz4C4o_m7ODLKmsMI_1-okVVRHhP_LEiprQY2sX3HwfXRWs1aPekq3guxa6N26ER6zhLjR9pQVi-RmM-FRIbDMp3szJzf2YSAySUt9UZj1b6A9SA_19q5pOaQzkwRF5Gtud3EMjIRl9YvTrCXcvGAIMprxyCH72v2QT-H56F2F2oTySo3OtcBiH3M_rPD89h_YwcVfOnVNnAt8AUX4r8XBkQEh0V-wczgeH89BgHZbncLFGbvlKwbs', tags: ['Indirect', 'Warm'], color: 'greening-moss' },
-                        { name: 'Magnolia', species: 'Magnolia grandiflora', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB68d0mMvceDMJK789F0x7HaNQQmewBA59v52KP_0w4kscuRxQ6ngH7q0vwBdG5CR8OLK7NzifTL6CQylEWq9qbVpwTWnBscByUUDzUybiLN_RDpmRi-ChDuKsxarMK2iTzBrkLfjMBZ7guralIKvqNdWPvWIULVhc3Wxk88oe7JJkO5JW8H8qnSXyW1513PrFpp49gI_OE2HtZo2WoVZ6QUO343eC48yc44rUatKq7cKGmlgA8MgayiDNEx45tVLlu2Q07ipMym54', tags: ['Full Sun', 'Rich Soil'], color: 'greening-terracotta' }
+                        { name: 'Japanese Painted Fern', species: 'Athyrium niponicum', img: '/images/services/plants/japanese-fern.jpg', tags: ['Shade', 'Moist'], color: 'greening-moss' },
+                        { name: 'European Olive', species: 'Olea europaea', img: '/images/services/plants/olive-tree.jpg', tags: ['Sun', 'Drought'], color: 'greening-terracotta' },
+                        { name: 'Fiddle Leaf Fig', species: 'Ficus lyrata', img: '/images/services/plants/fiddle-leaf-fig.jpg', tags: ['Indirect', 'Warm'], color: 'greening-moss' },
+                        { name: 'Magnolia', species: 'Magnolia grandiflora', img: '/images/services/plants/magnolia.jpg', tags: ['Full Sun', 'Rich Soil'], color: 'greening-terracotta' }
                     ].map((plant, i) => (
                         <div key={i} className="min-w-[320px] md:min-w-[380px] snap-center group pt-12">
                             <div className="relative h-[500px] bg-greening-surface rounded-[2rem] border border-white/5 p-8 flex flex-col items-center justify-end hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-300 shadow-greening-neumorphic">
@@ -264,7 +278,7 @@ export default function GreeningPage() {
                             <img
                                 className="w-14 h-14 rounded-full object-cover border-2 border-greening-moss shadow-lg"
                                 alt="Alexander V."
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD22LhN6rZU7TAiUOJnwSUzDqePNpfHmaQobysZL0DrksqVbZ7mv0AJ5epN1Qk0mMBL_xYVAqvGnH1SD70UXIo0oTKtOYtmGh62YziDaSPg3_8lKOwf3BZi4LCNmNoEm8nTf8ZZsPbUN_LkCVuvmZPIyR20sj0KBjkjSQj_ljQIJfSpo2hCNfFb5-FuhTnNoF3YuS3XFir4XZxG3utNtG_IJ-51l5RtHgRcqswjtXv2kIomZcfK8RX3UeA2ta5aBKfy8T-qtpWPf7Y"
+                                src="/images/services/greening-3.jpg"
                             />
                             <div className="text-left">
                                 <div className="text-white font-medium">Alexander V.</div>

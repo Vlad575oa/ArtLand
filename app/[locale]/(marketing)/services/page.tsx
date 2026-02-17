@@ -1,8 +1,22 @@
-'use client';
-
 import Link from 'next/link'
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+import { generatePageMetadata } from '@/lib/metadata';
+import type { Metadata } from 'next';
+
+type Props = { params: Promise<{ locale: string }> }
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { locale } = await params;
+    return generatePageMetadata({
+        titleRu: 'Услуги ландшафтного дизайна | TERRA.ART',
+        titleEn: 'Landscape Design Services | TERRA.ART',
+        descriptionRu: 'Озеленение, хардскейпинг, гидросистемы, освещение и ирригация. Полный цикл ландшафтных работ от TERRA.ART.',
+        descriptionEn: 'Greening, hardscaping, hydro systems, lumination and irrigation. Full-cycle landscape services by TERRA.ART.',
+        path: '/services',
+        image: '/images/services/service-1.jpg',
+    }, locale);
+}
 
 export default function ServicesPage() {
     const t = useTranslations('Services');
@@ -22,7 +36,7 @@ export default function ServicesPage() {
                         sanctuary: (chunks) => <span className="text-primary block">{chunks}</span>
                     })}
                 </h1>
-                <p className="text-lg md:text-xl text-sand-dark/80 max-w-xl leading-relaxed font-light animate-slide-up delay-300">
+                <p className="text-lg md:text-xl text-sand-dark/80 max-w-xl mx-auto leading-relaxed font-light animate-slide-up delay-300">
                     {t('description')}
                 </p>
             </header>
@@ -44,13 +58,13 @@ export default function ServicesPage() {
                             </p>
                             <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none mix-blend-overlay">
                                 <img
-                                    alt="Sculpted earth terrain"
+                                    alt={t('hardscaping_alt')}
                                     className="w-full h-full object-cover"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiuQKLpxDBNLufG_ADT8tAyE5Z4EkzkZHUHrvoApatSIJ50VHU7H4YoTdp3xhhcNy6r2lklMQHjDlUg7yrQwILU4oziSSDfNJDMHcZNAbHuGONl-hKMHsbtxgfaIatyWurrwAUUeK3j_MHrkVseVJ_OPunZYh0SmvpXPUmf6OaS5l2Hw0DlBwJHC6HlHvvQHVMKmD_wBc6YOacjM5b6aSRRjO9KAT3sRL8e75h8Ra8oYenl4gRUezzRmi9gDNWvCYDLpzpOCoZkSU"
+                                    src="/images/services/hardscaping.png"
                                 />
                             </div>
                             <Link className="inline-flex items-center text-xs text-white font-bold tracking-widest uppercase border border-white/30 px-5 py-2 rounded-full hover:bg-white hover:text-earth-moss transition-colors duration-300" href="/services/hardscaping">
-                                Explore
+                                {t('explore')}
                             </Link>
                         </div>
                     </div>
@@ -70,13 +84,13 @@ export default function ServicesPage() {
                             </p>
                             <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none mix-blend-overlay">
                                 <img
-                                    alt="Water flowing"
+                                    alt={t('hydro_alt')}
                                     className="w-full h-full object-cover"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQZVuzYo6zV16sk34wtjq5rzZNJNDvh7UyWPwzUeg66XV6UWgXeHKQpJ0T1lenp4WKyu9aVcIM0cNd4MXr39WDK3-nlBeYTN0Glc8VpTJDlbBZ5VlRCjtKL9sPZYFaBu0PTBqKDGA46PoAGAExB1bjHR3DPm2KS35_p1pJlAUBMoUIZb4pcjZ6VSuQfx_uZ0TucJgPDmu7fkzqdzjnaTAXz1bEr3tpNsQcrCUMYmZDsyQeebBkgAHFuMGS4eZEjjsdYvtBgDjiFz4"
+                                    src="/images/services/hydro.png"
                                 />
                             </div>
                             <Link className="inline-flex items-center text-xs text-white font-bold tracking-widest uppercase border border-white/30 px-5 py-2 rounded-full hover:bg-white hover:text-earth-terra transition-colors duration-300" href="/services/hydro-systems">
-                                Details
+                                {t('details')}
                             </Link>
                         </div>
                     </div>
@@ -90,22 +104,22 @@ export default function ServicesPage() {
                                     <span className="material-icons text-4xl text-white">tungsten</span>
                                 </div>
                             </div>
-                            <h3 className="text-2xl font-medium text-white mb-4 tracking-wide group-hover:shimmer-text transition-all duration-300">Lumination</h3>
+                            <h3 className="text-2xl font-medium text-white mb-4 tracking-wide group-hover:shimmer-text transition-all duration-300">{t('lumination_title')}</h3>
                             <p className="text-white/80 text-sm font-light leading-relaxed mb-4 flex-grow group-hover:shimmer-text transition-all duration-300">
-                                Atmospheric curation. We paint with light to extend beauty into the evening.
+                                {t('lumination_desc')}
                             </p>
                             <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/40 mb-8 group-hover:shimmer-text transition-all duration-300">
-                                Garden path lighting
+                                {t('lumination_subtitle')}
                             </span>
                             <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none mix-blend-overlay">
                                 <img
-                                    alt="Garden path lighting"
+                                    alt={t('lumination_alt')}
                                     className="w-full h-full object-cover"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3GhDGO_GRmICrS6X2yWmDCOTWWUHoS5U-pzJdmbuKGVxXSUDJg0DUgEg5m3hs6mBSsfc8MqljxHfmcNfGnZSPZCUyjxdbMXK7iZe0-jxGrl8vSTuHsyr2XPiom7jLDoUH2K_PHoJipck6XR7DsnlU-FAeSep6NCy5GwjLhjejVQAVq3YIj0hs1-zFBasV4PhAW_NzoEpTuT6GKH9CX2UdRPyHj0vXTTlKReTBwgJxQD--_wL_p7cxaKqEc6fKSsL82vRCE1-VgQs"
+                                    src="/images/services/lumination.png"
                                 />
                             </div>
                             <Link className="inline-flex items-center text-xs text-white font-bold tracking-widest uppercase border border-white/30 px-5 py-2 rounded-full hover:bg-white hover:text-earth-sand transition-all duration-300 group-hover:shimmer-text" href="/services/lumination">
-                                View
+                                {t('view')}
                             </Link>
                         </div>
                     </div>
@@ -119,19 +133,19 @@ export default function ServicesPage() {
                                     <span className="material-icons text-4xl text-white">yard</span>
                                 </div>
                             </div>
-                            <h3 className="text-2xl font-medium text-white mb-4 tracking-wide">Greening</h3>
+                            <h3 className="text-2xl font-medium text-white mb-4 tracking-wide">{t('greening_title')}</h3>
                             <p className="text-white/80 text-sm font-light leading-relaxed mb-8 flex-grow">
-                                Botanic curation focused on resilience. A living palette of texture and color.
+                                {t('greening_desc')}
                             </p>
                             <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none mix-blend-overlay">
                                 <img
-                                    alt="Lush fern leaves"
+                                    alt={t('greening_alt')}
                                     className="w-full h-full object-cover"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJmyMDiqpQ-VyorlQwdyDXzdAE5PVZdga5qJod9XAxp6NKNnTHIrHfQ8ETwSGrxmEx3XNqMFF4Rv3yn7R2aOeOkZCTzXjidinFwsAAfFmnddKGdedbyJ2gzEFgZkK-kRiAeqRz0eCq4xDVnCA9bZ3UuvzZr8ojZ9si01pFdDdbY20Z7pUg77W-BE2G3NZ6vb1lXJe5IQsXhfMXCmCgxwhpFFZDynGxponFsPU7gLi6JcOfmOdw-C7W2yHkK1FK6H9trWGjnat_GXQ"
+                                    src="/images/services/greening.png"
                                 />
                             </div>
                             <Link className="inline-flex items-center text-xs text-white font-bold tracking-widest uppercase border border-white/30 px-5 py-2 rounded-full hover:bg-white hover:text-earth-stone transition-colors duration-300" href="/services/greening">
-                                Browse
+                                {t('browse')}
                             </Link>
                         </div>
                     </div>

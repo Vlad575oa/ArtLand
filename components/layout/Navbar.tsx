@@ -16,7 +16,7 @@ export const Navbar = () => {
     }
 
     return (
-        <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-auto max-w-2xl px-4">
+        <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-auto max-w-2xl px-4 hidden lg:block" aria-label="Main navigation">
             <div className="px-2 py-2 rounded-full bg-background-dark/80 backdrop-blur-md border border-white/5 shadow-glass flex items-center gap-1">
                 <Link
                     href="/"

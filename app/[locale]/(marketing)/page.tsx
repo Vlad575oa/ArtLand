@@ -1,9 +1,24 @@
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/routing';
+import Image from 'next/image';
+import { generatePageMetadata } from '@/lib/metadata';
+import type { Metadata } from 'next';
 
+type Props = { params: Promise<{ locale: string }> }
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  return generatePageMetadata({
+    titleRu: 'TERRA.ART — Премиальный ландшафтный дизайн',
+    titleEn: 'TERRA.ART — Premium Landscape Architecture',
+    descriptionRu: 'Создаём живые пространства. Премиальный ландшафтный дизайн и архитектура от TERRA.ART. 150+ завершённых проектов.',
+    descriptionEn: 'Cultivating living art on your land. Premium landscape architecture by TERRA.ART. 150+ completed projects.',
+    path: '',
+    image: '/images/hero/hero-main.jpg',
+  }, locale);
+}
 export default function HomePage() {
   const t = useTranslations('Hero');
-  const tCommon = useTranslations('Common');
   const locale = useLocale();
 
   return (
@@ -31,17 +46,20 @@ export default function HomePage() {
                 {t('badge')}
               </span>
 
-              <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.05] text-[#F0F2F0] drop-shadow-2xl animate-fade-in">
+              <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.05] text-[#F0F2F0] drop-shadow-2xl">
                 {t.rich('title', {
                   living: (chunks) => (
-                    <span className="italic text-primary bg-clip-text text-transparent bg-gold-gradient relative inline-block">
+                    <span
+                      className="italic text-primary bg-clip-text text-transparent bg-gold-gradient relative inline-block"
+                      style={locale === 'ru' ? { fontSize: 'calc(1em - 2px)', paddingRight: '0.1em' } : undefined}
+                    >
                       {chunks}
                       <svg className="absolute w-full h-3 -bottom-1 left-0 text-primary opacity-40" fill="none" viewBox="0 0 200 9" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2.00025 6.99997C25.7501 2.99999 52.4462 0.999954 87.5002 0.999954C122.554 0.999954 153.75 3.00001 198 7" stroke="currentColor" strokeWidth="2" />
                       </svg>
                     </span>
                   ),
-                  br: () => <br />
+                  breakLine: () => <br />
                 })}
               </h1>
 
@@ -50,29 +68,34 @@ export default function HomePage() {
               </p>
 
               <div className="flex flex-wrap items-center gap-6 mt-6">
-                <button className="gold-btn group relative px-10 py-5 text-olive-deep rounded-full flex items-center gap-3 font-bold text-sm tracking-wide">
+                <Link href="/contacts" className="gold-btn group relative px-10 py-5 text-olive-deep rounded-full flex items-center gap-3 font-bold text-sm tracking-wide">
                   <span>{t('cta')}</span>
-                  <span className="material-icons-round group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                </button>
+                  <span className="material-icons-round group-hover:translate-x-1 transition-transform" aria-hidden="true">arrow_forward</span>
+                </Link>
 
-                <button className="flex items-center gap-4 px-6 py-4 rounded-full text-[#C0C8C4] hover:text-white transition-all group">
+                <Link href="/projects" className="flex items-center gap-4 px-6 py-4 rounded-full text-[#C0C8C4] hover:text-white transition-all group">
                   <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:border-primary group-hover:bg-primary/10 transition-all">
-                    <span className="material-icons-round text-2xl group-hover:text-primary">play_arrow</span>
+                    <span className="material-icons-round text-2xl group-hover:text-primary" aria-hidden="true">play_arrow</span>
                   </div>
                   <span className="text-sm font-medium tracking-wide border-b border-transparent group-hover:border-primary/50 transition-all pb-0.5">
                     {t('showreel')}
                   </span>
-                </button>
+                </Link>
               </div>
             </div>
 
             <div className="lg:col-span-5 relative h-[650px] hidden lg:block">
               <div className="relative h-full w-full">
                 <div className="absolute inset-0 leaf-shape-wide overflow-hidden convex-card p-2 z-10 rotate-2 hover:rotate-0 transition-all duration-700 ease-out">
-                  <img
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiVWGOAVHiIZIlz3ygKeyWRNFFs0dILgVb4lMP_L_6AFcGq0JQH0oFfhq-tMJeJ7pxXMnqWeW_z8LmEnUamNtRbRXicdUD627vBj1yOk8pi8B6bV9IHnkosmnRISBoxuvnl9BQfLm6MoVz4ogERmsYccImPgZFPMR5cxNTHL7ej9cQpuiqvczVbsFseheFfjH9yotZz19H0_32I04PThacL-OhqnbQm3R79F536ww0Wn06A_pj7rl193-ehcgztp47AZC7RtgoObM"
+                  <Image
+                    src="/images/hero/hero-main.jpg"
                     alt="Minimalist modern garden path with concrete steps and lush green ferns"
-                    className="w-full h-full object-cover leaf-shape-wide opacity-90 hover:opacity-100 transition-opacity duration-500"
+                    className="object-cover leaf-shape-wide opacity-90 hover:opacity-100 transition-opacity duration-500"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    priority
+                    fetchPriority="high"
+                    loading="eager"
                   />
                 </div>
                 <div className="absolute top-10 -right-8 w-3/4 h-3/4 bg-[#3D5246] leaf-shape-wide -z-0 opacity-40 rotate-6" />
@@ -157,21 +180,29 @@ export default function HomePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
-                { icon: 'landscape', titleKey: 'service1_title', descKey: 'service1_desc', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDJeHSgy9tJvI5tUi8hyYlmjHd_WxcTA73Q4sYM7pLYkWutsJUDlQITfe4pbKCTL4cfOoJ9z5rZlMry4DbUOBbV6BL3gVoGrUcULowSuBjcYjXBdg_bftN2AcJdFYiN2J-kUuWZWMsvUeDv38CwZ7sBBspq2olGS00crBerPqJqhzz_kV9osxuDYwYZCeZ1ZKMevDIXrTCG3yjKFm6yPvkaB0qv_BvcXBz78MjO5nXzb4Koe4fxWsRsoC9RaNq-1GWJ9kKy75mdgmw' },
-                { icon: 'water_drop', titleKey: 'service2_title', descKey: 'service2_desc', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDmdukYhyGWvlueVTnubcSmbO8xB7sL34keOqsqTb7YA1YSlInBZZXQo0Yq-FyVXHyd9zypO-4Tv3MgIljDx2la-WC9qB7zf-kq_mnV6-jFXc9pMRAPwcEEcX2vGpOlrDDBNRjSwDYgg6Bk9N6D7qGYv08lw7zJ_8dHy1Ea1S_04cC028hy1LtxlLoJLeedrggsRdSAxuwtxOjfWLFnQtdxyJFeR-jlC3GnJzwwZUZoCODmmfS_2avYCDGJaAGFqmfzGXbOEvwnQbs' },
-                { icon: 'lightbulb', titleKey: 'service3_title', descKey: 'service3_desc', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCM6XciOdzS0gaPA9CTjbHCnLbI61MoZJrpimBYdAiQ8uNqcyPGQyH-snCBUBxdrJHJozJEjZolTOxux4wHvRU1YrOVN1jUaTgKUIlcmJmtopFe42GieMcTyRjKhaw93CHaKtJY0n9Ed-OpIutrHAMwaI1nN4eiLO8Ph0YKIGLipdixaEEBhT8HeRaGqqyZpp-0lXKGNMfmw3jU-cWS05WhfBdZyfO9ISx8t88CMxJHQlhDKqKaNWTXytccIdG-5p1WRpIZiFc_ON8' },
-                { icon: 'forest', titleKey: 'service4_title', descKey: 'service4_desc', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDtqvzR-dVu_2uffjKPLcnO4P2typZrFBFsDPy6g4BP6sjzWKYecsxrrZKJfrqRnFkm4RvzUxc6Zuig3QwSyi9hzt4GHQv58J8g4kUPkSItLZVD1SN4Xu5imN_SipnE3vPADEbLNmUSLBQAu4k3RgsxnYNDKkFv5i6VENRD1XofdW8kupNKfeWVwkw8as465OuCMTjI66i78hPX3TLv2uzMh-YWAXZ4JMyAlMgcUSGw_fKf5uMREYVd8jLqZyxuOPX5tqq8syOEgfg' },
-                { icon: 'waves', titleKey: 'service5_title', descKey: 'service5_desc', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBzc53Ure_MIpBg7Cbb7yH43-AzYHqTVmrilp_53U9_VXcpk_0TJFK3wC6rfSYIwLmW_JCUqixLNLYsdv7falHIjszHoKIDLiey9iJDLB6TDp8Pn_i6mzu3ccWmIib6HlIXIexSQGlCZH8Xi8vvekD6ZfHkZEQaRKNBbrGGWn8H392SEUI-UXl3i-G6Cmq4Vi81NYf3pEaFXI8h2QlduSwQpKAC7zntjwUsyVf02VDGjnK0ei3zcOjCUIyAWh_LtmQ9dAD-uL9x15c' },
-                { icon: 'deck', titleKey: 'service6_title', descKey: 'service6_desc', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCfmxPiQXm125fldTm6yWhkB7SwjfA4t2LZ15hk9DmnLtZnr18q45gSBQMGABbRhBQpdMQx1dXLBKSjsZgn9U3huT_3IfdrJQYS8DBMnNsFmJiOZJ4zEPoTfhR9jrQn2QAJ7pW7f8KZoFk3sU5cyFjCHR1RillhVH8_D7Iak7Cv1HBH-fFF0UDtDCskS8pY9LfG-Sl99gjUuciRme1cT7oqlEAoaR1AidkQQINAQ3QrSGVdvOwX0C-6aPyo6uHWYbx8O_o3k4GIzWk' }
+                { icon: 'landscape', titleKey: 'service1_title', descKey: 'service1_desc', img: '/images/services/service-1.jpg' },
+                { icon: 'water_drop', titleKey: 'service2_title', descKey: 'service2_desc', img: '/images/services/service-2.jpg' },
+                { icon: 'lightbulb', titleKey: 'service3_title', descKey: 'service3_desc', img: '/images/services/service-3.jpg' },
+                { icon: 'forest', titleKey: 'service4_title', descKey: 'service4_desc', img: '/images/services/service-4.jpg' },
+                { icon: 'waves', titleKey: 'service5_title', descKey: 'service5_desc', img: '/images/services/service-5.jpg' },
+                { icon: 'deck', titleKey: 'service6_title', descKey: 'service6_desc', img: '/images/services/service-6.jpg' }
               ].map((service, i) => (
                 <div key={i} className="group relative h-[450px] rounded-[2rem] overflow-hidden cursor-pointer convex-card p-2">
                   <div className="w-full h-full rounded-[1.5rem] overflow-hidden relative">
-                    <img
-                      src={service.img}
-                      alt={t(service.titleKey)}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[30%] group-hover:grayscale-0"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#1F2E27] via-[#1F2E27]/40 to-transparent opacity-90 group-hover:opacity-80 transition-opacity" />
+                    {/* Image layer - only transform, no filter */}
+                    <div className="absolute inset-0 will-change-transform">
+                      <Image
+                        src={service.img}
+                        alt={t(service.titleKey)}
+                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                    </div>
+                    {/* Grayscale overlay - separate layer */}
+                    <div className="absolute inset-0 bg-black/30 mix-blend-saturation opacity-100 group-hover:opacity-0 transition-opacity duration-700 pointer-events-none" />
+                    {/* Gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1F2E27] via-[#1F2E27]/40 to-transparent opacity-90 group-hover:opacity-80 transition-opacity duration-500" />
                     <div className="absolute bottom-0 left-0 p-8 w-full z-10 text-left">
                       <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center mb-4 text-primary group-hover:bg-primary group-hover:text-olive-deep transition-all">
                         <span className="material-icons-round">{service.icon}</span>

@@ -20,7 +20,7 @@ export default function PortfolioPage() {
             title: 'Terracotta Gardens',
             category: t('categories.residential'),
             desc: 'Restoring arid soil for a lush Mediterranean oasis.',
-            img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAqoKA0zf30djiztBqyLOZDXbhNDWEgGq4GcI1kJAy5eFPyBvY5O-0pgRJNTZG4vRvV2L064stMUVL0pzeTgT1m64Jgz7tuj-u9ZAxwTMDZIqsM8VCugNIcIpYKt8jCYkD-1DyADCbAEXzPpPRfMNWAfam5T3_-I-aRTwE12Y0MBeA5dmdm6tivdotScFToCt1fGa_IvQ3uPEKGY0lD_xKKbNqOCKyrbVUdY77QDQBxTaAnK0M1lfynySGap4-uW7XrkjtFukGs1-U',
+            img: '/images/projects/project-1.jpg',
             theme: 'from-[#3d2c1f]/95 via-[#3d2c1f]/40',
             accent: '#8c6b50'
         },
@@ -28,7 +28,7 @@ export default function PortfolioPage() {
             title: 'Emerald Forest',
             category: t('categories.estate'),
             desc: 'Integrating modern living into a dense woodland slope.',
-            img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDbAWxxQ_xyBBUIoHl7gOSQxyTQeO28L_yhLlPpsKYFqbjVCHOTwOincgHQ4VUQXSM443wOn0R20meXAkjEsc_iiTqE62hTXGQ0sedMCEjVRUUWtscgvACnKhPlcfiOHXh5h30A2yJ4iUF5vdNwGheFCUsz7BHylpE0Kyz8WCTWV0NFpdO51GlHMa2dtnOeHOHv4wOlF4GXrPyKub-mE4XxdgCEyAfvVqVB3KFXCSpqQFCadbraR22ziFJCzbl6Jr9Ewxxzge3mKNE',
+            img: '/images/projects/project-2.jpg',
             theme: 'from-[#1c2e24]/95 via-[#1c2e24]/40',
             accent: '#8fa87a'
         },
@@ -36,7 +36,7 @@ export default function PortfolioPage() {
             title: 'Skyline Roof Deck',
             category: t('categories.commercial'),
             desc: 'Creating privacy and wind protection at 40 stories.',
-            img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBgiQaNhbxAzTzC2aKl9C23NA15ATaRYn-rNHNdHIZX7rhIbf6gjcaeu-xIWn_PlsrMBagNBunYJGSLJBQyoQFKUW20jfpDWqYY2UXVN57dAgNlhbQ1UFd2VkcVgPG_K0W_BTB5D-Qh4tKLKWSaZl8Ugbhm82neiPryzu9N5P8HimUORQeudGA1hyXxfAxnU2bHFHgDsp27oci0SlDuooYsHCZrcj5gfSh8p1ZWRUogLHW8vDkvsQvkJ5RnhjGM09-0d8OnNW8Lu-8',
+            img: '/images/projects/project-3.jpg',
             theme: 'from-[#2c353d]/95 via-[#2c353d]/40',
             accent: '#8fa87a'
         },
@@ -44,7 +44,7 @@ export default function PortfolioPage() {
             title: 'The Zen Courtyard',
             category: t('categories.urban'),
             desc: 'Maximizing natural light in a minimalist urban atrium.',
-            img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAo7p6VWz2r1uqq1JtQFnG21fDXJjKIyd1XptF-MFWoHWnfuXdpzOjHlh1nOQ95xReAAMfyjUeTbJZPMvg1ip2P4UX9cJGCxYxeLKHnmNYn7yig3g42MwRoeO2s3mH16IV6VLhkv_RkUgWcvMBKxy0KlkLmuK3B6RJ-UPVQUCPl3XLsjDAdCIvRq0B8N5OvwhrQIAXxYY4_bjmlqPwPrExzUqwarN2FsPobxlIT_uU4o2t2ssUymuWaM5HWDE3AXi4EgSrdYpwZEJc',
+            img: '/images/projects/project-4.jpg',
             theme: 'from-[#3a3e36]/95 via-[#3a3e36]/40',
             accent: '#8fa87a'
         },
@@ -52,7 +52,7 @@ export default function PortfolioPage() {
             title: 'Coastal Dune Villa',
             category: t('categories.coastal'),
             desc: 'Sustainable native planting for salt-heavy environments.',
-            img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC1n-TK3YNFDBQTbLUe4eUOzSgGu2wKko5aor-WloBqOIjIdgvFyY2cJd4uwuw8WPosUXl3IcsQFxuadOGpTv9f2e-AQcDlzC4sI1mHriprHwSnGDRDvmuPb2EKQ_0UJeDwiBUFiNdDpND9rXhCMSkTz18A5rFKRv78oDIEbxASQ3S5mjVOlcnYsav2jfvFsS9BldwGiR8Q0eXkzBIsWTFEcac1GAfwobU_z-nZXR4AeXSVyXz8ZIpTEG6WEICimda2whPEMva7GuM',
+            img: '/images/projects/project-5.jpg',
             theme: 'from-[#42484e]/95 via-[#42484e]/40',
             accent: '#89aeb2'
         },
@@ -60,7 +60,7 @@ export default function PortfolioPage() {
             title: 'Heritage Manor',
             category: t('categories.restoration'),
             desc: 'Preserving historical ancient trees while modernizing pathways.',
-            img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC5uGXZBuUZQejSvXGb3zZiADK5_w6yiLPdaU3dcRVUOZzUBIKGmRHstmtaioI8InNsFClbKN8MnkKjqrxhE_HoFUYP1TG6t4C-p6eJyu95Lr5G-qYHN3ECRRrGiDDPA_Nf9nQ3X6RaLNNCbxsQ39FJ_znziGE9EXirqMm0LSM68LXRJ_M1lYhCyc7V2flTJczMUzmcbZdLbFx0VMT0mdQypN_vYxhvcMuC5MGov70LcMoIuNvw71KhS8WceDM22EP-uKBuJv_1rJ8',
+            img: '/images/projects/project-6.jpg',
             theme: 'from-[#3d382e]/95 via-[#3d382e]/40',
             accent: '#d4a883'
         }

@@ -1,6 +1,19 @@
-'use client'
-
 import Link from 'next/link'
+import { generatePageMetadata } from '@/lib/metadata';
+import type { Metadata } from 'next';
+
+type Props = { params: Promise<{ locale: string }> }
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { locale } = await params;
+    return generatePageMetadata({
+        titleRu: 'Хардскейпинг — ландшафтная скульптура | TERRA.ART',
+        titleEn: 'Hardscaping — Landscape Sculpture | TERRA.ART',
+        descriptionRu: 'Профессиональный хардскейпинг: террасы, подпорные стенки, мощение, малые архитектурные формы. TERRA.ART.',
+        descriptionEn: 'Professional hardscaping: terraces, retaining walls, paving, landscape structures. TERRA.ART.',
+        path: '/services/hardscaping',
+    }, locale);
+}
 
 export default function HardscapingPage() {
     return (
@@ -13,7 +26,7 @@ export default function HardscapingPage() {
                     <img
                         alt="Luxury stone garden path"
                         className="w-full h-full object-cover opacity-80 mix-blend-overlay"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuS4k8l1PZiv4cENWFrbU6dwNq7SimGtSsyK9wNRvUtenSyq01V5NTLUinUFq-1fcxUkS1asDwN-hLosb6CFad8II3rH4UiCQOEhV1MVP4uWlJzW9is_dA4Id5fTy1Job6PqjPiPmjq33h8HD12QOyauWo7_K9J_MehmrbwTaVwURcXnzEwzf_NDoEt7M7eAve5Dkb2fu-GXdJWGuQo_Ry4YJIxpEnD7AQxM9pdtMk6MVHsNrMDCpaOu-uyWGrFL9Ady7IkYqodIA"
+                        src="/images/services/hardscaping-hero.jpg"
                     />
                 </div>
 
@@ -79,7 +92,7 @@ export default function HardscapingPage() {
                                 <img
                                     alt="Modern concrete stairs with lighting"
                                     className="w-full h-[600px] object-cover scale-105 group-hover:scale-100 transition-transform duration-1000 ease-out"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbSA1PVc-T-wV6Jk0tKzf_W7hU5RFxh8RuYb7kubR1rhbAWJfg37y3ERLalfI_cyqj6GaLC3txa945IX4ffgHJChXMqsllOYaj1FT_1rHQGheRy-2axmH7iQIrxb1bQwooVl_sPsG-7-q4-fCDPAIx086mGk5vVpYO5KRA6xgLux8f2aFiWW6MnBclLej0ZSjQw8r7V-hEM1I-kt62nZumzc5Td75JDSsXqM_IBYjEaHEdGzrLPrukoecdLyzEVLJvMUTyoslmvzs"
+                                    src="/images/services/hardscaping-1.jpg"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-hardscaping-bg/90 via-transparent to-transparent opacity-60"></div>
                             </div>
@@ -169,10 +182,10 @@ export default function HardscapingPage() {
 
                     <div className="flex gap-10 overflow-x-auto pb-16 snap-x snap-mandatory hide-scrollbar p-4 no-scrollbar">
                         {[
-                            { name: 'Basalt Grey', mat: 'Granite', finish: 'Rough Cut', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA_ZgVt0cBJFm_UCwHBydosHMxNEv1Z_vnQSVsu6vhny2heUW6TSEOUVx6vfTUeRiQ4HqTsI4l942uDQ21obsZ3K290JL4riSUL_D_0EOMa-NCEHx3lD3xkikUNdzuas3_SNk0RsikutsW-aVCtR3H1PzjRYFTm542x0PPxUgUgLTBUqva3XO6ybSIsI-VcL3e1y5gy6s3FCx5iE5wL1xWTpj-Xw129iPmoSvdhmHLsSGDXdIiMJhLdWzx_QcUBTxbSe0egUevwI8U' },
-                            { name: 'Brazilian Ipe', mat: 'Hardwood', finish: 'Oiled Finish', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDsvVAHQRG03YBGUCFSo3mSK1Yfqzj0rKJrSrTAsAOVyeNWWTlKF877A5JitaQx6-EX7_B8kTtuqoqD6mgQso1uuae0LPtv1_f3k35m9ltIEbAB-pYkZCqGTPqb2VBXS_QxMVzCB4tRCF-aKniKgXXCmFnjmM5S3err6lY2dC0dYJAya3B-448psT8OpUToarBOON09Bw5hjcHvKda95yEi3emly5N2OVOxFzMoxbMuZHXJEyVUBfbpQO1AhhPzMmpKn4_Cu88jbSE', border: 'wood' },
-                            { name: 'Travertine Cream', mat: 'Limestone', finish: 'Honed', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCFKIIdcug0mXFa2OA5KU7SpZ-B89uies1pZb0YiZ6p3WfxucgXA4fu_fthjJ0yDLCJgMnuNcmorkkUuNuDRoVGQogFQNSMg86WAUy_BYVzfQ6zl2hZLc1RTTdbBeWMkbSaFbjbwWPE-beqvVAmHgMo4QLP5n8uQOSzh69lTYZWLlP1bmP1DOcju_ZWfDvCbNxkIjfpXNecDzJu63zZr1iVEzDRvAUDhrgo1j4kFRt59ZWa1TjuIj3mhCbCxYGdbR0mO1bmgxrM0Ow' },
-                            { name: 'Midnight Slate', mat: 'Natural Stone', finish: 'Natural Cleft', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDQEu9HXCAqLhWam8EvCszDThPG2A8XXsY36Z605KPX2MEplfab2eiylXrjsr13vt0BB0qLeANB2DG-0AXZ_JZrICIdtsNDEI_G6LcR-iTmpaG4RNAQCmeNwGawHC4xDfjl4ZRNX2krVnpIRqfLRFYP4EAfSHW4MZkwE7cPGl1wSpdANSvVpU3bdqo56BkoyUKMzoNlTzDdQKH8HYVm_uZVPaSrzfS7MZw4htBuwE-CZoEcahcTEUkfDP5t-i69U8zbOttmg5CQ_cs' }
+                            { name: 'Basalt Grey', mat: 'Granite', finish: 'Rough Cut', img: '/images/services/materials/basalt-grey.jpg' },
+                            { name: 'Brazilian Ipe', mat: 'Hardwood', finish: 'Oiled Finish', img: '/images/services/materials/brazilian-ipe.jpg', border: 'wood' },
+                            { name: 'Travertine Cream', mat: 'Limestone', finish: 'Honed', img: '/images/services/materials/travertine-cream.jpg' },
+                            { name: 'Midnight Slate', mat: 'Natural Stone', finish: 'Natural Cleft', img: '/images/services/materials/midnight-slate.jpg' }
                         ].map((mat, i) => (
                             <div key={i} className={`snap-center shrink-0 w-80 p-8 rounded-[2.5rem] bg-gradient-to-br from-[#2a3630] to-hardscaping-bg shadow-hardscaping-neumorphic flex flex-col items-center group cursor-pointer hover:-translate-y-3 transition-transform duration-500 border ${mat.border === 'wood' ? 'border-hardscaping-wood/20' : 'border-white/5'}`}>
                                 <div className={`w-56 h-56 rounded-full bg-hardscaping-surface mb-8 shadow-hardscaping-inset overflow-hidden border-8 border-[#232f29] relative flex items-center justify-center`}>
@@ -220,13 +233,13 @@ export default function HardscapingPage() {
                                 <img
                                     alt="After transformation"
                                     className="absolute inset-0 w-full h-full object-cover"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNym8CyeeKN9klKtLxARQdN6hRymOcHy54VvXEL0Da9Qk8Xd6K0V13m5y2yKfZ6XU8F7vFL7OEuYxwag5zkWYt6556rVWtWelPZX7GNR6kqcy7HNUFjjogydJwDE9JYm0Xw12WgFpGyrDTXy3zTwOZBzDR8gDv5Upzmv2KyE6A3KJJ5_Gw3ppUc8j3H3t4xqhFY_KszoxkIhTfqDjMn5wvXYNAyom33ZZXldemblpt0GW9qKhJ2or1PKApEgFtR0PLUrL8ms4UZzU"
+                                    src="/images/services/hardscaping-after.jpg"
                                 />
                                 <div className="absolute inset-0 w-full h-full bg-black/60 overflow-hidden" style={{ clipPath: 'inset(0 50% 0 0)' }}>
                                     <img
                                         alt="Before transformation"
                                         className="absolute inset-0 w-full h-full object-cover grayscale opacity-80"
-                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyNmACYxlVMqfEjOcmdy0Ba-gTWrXRaFyoeBD_ItK1PBJ2aU9Qel-55LdkqUSXSZxkc_Oo_5S-9WmybWenW49rJKEa_5-W4WysNCDNQzMdUQ-YwwhqqiPeILkZVmWp3T3uQBwYrScb9-HuKF2epC8BAMTCrNZ1_OLcWPumNK8vi2iUPQ6iwYLxIr5AuoH0JUHxkT5Gmv9eliDRvzs-4xpZrHikxqEtksZ1vUFqHIDhVRwPJ6WP1Svq6FsRhHBemeI4l8-dkU3w4Pc"
+                                        src="/images/services/hardscaping-before.jpg"
                                     />
                                     <div className="absolute top-6 left-6 bg-black/70 backdrop-blur-md px-4 py-1.5 rounded-full text-[10px] font-bold text-white uppercase tracking-widest border border-white/10">Before</div>
                                 </div>

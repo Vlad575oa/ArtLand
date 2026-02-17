@@ -1,8 +1,21 @@
-'use client';
-
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link'
+import { generatePageMetadata } from '@/lib/metadata';
+import type { Metadata } from 'next';
+
+type Props = { params: Promise<{ locale: string }> }
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { locale } = await params;
+    return generatePageMetadata({
+        titleRu: 'Философия устойчивого дизайна | TERRA.ART',
+        titleEn: 'Philosophy of Sustainable Design | TERRA.ART',
+        descriptionRu: 'Наша философия создания устойчивых ландшафтов. Инженерный подход к природной гармонии. TERRA.ART.',
+        descriptionEn: 'Our philosophy of sustainable landscape creation. Engineered approach to natural harmony. TERRA.ART.',
+        path: '/philosophy',
+    }, locale);
+}
 
 export default function PhilosophyPage() {
     const t = useTranslations('Philosophy');
@@ -52,7 +65,7 @@ export default function PhilosophyPage() {
                                 <img
                                     alt="Mist covered modern minimalist garden landscape"
                                     className="w-full h-full object-cover"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuACPolX2rDHMS-94_yk24_c8eKoSHrtdNF_PLx2UyHav8_re4Ob2MqiJnfaxE29aFxZ_Q21w1cAEBraXUX5iT_83vjVMhH_Mb0KxEwHVEeuN2LRccPI0ZBeL-3H68hdbe_SVSuu_nXvMR6gaEIVHKrEVMqkywnt-K9hsyE-iWmlY_KmRrCLkz20TWx5j3D73u91Jsgq6Ht_ph-fNJVrGUWu1B1b-_XV5JKXIQ568hf5tjRARGz_GdjioZVnMp2TjqffgolJtwvckJg"
+                                    src="/images/projects/kyoto-zen.png"
                                 />
                                 <div className="absolute bottom-8 left-8 z-20">
                                     <div className="p-5 bg-background-dark/70 backdrop-blur-md rounded-2xl border border-white/10 max-w-xs shadow-inflated">
@@ -89,16 +102,12 @@ export default function PhilosophyPage() {
                                 <div className="w-16 h-16 rounded-2xl bg-forest-light flex items-center justify-center mb-8 shadow-soft-neumorph text-primary border border-white/5">
                                     <span className="material-icons text-3xl">balance</span>
                                 </div>
-                                <h3 className="text-2xl font-bold text-white mb-4">Eco-Balance Systems</h3>
+                                <h3 className="text-2xl font-bold text-white mb-4">{t('eco_title')}</h3>
                                 <p className="text-sand-dark leading-relaxed mb-8">
-                                    We design closed-loop ecosystems where waste becomes nutrient. Our water retention landscapes capture 95% of rainfall, reducing irrigation needs and creating resilient micro-climates.
+                                    {t('eco_desc')}
                                 </p>
                                 <ul className="space-y-4 text-sm text-sand">
-                                    {[
-                                        'Soil microbiome regeneration',
-                                        'Integrated pest management',
-                                        'Carbon-sequestering hardscapes'
-                                    ].map((item, i) => (
+                                    {(t.raw('eco_list') as string[]).map((item, i) => (
                                         <li key={i} className="flex items-center gap-4">
                                             <span className="flex items-center justify-center w-6 h-6 rounded-full bg-forest-deep shadow-soft-neumorph-inset text-primary">
                                                 <span className="material-icons text-[10px]">check</span>
@@ -118,16 +127,12 @@ export default function PhilosophyPage() {
                                 <div className="w-16 h-16 rounded-2xl bg-forest-light flex items-center justify-center mb-8 shadow-soft-neumorph text-terracotta border border-white/5">
                                     <span className="material-icons text-3xl">thermostat</span>
                                 </div>
-                                <h3 className="text-2xl font-bold text-white mb-4">Climatic Selection</h3>
+                                <h3 className="text-2xl font-bold text-white mb-4">{t('climatic_title')}</h3>
                                 <p className="text-sand-dark leading-relaxed mb-8">
-                                    Every species is chosen based on 50-year climate projections. We prioritize hyper-local natives that thrive in your specific soil chemistry and sun exposure without artificial life support.
+                                    {t('climatic_desc')}
                                 </p>
                                 <ul className="space-y-4 text-sm text-sand">
-                                    {[
-                                        'Drought-tolerant architectural flora',
-                                        'Seasonal adaptive planting',
-                                        'Heat-island reduction strategies'
-                                    ].map((item, i) => (
+                                    {(t.raw('climatic_list') as string[]).map((item, i) => (
                                         <li key={i} className="flex items-center gap-4">
                                             <span className="flex items-center justify-center w-6 h-6 rounded-full bg-forest-deep shadow-soft-neumorph-inset text-terracotta">
                                                 <span className="material-icons text-[10px]">check</span>
@@ -155,11 +160,7 @@ export default function PhilosophyPage() {
                     <div className="relative">
                         <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-2 bg-forest-light rounded-full shadow-soft-neumorph-inset hidden md:block" />
                         <div className="space-y-12 md:space-y-24">
-                            {[
-                                { year: '2010', title: 'Foundation', desc: 'Terraform established with a single mission: to challenge traditional, wasteful landscaping practices.', color: 'terracotta' },
-                                { year: '2015', title: 'The Water Shift', desc: 'Introduced our proprietary hydro-zoning technique, reducing client water usage by an average of 60%.', color: 'primary' },
-                                { year: '2023', title: 'Carbon Neutral', desc: 'Achieved full carbon neutrality across all operations and supply chains. First in the region.', color: 'terracotta' }
-                            ].map((item, i) => (
+                            {(t.raw('timeline_items') as Array<{ year: string, title: string, desc: string, color?: string }>).map((item, i) => (
                                 <div key={i} className="relative flex flex-col md:flex-row items-center md:justify-between group animate-slide-up delay-200">
                                     <div className={`md:w-5/12 text-center ${i % 2 === 0 ? 'md:text-right' : 'md:text-left order-3'} mt-4 md:mt-0 px-6`}>
                                         <div className={`p-6 bg-forest-light rounded-2xl shadow-inflated border-b-4 border-${item.color} inline-block w-full text-left`}>
@@ -169,7 +170,7 @@ export default function PhilosophyPage() {
                                     </div>
                                     <div className="md:w-2/12 flex justify-center order-1 md:order-2 relative">
                                         <div className="w-16 h-16 rounded-full bg-forest-light border-4 border-background-dark flex items-center justify-center z-10 shadow-inflated group-hover:scale-110 transition-transform">
-                                            <span className={`text-sm font-bold text-${item.color}`}>{item.year}</span>
+                                            <span className={`text-sm font-bold ${i === 1 ? 'text-primary' : 'text-terracotta'}`}>{item.year}</span>
                                         </div>
                                     </div>
                                     <div className={`md:w-5/12 ${i % 2 === 0 ? 'order-3' : 'order-1'}`} />
@@ -198,9 +199,9 @@ export default function PhilosophyPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {[
-                            { name: 'Elias Thorne', role: 'Lead Architect', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCnlua_Rr5Xu2exqBkGVuybJqQnndzo8DL0ajEEHr4yZ0q93ap4jbWUrTlOxtZFd4sDK7dfgkv0sOO0UTFbD2lKDHqVh-CZjQ4FRVBp41GJFzT2yHXyw8yvEWf-E4bE5olLtXUHZUiJL5AYMk37GFb0Enx6jDJOwN_cNTjRfEv8jaJ5uaEMtktxeiFKP8oqeR2dI8M6GolFRvHVUyFPuXDGc5JGI8-GR4fCkgQmNpupQwsuYLVSaXQZOrqDmcMuisq7oD0n4lat30s', color: 'terracotta' },
-                            { name: 'Dr. Sarah Lin', role: 'Head Botanist', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBwFzJKim0Mvfen4cdCnDdmx5Me6GNuTmSVYSijvTTSkSo74dwoQU2ZhcP-YpL-0mJ_6HUxWVx9vzIEhTuKNwTNn4ZtM2jYh6IokiIZhXZy4RM0OYLFDhiteNfG2la3IxN1eNdduKrrd6DaBi5jd17oSjMBnQ-it52lINIFFRsDPdUv4vHu04mZBo5IEF3Qy46QweiVpmXpPO7fb2ke1R34sAbEA-cuBKNj6qvE4piMtA4wMVFUb8JPAAz3FCqpbWEnM79R44snz6E', color: 'primary' },
-                            { name: 'Marcus Vance', role: 'Sustainability Officer', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC1WUAbTFarOk4jLX0DYNMpFeYK2bmBOUWJez0NoGgt9K_bUaJDUyu6uZST1gMigG_7onaIyFR73gGQuEeA24k1nKggsrpeN2ZoeMPc_ri9wqONtU92MVRsDIo3HgabrUWQ6kyDe1KXaPbbjUkLgjl9whmzOlP2nQ57TXwZUvkTdW7R2RnhYuyvfCr-NPdiN7s09nhbp64WqqnEaWwlkbE62Ty0kgmxUBVZERsTozfxKSjn5FRg4zmhIuVCaryLV6g4lilR0c7u0Yg', color: 'terracotta' }
+                            { name: 'Elias Thorne', role: 'Lead Architect', img: '/images/team/elias.png', color: 'terracotta' },
+                            { name: 'Dr. Sarah Lin', role: 'Head Botanist', img: '/images/team/sarah.png', color: 'primary' },
+                            { name: 'Marcus Vance', role: 'Sustainability Officer', img: '/images/team/marcus.png', color: 'terracotta' }
                         ].map((member, i) => (
                             <div key={i} className="group bg-forest-light rounded-[2.5rem] p-8 text-center shadow-inflated hover:translate-y-[-5px] transition-all duration-300">
                                 <div className="relative w-36 h-36 mx-auto mb-8">
@@ -214,7 +215,7 @@ export default function PhilosophyPage() {
                                 <h3 className="text-xl font-bold text-white mb-1">{member.name}</h3>
                                 <p className={`text-${member.color} text-xs uppercase tracking-widest mb-6 font-bold`}>{member.role}</p>
                                 <p className="text-sand-dark text-sm mb-8 opacity-90 leading-relaxed px-2">
-                                    Dedicated to the art of living architecture and sustainable design legacies.
+                                    {t('team_bio')}
                                 </p>
                                 <div className="flex justify-center gap-6">
                                     <a className="w-10 h-10 rounded-full bg-forest-light shadow-inflated flex items-center justify-center text-sand hover:text-primary hover:scale-110 transition-all" href="#">

@@ -1,4 +1,19 @@
 import Link from 'next/link'
+import { generatePageMetadata } from '@/lib/metadata';
+import type { Metadata } from 'next';
+
+type Props = { params: Promise<{ locale: string }> }
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { locale } = await params;
+    return generatePageMetadata({
+        titleRu: 'Ландшафтное освещение | TERRA.ART',
+        titleEn: 'Landscape Lumination | TERRA.ART',
+        descriptionRu: 'Атмосферное ландшафтное освещение: подсветка деревьев, дорожек, архитектуры. Энергоэффективные решения. TERRA.ART.',
+        descriptionEn: 'Atmospheric landscape lighting: tree, pathway, and architectural lighting. Energy-efficient solutions. TERRA.ART.',
+        path: '/services/lumination',
+    }, locale);
+}
 
 export default function LuminationPage() {
     return (
@@ -12,7 +27,7 @@ export default function LuminationPage() {
                     <img
                         alt="Evening garden with warm lighting"
                         className="w-full h-full object-cover opacity-60 scale-105"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3GhDGO_GRmICrS6X2yWmDCOTWWUHoS5U-pzJdmbuKGVxXSUDJg0DUgEg5m3hs6mBSsfc8MqljxHfmcNfGnZSPZCUyjxdbMXK7iZe0-jxGrl8vSTuHsyr2XPiom7jLDoUH2K_PHoJipck6XR7DsnlU-FAeSep6NCy5GwjLhjejVQAVq3YIj0hs1-zFBasV4PhAW_NzoEpTuT6GKH9CX2UdRPyHj0vXTTlKReTBwgJxQD--_wL_p7cxaKqEc6fKSsL82vRCE1-VgQs"
+                        src="/images/services/lumination-hero.jpg"
                     />
                 </div>
 
@@ -70,7 +85,7 @@ export default function LuminationPage() {
                                 <img
                                     alt="Professional garden lighting details"
                                     className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3GhDGO_GRmICrS6X2yWmDCOTWWUHoS5U-pzJdmbuKGVxXSUDJg0DUgEg5m3hs6mBSsfc8MqljxHfmcNfGnZSPZCUyjxdbMXK7iZe0-jxGrl8vSTuHsyr2XPiom7jLDoUH2K_PHoJipck6XR7DsnlU-FAeSep6NCy5GwjLhjejVQAVq3YIj0hs1-zFBasV4PhAW_NzoEpTuT6GKH9CX2UdRPyHj0vXTTlKReTBwgJxQD--_wL_p7cxaKqEc6fKSsL82vRCE1-VgQs"
+                                    src="/images/services/lumination-hero.jpg"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-night-surface via-transparent to-transparent opacity-60"></div>
                             </div>
@@ -121,7 +136,7 @@ export default function LuminationPage() {
                 <img
                     alt="Luxury evening garden terrace"
                     className="w-full h-full object-cover fixed top-0 left-0 -z-10"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3GhDGO_GRmICrS6X2yWmDCOTWWUHoS5U-pzJdmbuKGVxXSUDJg0DUgEg5m3hs6mBSsfc8MqljxHfmcNfGnZSPZCUyjxdbMXK7iZe0-jxGrl8vSTuHsyr2XPiom7jLDoUH2K_PHoJipck6XR7DsnlU-FAeSep6NCy5GwjLhjejVQAVq3YIj0hs1-zFBasV4PhAW_NzoEpTuT6GKH9CX2UdRPyHj0vXTTlKReTBwgJxQD--_wL_p7cxaKqEc6fKSsL82vRCE1-VgQs"
+                    src="/images/services/lumination-hero.jpg"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-night-surface via-night-surface/40 to-night-surface/80"></div>
 

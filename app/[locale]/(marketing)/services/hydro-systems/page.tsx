@@ -1,6 +1,19 @@
-'use client'
-
 import Link from 'next/link'
+import { generatePageMetadata } from '@/lib/metadata';
+import type { Metadata } from 'next';
+
+type Props = { params: Promise<{ locale: string }> }
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { locale } = await params;
+    return generatePageMetadata({
+        titleRu: 'Гидросистемы и водные объекты | TERRA.ART',
+        titleEn: 'Hydro Systems & Water Features | TERRA.ART',
+        descriptionRu: 'Проектирование и установка водных систем: фонтаны, пруды, водопады, дренажные системы. TERRA.ART.',
+        descriptionEn: 'Design and installation of water systems: fountains, ponds, waterfalls, drainage. TERRA.ART.',
+        path: '/services/hydro-systems',
+    }, locale);
+}
 
 export default function HydroSystemsPage() {
     return (
@@ -17,7 +30,7 @@ export default function HydroSystemsPage() {
                     <img
                         alt="Automatic sprinkler system watering lush green lawn"
                         className="w-full h-full object-cover opacity-50"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZf06hyb6Q9muJV7u_bCXpsFtj8JgcXwD2BzPWeRs0Z0VpFhOJ2BAlBCw_RCIpO0xBkCT5uxVi-wWhjUImR_WvNPZKr80yoMICfbw7k7utoRDfRYb7TUD8npsigYKsbDrWXHArUClRRs_zt0cUoGIMySmZXQJl1DMNbY-ZXVBFKpwH40fVQDu0ptSYNZIfJ6qQ4ILwktQjvMr-_jkm9um3SzbFJ5q2-AvyQXPwQlUzbb_LXsPA9yxh4GKdOdHtRAN0TvHh2TPjBFI"
+                        src="/images/services/hydro-systems-hero.jpg"
                     />
                 </div>
 
@@ -172,7 +185,7 @@ export default function HydroSystemsPage() {
                                 <img
                                     alt="Technical irrigation nozzle"
                                     className="w-full h-full object-cover opacity-80"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAH7ET6YzBZHdER35ir277OA628zr05rxvnRP4FEe4jJqpf6tNZDeFywCIJSQhgat98v6fTMt0oOvw5D4s2k2yKJMn3u0BliEyzRBv6-CD6bWBdrQLFDTIeQaOzrxlcy_iMffVWuceO2hRGB2ZoGd3WoNVaBGPXp82QgQVmCEo5sUOM0SgvtsbTqyjMlV8geLlZlKjyb2LWNmhpWSvJJ--Mivfckl8_O2kmTRnXLqzpZJ7wGZ_7V2NSOgJfAwVtb835rnpjE89kbkM"
+                                    src="/images/services/hydro-systems-1.jpg"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-l from-[#0b1611]/80 to-transparent"></div>
                             </div>
@@ -234,7 +247,7 @@ export default function HydroSystemsPage() {
             {/* CTA section with Form */}
             <section className="py-24 relative overflow-hidden z-10">
                 <div className="absolute inset-0 z-0">
-                    <img alt="Aerial view of garden" className="w-full h-full object-cover opacity-20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARjOUwY5Tz7WCYYJ7Tzd-D0NoCUIpd6NOGoZksyLtomS6CplDjZBYfSVndGCDJI0dBwPAcdJwwiNcvnLta0eLnq11V6vaNkTL_CjLJeWlZyYHDAhdLhQjIwVVEaSWqu_J8x_RDc8JjThoKoD2lUdmnEHg5fO8adi8LP0scMgyh2mkvNEABuNGnC0nJrQYD-NIIuc_XqsVL6Mk_2ySJ9RtlvURy9vdFySn1z5mpt6_vbrb_sJG2cNz8mtUVJS5TL4iry1mKLa-M8c4" />
+                    <img alt="Aerial view of garden" className="w-full h-full object-cover opacity-20" src="/images/services/hydro-systems-2.jpg" />
                     <div className="absolute inset-0 bg-gradient-to-r from-deep-forest via-deep-forest/90 to-deep-forest/40"></div>
                 </div>
 

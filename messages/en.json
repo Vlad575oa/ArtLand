@@ -8,7 +8,7 @@
     },
     "Hero": {
         "badge": "Lush Landscapes",
-        "title": "Cultivating <living>living art</living> <br /> on your land",
+        "title": "Cultivating <living>living art</living> on your land",
         "subtitle": "Bespoke architectural landscapes where nature meets precision.",
         "cta": "Start project",
         "showreel": "Watch Showreel",
@@ -47,13 +47,14 @@
     "Footer": {
         "description": "Pioneering the future of landscape architecture through ecological intelligence and minimalist design.",
         "company": "Company",
+        "home": "Home",
+        "portfolio": "Portfolio",
+        "services": "Services",
         "philosophy": "Philosophy",
-        "projects": "Projects",
-        "team": "Our Team",
-        "careers": "Careers",
+        "contacts": "Contacts",
         "getInTouch": "Get in Touch",
         "address": "1280 Eco Park Blvd,\nSeattle, WA 98101",
-        "rights": "© 2023 Terraform Landscapes. All rights reserved.",
+        "rights": "© 2026 Terraform Landscapes. All rights reserved.",
         "privacy": "Privacy Policy",
         "terms": "Terms of Service"
     },
@@ -72,8 +73,12 @@
         "lumination_title": "Lumination",
         "lumination_desc": "Atmospheric curation. We paint with light to extend beauty into the evening.",
         "lumination_subtitle": "Garden path lighting",
+        "lumination_alt": "Garden path lighting",
         "greening_title": "Greening",
         "greening_desc": "Botanic curation focused on resilience. A living palette of texture and color.",
+        "greening_alt": "Lush fern leaves",
+        "hardscaping_alt": "Sculpted earth terrain",
+        "hydro_alt": "Water flowing",
         "process_01_title": "Consultation",
         "process_01_desc": "Understanding the soul of the site and the desires of the dweller. We begin with deep listening.",
         "process_02_title": "Curation",
@@ -128,8 +133,26 @@
         ],
         "journey_badge": "Our Journey",
         "journey_title": "Evolution of <sustainability>Sustainability</sustainability>",
+        "timeline_items": [
+            {
+                "year": "2010",
+                "title": "Foundation",
+                "desc": "Terraform established with a single mission: to challenge traditional, wasteful landscaping practices."
+            },
+            {
+                "year": "2015",
+                "title": "The Water Shift",
+                "desc": "Introduced our proprietary hydro-zoning technique, reducing client water usage by an average of 60%."
+            },
+            {
+                "year": "2023",
+                "title": "Carbon Neutral",
+                "desc": "Achieved full carbon neutrality across all operations and supply chains. First in the region."
+            }
+        ],
         "cultivators_title": "The <cultivators>Cultivators</cultivators>",
         "cultivators_desc": "Minds dedicated to the art of living architecture.",
+        "team_bio": "Dedicated to the art of living architecture and sustainable design legacies.",
         "view_all": "View All Members",
         "cta_title": "Ready to shape your <ecosystem>Ecosystem?</ecosystem>",
         "cta_desc": "Let's discuss how we can transform your space into a sustainable legacy.",
@@ -151,7 +174,11 @@
             "vision": "Project Vision",
             "vision_placeholder": "Tell us about your space and dreams...",
             "submit": "Send Inquiry",
-            "privacy_note": "By submitting this form, you agree to our privacy policy regarding your personal data."
+            "privacy_note": "By submitting this form, you agree to our privacy policy regarding your personal data.",
+            "budget_option_1": "$50k - $100k",
+            "budget_option_2": "$100k - $250k",
+            "budget_option_3": "$250k - $500k",
+            "budget_option_4": "$500k+"
         },
         "studio_title": "The Studio",
         "direct_line": "Direct Line",
@@ -165,5 +192,9 @@
     "Privacy": {
         "title": "Privacy Policy",
         "content": "Your privacy is important to us..."
+    },
+    "Terms": {
+        "title": "Terms of Service",
+        "content": "By using our website and services, you agree to comply with our terms and conditions. We reserve the right to update these terms at any time."
     }
 }

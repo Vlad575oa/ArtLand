@@ -6,7 +6,7 @@ const withNextIntl = createNextIntlPlugin(
 );
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // All images are now local - no remote patterns needed
 };
 
 export default withNextIntl(nextConfig);
