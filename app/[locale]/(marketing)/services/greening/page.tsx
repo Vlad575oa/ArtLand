@@ -1,7 +1,5 @@
 import Link from 'next/link'
-import { generatePageMetadata } from '@/lib/metadata';
-
-import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { ServiceSchema } from '@/components/seo/StructuredData';
 import { useTranslations } from 'next-intl';
@@ -48,17 +46,19 @@ export default function GreeningPage() {
                 {/* Hero Section */}
                 <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden pt-20">
                     <div className="absolute inset-0 z-0">
-                        <img
+                        <Image
                             className="w-full h-full object-cover opacity-60"
                             alt="Lush dark green botanical garden"
                             src="/images/services/greening-hero.jpg"
+                            fill
+                            priority
                         />
                         <div className="absolute inset-0 bg-gradient-to-b from-greening-background/90 via-greening-background/70 to-greening-background"></div>
                         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#0B1410_100%)]"></div>
                     </div>
 
                     <div className="relative z-10 container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-                        <div className="space-y-8 max-w-2xl animate-in fade-in slide-in-from-left-10 duration-1000">
+                        <div className="space-y-8 max-w-2xl">
                             <div className="mb-4">
                                 <Breadcrumbs
                                     items={[

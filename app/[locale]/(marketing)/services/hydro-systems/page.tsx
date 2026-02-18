@@ -1,6 +1,5 @@
 import Link from 'next/link'
-import { generatePageMetadata } from '@/lib/metadata';
-import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { ServiceSchema } from '@/components/seo/StructuredData';
 import { useTranslations } from 'next-intl';
@@ -43,15 +42,17 @@ export default function HydroSystemsPage() {
                 <header className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
                     <div className="absolute inset-0 z-0">
                         <div className="absolute inset-0 bg-gradient-to-b from-[#0b1611]/40 via-[#0b1611]/70 to-[#0b1611]"></div>
-                        <img
+                        <Image
                             alt="Automatic sprinkler system watering lush green lawn"
                             className="w-full h-full object-cover opacity-50"
                             src="/images/services/hydro-systems-hero.jpg"
+                            fill
+                            priority
                         />
                     </div>
 
                     <div className="relative z-10 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-                        <div className="space-y-8 animate-in fade-in slide-in-from-left-10 duration-1000">
+                        <div className="space-y-8">
                             <div className="mb-4">
                                 <Breadcrumbs
                                     items={[

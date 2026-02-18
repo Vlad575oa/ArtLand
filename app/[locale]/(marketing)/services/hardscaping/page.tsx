@@ -1,7 +1,5 @@
 import Link from 'next/link'
-import { generatePageMetadata } from '@/lib/metadata';
-
-import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { ServiceSchema } from '@/components/seo/StructuredData';
 import { useTranslations } from 'next-intl';
@@ -40,15 +38,17 @@ export default function HardscapingPage() {
                     <div className="absolute inset-0 z-0">
                         <div className="absolute inset-0 bg-gradient-to-r from-hardscaping-bg via-hardscaping-bg/90 to-hardscaping-bg/40 z-10"></div>
                         <div className="absolute inset-0 bg-gradient-to-t from-hardscaping-bg via-transparent to-transparent z-10"></div>
-                        <img
+                        <Image
                             alt="Luxury stone garden path"
                             className="w-full h-full object-cover opacity-80 mix-blend-overlay"
                             src="/images/services/hardscaping-hero.jpg"
+                            fill
+                            priority
                         />
                     </div>
 
                     <div className="max-w-7xl mx-auto px-6 relative z-20 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-end pb-24">
-                        <div className="lg:col-span-8 animate-in fade-in slide-in-from-left-10 duration-1000">
+                        <div className="lg:col-span-8">
                             <div className="mb-4">
                                 <Breadcrumbs
                                     items={[

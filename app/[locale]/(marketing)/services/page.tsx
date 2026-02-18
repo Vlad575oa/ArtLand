@@ -28,15 +28,15 @@ export default function ServicesPage() {
           Actually, the marketing layout already provides the Navbar. */}
 
             <header className="relative py-20 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto w-full text-center">
-                <span className="inline-block py-1.5 px-4 rounded-full bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase border border-primary/20 shadow-sm animate-slide-up delay-100">
+                <span className="inline-block py-1.5 px-4 rounded-full bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase border border-primary/20 shadow-sm">
                     {t('badge')}
                 </span>
-                <h1 className="text-4xl md:text-6xl lg:text-8xl font-black text-white tracking-tighter leading-none animate-slide-up delay-200">
+                <h1 className="text-4xl md:text-6xl lg:text-8xl font-black text-white tracking-tighter leading-none">
                     {t.rich('title', {
                         sanctuary: (chunks) => <span className="text-primary block">{chunks}</span>
                     })}
                 </h1>
-                <p className="text-lg md:text-xl text-sand-dark/80 max-w-xl mx-auto leading-relaxed font-light animate-slide-up delay-300">
+                <p className="text-lg md:text-xl text-sand-dark/80 max-w-xl mx-auto leading-relaxed font-light">
                     {t('description')}
                 </p>
             </header>

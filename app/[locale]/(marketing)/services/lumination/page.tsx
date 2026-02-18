@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image';
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
@@ -40,15 +41,17 @@ export default function LuminationPage() {
                 <section className="relative min-h-[90vh] flex items-center pt-32 overflow-hidden">
                     <div className="absolute inset-0 z-0">
                         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-night-surface z-10"></div>
-                        <img
+                        <Image
                             alt="Evening garden with warm lighting"
                             className="w-full h-full object-cover opacity-60 scale-105"
                             src="/images/services/lumination-hero.jpg"
+                            fill
+                            priority
                         />
                     </div>
 
                     <div className="max-w-7xl mx-auto px-6 relative z-20 w-full text-center">
-                        <div className="animate-in fade-in slide-in-from-bottom-10 duration-1000">
+                        <div>
                             <div className="flex justify-center mb-6">
                                 <Breadcrumbs
                                     items={[

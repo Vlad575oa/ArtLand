@@ -65,16 +65,16 @@ export default function ContactPage() {
 
             <main className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-32 pb-20 lg:pb-32 grid lg:grid-cols-12 gap-12 lg:gap-24 items-start">
                 <div className="lg:col-span-7 flex flex-col gap-10">
-                    <div className="space-y-4 animate-slide-up delay-100">
-                        <span className="inline-block py-1 px-3 rounded-full bg-contact-primary/10 text-contact-primary text-xs font-bold tracking-widest uppercase border border-contact-primary/20 shadow-sm animate-slide-up delay-200">
+                    <div className="space-y-4">
+                        <span className="inline-block py-1 px-3 rounded-full bg-contact-primary/10 text-contact-primary text-xs font-bold tracking-widest uppercase border border-contact-primary/20 shadow-sm">
                             {t('badge')}
                         </span>
-                        <h1 className="text-4xl md:text-6xl font-extrabold text-[#f0f2ef] tracking-tight leading-[1.1] animate-slide-up delay-300">
+                        <h1 className="text-4xl md:text-6xl font-extrabold text-[#f0f2ef] tracking-tight leading-[1.1]">
                             {t.rich('title', {
                                 living_space: (chunks) => <span className="text-transparent bg-clip-text bg-gradient-to-r from-contact-primary to-[#dccbb5]">{chunks}</span>
                             })}
                         </h1>
-                        <p className="text-lg text-contact-muted max-w-xl leading-relaxed animate-slide-up delay-400">
+                        <p className="text-lg text-contact-muted max-w-xl leading-relaxed">
                             {t('description')}
                         </p>
                     </div>
@@ -92,7 +92,7 @@ export default function ContactPage() {
                             </button>
                         </div>
                     ) : (
-                        <form onSubmit={handleSubmit} className="bg-contact-surface/50 backdrop-blur-sm p-8 md:p-10 rounded-xl shadow-contact-convex border border-white/5 space-y-8 relative overflow-hidden group animate-slide-up delay-500">
+                        <form onSubmit={handleSubmit} className="bg-contact-surface/50 backdrop-blur-sm p-8 md:p-10 rounded-xl shadow-contact-convex border border-white/5 space-y-8 relative overflow-hidden group">
                             <div className="absolute -top-24 -right-24 w-48 h-48 bg-contact-primary/5 rounded-full blur-3xl transition-opacity duration-700 opacity-30 group-hover:opacity-60 pointer-events-none"></div>
 
                             <div className="grid md:grid-cols-2 gap-6">

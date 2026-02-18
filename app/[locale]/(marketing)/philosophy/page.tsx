@@ -30,17 +30,17 @@ export default function PhilosophyPage() {
                 <section className="max-w-7xl mx-auto px-6 lg:px-12 mb-32">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <div className="space-y-8">
-                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-forest-light border border-white/5 text-xs text-primary font-semibold tracking-wider uppercase shadow-soft-neumorph animate-slide-up delay-100">
+                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-forest-light border border-white/5 text-xs text-primary font-semibold tracking-wider uppercase shadow-soft-neumorph">
                                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                                 {t('badge')}
                             </div>
-                            <h1 className="text-5xl lg:text-7xl font-light text-white leading-[1.1] animate-slide-up delay-200">
+                            <h1 className="text-5xl lg:text-7xl font-light text-white leading-[1.1]">
                                 {t.rich('title_part1', {
                                     br: () => <br />
                                 })}
                                 <span className="font-bold text-terracotta">{t('title_part2')}</span>
                             </h1>
-                            <p className="text-lg text-sand-dark max-w-md leading-relaxed animate-slide-up delay-300">
+                            <p className="text-lg text-sand-dark max-w-md leading-relaxed">
                                 {t('description')}
                             </p>
                             <div className="flex items-center gap-6 lg:gap-12 pt-4 animate-slide-up delay-400">
@@ -59,13 +59,15 @@ export default function PhilosophyPage() {
                             </div>
                         </div>
 
-                        <div className="relative animate-slide-up delay-500">
+                        <div className="relative">
                             <div className="aspect-[4/5] rounded-[2rem] overflow-hidden relative shadow-soft-neumorph border-4 border-forest-light/30">
                                 <div className="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent z-10 opacity-60" />
-                                <img
+                                <Image
                                     alt="Mist covered modern minimalist garden landscape"
                                     className="w-full h-full object-cover"
                                     src="/images/projects/kyoto-zen.png"
+                                    fill
+                                    priority
                                 />
                                 <div className="absolute bottom-8 left-8 z-20">
                                     <div className="p-5 bg-background-dark/70 backdrop-blur-md rounded-2xl border border-white/10 max-w-xs shadow-inflated">
