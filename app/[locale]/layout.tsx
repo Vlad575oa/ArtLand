@@ -6,6 +6,8 @@ import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { OrganizationSchema } from '@/components/seo/StructuredData';
+import { ModalProvider } from '@/context/ModalContext';
+import { ConsultationModal } from '@/components/features/ConsultationModal';
 
 const manrope = Manrope({
   subsets: ['latin', 'cyrillic'],
@@ -61,7 +63,10 @@ export default async function RootLayout({
       <body className="font-display bg-background-light dark:bg-background-dark text-slate-800 dark:text-[#E0E5E2] antialiased selection:bg-primary selection:text-olive-deep">
         <OrganizationSchema />
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <ModalProvider>
+            {children}
+            <ConsultationModal />
+          </ModalProvider>
         </NextIntlClientProvider>
       </body>
     </html>

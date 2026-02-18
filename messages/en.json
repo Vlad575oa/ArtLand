@@ -86,7 +86,11 @@
         "process_03_title": "Execution",
         "process_03_desc": "A meticulous installation process where precision meets the unpredictable nature of the wild.",
         "cta_title": "Ready to transform your <exterior>exterior world</exterior>?",
-        "cta_button": "Book Consultation"
+        "cta_button": "Book Consultation",
+        "hardscaping_cta": "Get Stone Sample Kit",
+        "greening_cta": "Request Plant Palette",
+        "hydro_cta": "Book Irrigation Audit",
+        "lumination_cta": "Schedule Night Demo"
     },
     "Projects": {
         "badge": "Our Curated Works",
@@ -178,7 +182,10 @@
             "budget_option_1": "$50k - $100k",
             "budget_option_2": "$100k - $250k",
             "budget_option_3": "$250k - $500k",
-            "budget_option_4": "$500k+"
+            "budget_option_4": "$500k+",
+            "trust_response": "Response within 2 hours during business days.",
+            "trust_spam": "Zero spam guarantee.",
+            "trust_badge": "Trusted by 50+ Premium Estates"
         },
         "studio_title": "The Studio",
         "direct_line": "Direct Line",

@@ -5,10 +5,12 @@ import { useTranslations } from 'next-intl'
 
 export const Footer = () => {
     const t = useTranslations('Footer')
+    const tServices = useTranslations('Services')
+    const tHero = useTranslations('Hero')
 
     return (
         <footer className="bg-background-dark border-t border-white/5 py-16 px-6 lg:px-12 relative z-10 mt-20">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-12">
                 <div className="space-y-6 col-span-1 md:col-span-2">
                     <div className="flex items-center gap-2">
                         <div className="w-6 h-6 rounded-full bg-terracotta flex items-center justify-center shadow-inner">
@@ -32,11 +34,20 @@ export const Footer = () => {
                     </div>
                 </div>
                 <div>
+                    <h4 className="text-white font-bold mb-6">{t('services')}</h4>
+                    <ul className="space-y-4 text-sm text-sand-dark">
+                        <li><Link className="hover:text-primary transition-colors" href="/services/hardscaping">{tServices('hardscaping_title')}</Link></li>
+                        <li><Link className="hover:text-primary transition-colors" href="/services/greening">{tServices('greening_title')}</Link></li>
+                        <li><Link className="hover:text-primary transition-colors" href="/services/hydro-systems">{tServices('hydro_title')}</Link></li>
+                        <li><Link className="hover:text-primary transition-colors" href="/services/lumination">{tServices('lumination_title')}</Link></li>
+                        <li><Link className="hover:text-primary transition-colors" href="/services/irrigation">{tHero('service2_title')}</Link></li>
+                    </ul>
+                </div>
+                <div>
                     <h4 className="text-white font-bold mb-6">{t('company')}</h4>
                     <ul className="space-y-4 text-sm text-sand-dark">
                         <li><Link className="hover:text-primary transition-colors" href="/">{t('home')}</Link></li>
                         <li><Link className="hover:text-primary transition-colors" href="/projects">{t('portfolio')}</Link></li>
-                        <li><Link className="hover:text-primary transition-colors" href="/services">{t('services')}</Link></li>
                         <li><Link className="hover:text-primary transition-colors" href="/philosophy">{t('philosophy')}</Link></li>
                         <li><Link className="hover:text-primary transition-colors" href="/contacts">{t('contacts')}</Link></li>
                     </ul>

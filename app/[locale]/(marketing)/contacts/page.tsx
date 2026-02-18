@@ -180,6 +180,23 @@ export default function ContactPage() {
                                 <p className="text-[10px] text-contact-muted/50 mt-4 text-center leading-relaxed font-medium">
                                     {t('form.privacy_note')}
                                 </p>
+                                <div className="mt-6 flex flex-col gap-3 items-center border-t border-white/5 pt-6">
+                                    <div className="flex items-center gap-2 text-xs text-contact-muted font-medium bg-white/5 px-3 py-1.5 rounded-full border border-white/5">
+                                        <span className="material-icons-round text-contact-primary text-sm">verified</span>
+                                        {t('form.trust_badge')}
+                                    </div>
+                                    <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-[10px] text-contact-muted/60 font-medium tracking-wide">
+                                        <span className="flex items-center gap-1.5">
+                                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500/50"></span>
+                                            {t('form.trust_response')}
+                                        </span>
+                                        <span className="hidden sm:inline opacity-30">|</span>
+                                        <span className="flex items-center gap-1.5">
+                                            <span className="material-icons-round text-xs opacity-70">shield</span>
+                                            {t('form.trust_spam')}
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
                         </form>
                     )}
@@ -245,7 +262,7 @@ export default function ContactPage() {
                         </div>
                     </div>
                 </div>
-            </main>
-        </div>
+            </main >
+        </div >
     )
 }

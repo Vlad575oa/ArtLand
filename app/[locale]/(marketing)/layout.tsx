@@ -1,6 +1,7 @@
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { MobileMenu } from '@/components/layout/MobileMenu'
+import { StickyCTA } from '@/components/layout/StickyCTA'
 
 export default function MarketingLayout({
     children,
@@ -18,6 +19,7 @@ export default function MarketingLayout({
                 {children}
             </div>
             <Footer />
+            <StickyCTA />
         </>
     )
 }

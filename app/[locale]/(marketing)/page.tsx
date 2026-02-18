@@ -3,6 +3,7 @@ import { Link } from '@/i18n/routing';
 import Image from 'next/image';
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
+import { HeroCTA } from '@/components/features/HeroCTA';
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -68,10 +69,12 @@ export default function HomePage() {
               </p>
 
               <div className="flex flex-wrap items-center gap-6 mt-6">
-                <Link href="/contacts" className="gold-btn group relative px-10 py-5 text-olive-deep rounded-full flex items-center gap-3 font-bold text-sm tracking-wide">
-                  <span>{t('cta')}</span>
+                <HeroCTA
+                  text={t('cta')}
+                  className="gold-btn group relative px-10 py-5 text-olive-deep rounded-full flex items-center gap-3 font-bold text-sm tracking-wide"
+                >
                   <span className="material-icons-round group-hover:translate-x-1 transition-transform" aria-hidden="true">arrow_forward</span>
-                </Link>
+                </HeroCTA>
 
                 <Link href="/projects" className="flex items-center gap-4 px-6 py-4 rounded-full text-[#C0C8C4] hover:text-white transition-all group">
                   <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:border-primary group-hover:bg-primary/10 transition-all">

@@ -102,3 +102,59 @@ export function BreadcrumbSchema({ items }: { items: { name: string; url: string
         />
     )
 }
+
+export function ServiceSchema({
+    name,
+    description,
+    image,
+    offers
+}: {
+    name: string;
+    description: string;
+    image: string;
+    offers?: { name: string; description: string; price?: string }[]
+}) {
+    const schema = {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name,
+        description,
+        provider: {
+            '@type': 'LandscapingBusiness',
+            name: 'TERRA.ART',
+            image: 'https://terra.art/favicon.ico',
+        },
+        image: `https://terra.art${image}`,
+        areaServed: {
+            '@type': 'GeoCircle',
+            geoMidpoint: {
+                '@type': 'GeoCoordinates',
+                latitude: 47.6062,
+                longitude: -122.3321,
+            },
+            geoRadius: '100000',
+        },
+        ...(offers && {
+            hasOfferCatalog: {
+                '@type': 'OfferCatalog',
+                name: `${name} Services`,
+                itemListElement: offers.map((offer, index) => ({
+                    '@type': 'Offer',
+                    itemOffered: {
+                        '@type': 'Service',
+                        name: offer.name,
+                        description: offer.description,
+                        ...(offer.price && { price: offer.price, priceCurrency: 'USD' })
+                    },
+                })),
+            },
+        }),
+    }
+
+    return (
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+    )
+}
