@@ -61,11 +61,11 @@ export default async function RootLayout({
         {/* Preload critical icons to improve LCP/FCP */}
         <link
           rel="preload"
-          href="https://fonts.googleapis.com/icon?family=Material+Icons+Round&display=swap"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Round&display=swap"
           as="style"
         />
         <link
-          href="https://fonts.googleapis.com/icon?family=Material+Icons+Round&display=swap"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Round&display=swap"
           rel="stylesheet"
         />
       </head>
