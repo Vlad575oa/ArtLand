@@ -60,7 +60,7 @@ export default function ServicesPage() {
                                 <img
                                     alt={t('hardscaping_alt')}
                                     className="w-full h-full object-cover"
-                                    src="/images/services/hardscaping.png"
+                                    src="/images/services/hardscaping-hero.jpg"
                                 />
                             </div>
                             <Link className="inline-flex items-center text-xs text-white font-bold tracking-widest uppercase border border-white/30 px-5 py-2 rounded-full hover:bg-white hover:text-earth-moss transition-colors duration-300" href="/services/hardscaping">
@@ -86,7 +86,7 @@ export default function ServicesPage() {
                                 <img
                                     alt={t('hydro_alt')}
                                     className="w-full h-full object-cover"
-                                    src="/images/services/hydro.png"
+                                    src="/images/services/hydro-systems-hero.jpg"
                                 />
                             </div>
                             <Link className="inline-flex items-center text-xs text-white font-bold tracking-widest uppercase border border-white/30 px-5 py-2 rounded-full hover:bg-white hover:text-earth-terra transition-colors duration-300" href="/services/hydro-systems">

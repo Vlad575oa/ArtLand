@@ -6,6 +6,13 @@
         "philosophy": "Philosophy",
         "contacts": "Contacts"
     },
+    "MessengerConsent": {
+        "title": "Continue to {messenger}",
+        "description": "You are leaving terra.art to open an external application. Please note that by proceeding, your phone number and profile data will be visible to the messenger platform.",
+        "cancel": "Cancel",
+        "continue": "Continue",
+        "checkbox_label": "By clicking the WhatsApp/Telegram button, you agree that your phone number and messages will be directed to the corresponding messenger to contact you. More details in the <privacy>Privacy Policy</privacy>."
+    },
     "Hero": {
         "badge": "Lush Landscapes",
         "title": "Cultivating <living>living art</living> on your land",
@@ -42,10 +49,14 @@
         "cta_title": "Ready to transform your site?",
         "cta_desc": "Leave a request for a free visit from a landscape architect. We will evaluate the potential of your territory and suggest ideas.",
         "cta_input_placeholder": "Your Email or Phone",
-        "cta_button": "DISCUSS PROJECT"
+        "cta_button": "DISCUSS PROJECT",
+        "get_analysis": "🌿 Get free site analysis"
     },
     "Footer": {
+        "brand_part1": "TERRA",
+        "brand_part2": "FORM",
         "description": "Pioneering the future of landscape architecture through ecological intelligence and minimalist design.",
+        "messaging_disclaimer": "By clicking the WhatsApp/Telegram/VK button, you agree that your phone number and messages will be directed to the corresponding messenger to contact you. More details in the <privacy>Privacy Policy</privacy>.",
         "company": "Company",
         "home": "Home",
         "portfolio": "Portfolio",
@@ -53,7 +64,7 @@
         "philosophy": "Philosophy",
         "contacts": "Contacts",
         "getInTouch": "Get in Touch",
-        "address": "1280 Eco Park Blvd,\nSeattle, WA 98101",
+        "address": "10 Lesnaya St, Office 402,\nMoscow, 125047",
         "rights": "© 2026 Terraform Landscapes. All rights reserved.",
         "privacy": "Privacy Policy",
         "terms": "Terms of Service"
@@ -106,7 +117,105 @@
             "urban": "Urban",
             "coastal": "Coastal"
         },
-        "view_more": "View More Projects"
+        "view_more": "View More Projects",
+        "labels": {
+            "area": "Area",
+            "duration": "Duration",
+            "flora": "Flora",
+            "vision": "The Vision",
+            "challenge": "The Challenge",
+            "solution": "The Solution",
+            "expertise": "Expertise Used",
+            "cta": "Discuss Your Project",
+            "back": "Back to Portfolio",
+            "not_found": "Project Not Found",
+            "expertise_items": {
+                "botanical": "Botanical Curation",
+                "hydro": "Hydro-Zoning Systems",
+                "rainwater": "Rainwater Harvesting",
+                "zen_rock": "Zen Rock Arrangement"
+            }
+        },
+        "items": {
+            "kyoto": {
+                "title": "Kyoto Zen Residence",
+                "desc": "Engineering the ancient Japanese philosophy into a modern architectural garden.",
+                "category": "Residential",
+                "full_desc": "The Kyoto Zen Residence project is a synthesis of traditional Japanese aesthetics and advanced ecological technologies. We created a space that fosters deep meditation while serving as a resilient ecosystem.",
+                "challenge": "The requirement was to integrate a meditation garden into a constrained urban space with variable lighting and complex drainage.",
+                "solution": "We applied vertical structuring and a concealed rainwater harvesting system. Using native moss species and strategically placed stones created the feeling of a boundless forest.",
+                "metrics": {
+                    "area": "450 m²",
+                    "duration": "8 months",
+                    "flora": "120+ species"
+                }
+            },
+            "terracotta": {
+                "title": "Terracotta Gardens",
+                "desc": "Restoring arid soil for a lush Mediterranean oasis.",
+                "category": "Residential",
+                "full_desc": "The 'Terracotta Gardens' project demonstrates the possibilities of regenerative landscape architecture. We transformed a depleted site into a flourishing Mediterranean garden using innovative moisture conservation techniques.",
+                "challenge": "The soil was extremely depleted and prone to erosion, requiring a comprehensive approach to biome restoration.",
+                "solution": "The implementation of terracotta capillary irrigation systems and deep organic mulching allowed for the creation of a sustainable moist environment without excessive water consumption.",
+                "metrics": {
+                    "area": "800 m²",
+                    "duration": "12 months",
+                    "flora": "150+ species"
+                }
+            },
+            "emerald": {
+                "title": "Emerald Forest",
+                "desc": "Integrating modern living into a dense woodland slope.",
+                "category": "Estate",
+                "full_desc": "The 'Emerald Forest' project focuses on the symbiosis of architecture and wildlife. We created a living space that is seamlessly integrated into the existing forest ecosystem, preserving its pristine look.",
+                "challenge": "The complex terrain of the forest slope and the critical need to preserve the root systems of ancient trees.",
+                "solution": "The use of a 'floating' terrace system on screw piles and permeable coatings made it possible to minimize interference with the soil cover.",
+                "metrics": {
+                    "area": "2500 m²",
+                    "duration": "18 months",
+                    "flora": "300+ species"
+                }
+            },
+            "skyline": {
+                "title": "Skyline Roof Deck",
+                "desc": "Creating privacy and wind protection at 40 stories.",
+                "category": "Commercial",
+                "full_desc": "The 'Skyline Roof Deck' project is an oasis of tranquility amidst a noisy metropolis. We created a functional space for relaxation, protected from the harsh conditions of high-rise buildings.",
+                "challenge": "Extreme wind loads at high altitudes and strict weight restrictions for roofing structures.",
+                "solution": "The use of lightweight polymer substrates and the installation of cascading windbreaks made of tempered glass, complemented by wind-resistant grasses.",
+                "metrics": {
+                    "area": "120 m²",
+                    "duration": "4 months",
+                    "flora": "45 species"
+                }
+            },
+            "zen": {
+                "title": "The Zen Courtyard",
+                "desc": "Maximizing natural light in a minimalist urban atrium.",
+                "category": "Urban",
+                "full_desc": "The 'The Zen Courtyard' project reinterprets the courtyard space as the meditative center of the home. Minimalism and the play of light create an atmosphere of endless space even in a small area.",
+                "challenge": "A closed space with minimal access to sunlight and complex acoustics.",
+                "solution": "The use of reflective materials, shade-tolerant flora and cascading water features that absorb urban noise.",
+                "metrics": {
+                    "area": "60 m²",
+                    "duration": "3 months",
+                    "flora": "25 species"
+                }
+            },
+            "heritage": {
+                "title": "Heritage Manor",
+                "desc": "Preserving historical ancient trees while modernizing pathways.",
+                "category": "Restoration",
+                "full_desc": "In the 'Heritage Manor' project, we worked with a historical estate where every element has its own story. We updated functional areas, preserving the spirit and grandeur of the ancient park.",
+                "challenge": "The need to lay modern communications and paths in the immediate vicinity of protected century-old oaks.",
+                "solution": "Ground-penetrating radar scanning of roots and the use of manual labor when installing pathways made of natural aged stone.",
+                "metrics": {
+                    "area": "1.5 Ha",
+                    "duration": "24 months",
+                    "flora": "500+ species"
+                }
+            }
+        }
     },
     "Philosophy": {
         "badge": "Our Philosophy",
@@ -179,10 +288,10 @@
             "vision_placeholder": "Tell us about your space and dreams...",
             "submit": "Send Inquiry",
             "privacy_note": "By submitting this form, you agree to our privacy policy regarding your personal data.",
-            "budget_option_1": "$50k - $100k",
-            "budget_option_2": "$100k - $250k",
-            "budget_option_3": "$250k - $500k",
-            "budget_option_4": "$500k+",
+            "budget_option_1": "$500 - $5,000",
+            "budget_option_2": "$10k - $25k",
+            "budget_option_3": "$25k - $50k",
+            "budget_option_4": "$50k+",
             "trust_response": "Response within 2 hours during business days.",
             "trust_spam": "Zero spam guarantee.",
             "trust_badge": "Trusted by 50+ Premium Estates"

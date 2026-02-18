@@ -1,13 +1,20 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Link, usePathname } from '@/i18n/routing'
-import { useTranslations } from 'next-intl'
+import { Link, usePathname, useRouter } from '@/i18n/routing'
+import { useTranslations, useLocale } from 'next-intl'
+import { TelegramIcon } from '@/components/ui/SVGIcons'
+import { CONTACT_INFO } from '@/lib/constants'
+import { useMessengerConsent } from '@/components/features/MessengerConsent'
 
 export const MobileMenu = () => {
     const [isOpen, setIsOpen] = useState(false)
     const pathname = usePathname()
+    const locale = useLocale()
+    const router = useRouter()
     const t = useTranslations('Navbar')
+    const tFooter = useTranslations('Footer')
+    const { openConsent } = useMessengerConsent()
 
     // Close menu on route change
     useEffect(() => {
@@ -25,6 +32,11 @@ export const MobileMenu = () => {
             document.body.style.overflow = ''
         }
     }, [isOpen])
+
+    const toggleLanguage = () => {
+        const nextLocale = locale === 'ru' ? 'en' : 'ru'
+        router.replace(pathname, { locale: nextLocale })
+    }
 
     const navLinks = [
         { href: '/' as const, label: t('home'), isActive: pathname === '/' },
@@ -88,15 +100,57 @@ export const MobileMenu = () => {
                         ))}
                     </nav>
 
-                    {/* CTA */}
-                    <div className="mt-auto pt-8 border-t border-white/5">
-                        <Link
-                            href="/contacts"
-                            className="flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-primary text-olive-deep font-bold text-sm tracking-wide hover:bg-primary/90 transition-colors"
-                        >
-                            <span className="material-icons-round text-lg">mail</span>
-                            {t('contacts')}
-                        </Link>
+                    {/* CTA & Socials & Language */}
+                    <div className="mt-auto pt-8 border-t border-white/5 space-y-6">
+                        <div className="flex justify-center gap-4">
+                            <button
+                                onClick={() => { openConsent(CONTACT_INFO.telegram, 'telegram'); setIsOpen(false) }}
+                                className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-white/10 transition-colors relative"
+                            >
+                                <TelegramIcon className="w-6 h-6" />
+                                <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-primary text-[#1a2922] text-[10px] flex items-center justify-center font-bold shadow-sm border border-[#1a2922]">
+                                    i
+                                </div>
+                            </button>
+                            <button
+                                onClick={() => { openConsent(CONTACT_INFO.whatsapp, 'whatsapp'); setIsOpen(false) }}
+                                className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-white/10 transition-colors relative"
+                            >
+                                <span className="material-icons-round text-xl">chat</span>
+                                <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-primary text-[#1a2922] text-[10px] flex items-center justify-center font-bold shadow-sm border border-[#1a2922]">
+                                    i
+                                </div>
+                            </button>
+                            <button
+                                onClick={toggleLanguage}
+                                className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-white/10 transition-colors overflow-hidden p-3"
+                                title={locale === 'ru' ? 'Switch to English' : 'Переключить на русский'}
+                            >
+                                <div className="w-full h-full rounded-md overflow-hidden relative shadow-sm">
+                                    {locale === 'ru' ? (
+                                        <svg viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" className="absolute inset-0 w-full h-full object-cover">
+                                            <rect width="60" height="30" fill="#012169" />
+                                            <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" strokeWidth="6" />
+                                            <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" strokeWidth="4" />
+                                            <path d="M30,0 v30 M0,15 h60" stroke="#fff" strokeWidth="10" />
+                                            <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" strokeWidth="6" />
+                                        </svg>
+                                    ) : (
+                                        <svg viewBox="0 0 9 6" xmlns="http://www.w3.org/2000/svg" className="absolute inset-0 w-full h-full object-cover">
+                                            <rect width="9" height="6" fill="#fff" />
+                                            <rect width="9" height="4" y="2" fill="#0039a6" />
+                                            <rect width="9" height="2" y="4" fill="#d52b1e" />
+                                        </svg>
+                                    )}
+                                </div>
+                            </button>
+                        </div>
+                        <p className="text-[10px] text-center text-sand-dark/40 leading-tight px-4 pb-2">
+                            {/* Reusing Footer translation for consistency */}
+                            {tFooter.rich('messaging_disclaimer', {
+                                privacy: (chunks) => <Link href="/privacy" className="underline">{chunks}</Link>
+                            })}
+                        </p>
                     </div>
                 </div>
             </div>

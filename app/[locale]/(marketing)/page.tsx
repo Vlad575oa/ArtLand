@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { HeroCTA } from '@/components/features/HeroCTA';
+import { ContactHeroForm } from '@/components/features/ContactHeroForm';
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -18,6 +19,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     image: '/images/hero/hero-main.jpg',
   }, locale);
 }
+
+
 export default function HomePage() {
   const t = useTranslations('Hero');
   const locale = useLocale();
@@ -75,21 +78,12 @@ export default function HomePage() {
                 >
                   <span className="material-icons-round group-hover:translate-x-1 transition-transform" aria-hidden="true">arrow_forward</span>
                 </HeroCTA>
-
-                <Link href="/projects" className="flex items-center gap-4 px-6 py-4 rounded-full text-[#C0C8C4] hover:text-white transition-all group">
-                  <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:border-primary group-hover:bg-primary/10 transition-all">
-                    <span className="material-icons-round text-2xl group-hover:text-primary" aria-hidden="true">play_arrow</span>
-                  </div>
-                  <span className="text-sm font-medium tracking-wide border-b border-transparent group-hover:border-primary/50 transition-all pb-0.5">
-                    {t('showreel')}
-                  </span>
-                </Link>
               </div>
             </div>
 
-            <div className="lg:col-span-5 relative h-[650px] hidden lg:block">
+            <div className="lg:col-span-5 relative h-[500px] md:h-[650px] mt-12 lg:mt-0">
               <div className="relative h-full w-full">
-                <div className="absolute inset-0 leaf-shape-wide overflow-hidden convex-card p-2 z-10 rotate-2 hover:rotate-0 transition-all duration-700 ease-out">
+                <div className="absolute inset-0 leaf-shape-wide overflow-hidden convex-card p-2 z-10 lg:rotate-2 lg:hover:rotate-0 transition-all duration-700 ease-out">
                   <Image
                     src="/images/hero/hero-main.jpg"
                     alt="Minimalist modern garden path with concrete steps and lush green ferns"
@@ -103,17 +97,17 @@ export default function HomePage() {
                 </div>
                 <div className="absolute top-10 -right-8 w-3/4 h-3/4 bg-[#3D5246] leaf-shape-wide -z-0 opacity-40 rotate-6" />
 
-                <div className="absolute bottom-12 -left-12 glass-panel p-8 rounded-2xl max-w-[240px] z-20 shadow-2xl backdrop-blur-2xl">
+                <div className="absolute bottom-6 md:bottom-12 -left-6 md:-left-12 glass-panel p-6 md:p-8 rounded-2xl max-w-[200px] md:max-w-[240px] z-20 shadow-2xl backdrop-blur-2xl">
                   <div className="flex items-center gap-3 mb-2">
-                    <span className="material-icons-round text-primary text-2xl">verified</span>
-                    <span className="text-xs uppercase tracking-widest text-primary font-bold">
+                    <span className="material-icons-round text-primary text-xl md:text-2xl">verified</span>
+                    <span className="text-[10px] md:text-xs uppercase tracking-widest text-primary font-bold">
                       {t('experience_label')}
                     </span>
                   </div>
                   <div className="flex items-baseline gap-1">
-                    <span className="text-4xl font-serif text-white">150+</span>
+                    <span className="text-3xl md:text-4xl font-serif text-white">150+</span>
                   </div>
-                  <p className="text-sm text-[#C0C8C4] mt-2 leading-relaxed font-light">
+                  <p className="text-xs md:text-sm text-[#C0C8C4] mt-2 leading-relaxed font-light">
                     {t('experience_desc')}
                   </p>
                 </div>
@@ -235,18 +229,11 @@ export default function HomePage() {
                 <p className="text-[#A0ABA5] mb-12 text-lg font-light">
                   {t('cta_desc')}
                 </p>
-                <form className="flex flex-col md:flex-row gap-4 justify-center">
-                  <div className="relative w-full md:w-auto min-w-[320px]">
-                    <input
-                      className="w-full h-full px-8 py-5 rounded-full bg-[#1C2922] border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all shadow-inner"
-                      placeholder={t('cta_input_placeholder')}
-                      type="email"
-                    />
-                  </div>
-                  <button className="gold-btn px-10 py-5 text-olive-deep font-bold rounded-full transition-all whitespace-nowrap" type="button">
-                    {t('cta_button')}
-                  </button>
-                </form>
+                <ContactHeroForm
+                  ctaInputPlaceholder={t('cta_input_placeholder')}
+                  ctaButton={t('cta_button')}
+                  locale={locale}
+                />
               </div>
             </div>
           </div>

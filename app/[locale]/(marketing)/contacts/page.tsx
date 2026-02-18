@@ -1,12 +1,21 @@
 'use client'
 
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
+import { TelegramIcon } from '@/components/ui/SVGIcons';
+import { CONTACT_INFO } from '@/lib/constants';
 import { useState, FormEvent } from 'react'
+import { useCookieConsent } from '@/components/layout/CookieConsent';
+import { useMessengerConsent } from '@/components/features/MessengerConsent';
+import { Link } from '@/i18n/routing';
 
 export default function ContactPage() {
     const t = useTranslations('Contacts');
+    const locale = useLocale();
+    const { consent, acceptCookies } = useCookieConsent();
+    const { openConsent } = useMessengerConsent();
     const [budget, setBudget] = useState('')
     const [isSubmitting, setIsSubmitting] = useState(false)
+    const [consentChecked, setConsentChecked] = useState(false)
     const [isSuccess, setIsSuccess] = useState(false)
     const [error, setError] = useState('')
 
@@ -162,10 +171,31 @@ export default function ContactPage() {
                                 </div>
                             )}
 
+                            <div className="flex items-start gap-3 py-2">
+                                <div className="flex items-center h-5">
+                                    <input
+                                        id="privacy-consent-page"
+                                        name="privacy-consent"
+                                        type="checkbox"
+                                        required
+                                        checked={consentChecked}
+                                        onChange={(e) => setConsentChecked(e.target.checked)}
+                                        className="w-4 h-4 rounded border-white/10 bg-white/5 text-contact-primary focus:ring-contact-primary/50 cursor-pointer shadow-contact-inset"
+                                    />
+                                </div>
+                                <label htmlFor="privacy-consent-page" className="text-[10px] text-contact-muted/70 leading-tight cursor-pointer select-none">
+                                    {locale === 'ru' ? (
+                                        <>Я даю свое согласие на обработку персональных данных в соответствии с <a href="/privacy" target="_blank" className="text-contact-primary hover:underline">Политикой конфиденциальности</a>.</>
+                                    ) : (
+                                        <>I agree to the processing of my personal data in accordance with the <a href="/privacy" target="_blank" className="text-contact-primary hover:underline">Privacy Policy</a>.</>
+                                    )}
+                                </label>
+                            </div>
+
                             <div className="pt-2">
                                 <button
                                     type="submit"
-                                    disabled={isSubmitting}
+                                    disabled={isSubmitting || !consentChecked}
                                     className="w-full bg-contact-primary hover:bg-contact-primary/90 text-background-dark font-bold py-5 rounded-lg transition-all transform hover:scale-[1.01] active:scale-[0.99] shadow-lg shadow-contact-primary/20 disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
                                     {isSubmitting ? (
@@ -177,9 +207,6 @@ export default function ContactPage() {
                                         t('form.submit')
                                     )}
                                 </button>
-                                <p className="text-[10px] text-contact-muted/50 mt-4 text-center leading-relaxed font-medium">
-                                    {t('form.privacy_note')}
-                                </p>
                                 <div className="mt-6 flex flex-col gap-3 items-center border-t border-white/5 pt-6">
                                     <div className="flex items-center gap-2 text-xs text-contact-muted font-medium bg-white/5 px-3 py-1.5 rounded-full border border-white/5">
                                         <span className="material-icons-round text-contact-primary text-sm">verified</span>
@@ -212,7 +239,7 @@ export default function ContactPage() {
                             <div>
                                 <h3 className="text-white font-bold mb-1">{t('studio_title')}</h3>
                                 <p className="text-contact-muted text-sm leading-relaxed">
-                                    1280 Eco Park Blvd,<br />Seattle, WA 98101
+                                    {CONTACT_INFO.address.full}
                                 </p>
                             </div>
                         </div>
@@ -223,7 +250,7 @@ export default function ContactPage() {
                             </div>
                             <div>
                                 <h3 className="text-white font-bold mb-1">{t('direct_line')}</h3>
-                                <a href="tel:+15550123-4567" className="text-contact-primary font-bold text-lg hover:underline">+1 (555) 0123-4567</a>
+                                <a href={`tel:${CONTACT_INFO.phone_clean}`} className="text-contact-primary font-bold text-lg hover:underline">{CONTACT_INFO.phone}</a>
                                 <p className="text-[10px] text-contact-muted uppercase tracking-widest mt-1 font-bold">{t('direct_line_desc')}</p>
                             </div>
                         </div>
@@ -234,6 +261,13 @@ export default function ContactPage() {
                                 <a className="w-10 h-10 rounded-full bg-contact-background shadow-contact-convex flex items-center justify-center text-contact-secondary hover:text-contact-primary hover:scale-110 transition-all duration-300" href="#" aria-label="Instagram">
                                     <svg aria-hidden="true" className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path clipRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772 4.902 4.902 0 011.772-1.153c.636-.247 1.363-.416 2.427-.465 1.067-.047 1.407-.06 4.123-.06h.08v-.002zm0 1.8c-2.637 0-2.974.01-4.022.058-1.05.048-1.62.224-2.002.372a3.11 3.11 0 00-1.127.732 3.11 3.11 0 00-.732 1.127c-.148.382-.325.952-.372 2.002-.048 1.048-.058 1.385-.058 4.022 0 2.637.01 2.974.058 4.022.048 1.05.224 1.62.372 2.002.345.886.966 1.507 1.853 1.853.382.148.952.325 2.002.372 1.048.048 1.385.058 4.022.058 2.637 0 2.974-.01 4.022-.058 1.05-.048 1.62-.224 2.002-.372a3.11 3.11 0 001.127-.732 3.11 3.11 0 00.732-1.127c.148-.382.325-.952.372-2.002.048-1.048.058-1.385.058-4.022 0-2.637-.01-2.974-.058-4.022-.048-1.05-.224-1.62-.372-2.002a3.11 3.11 0 00-.732-1.127 3.11 3.11 0 00-1.127-.732c-.382-.148-.952-.325-2.002-.372-1.049-.048-1.386-.058-4.023-.058zm0 4.414a5.386 5.386 0 100 10.772 5.386 5.386 0 000-10.772zm0 8.973a3.587 3.587 0 110-7.174 3.587 3.587 0 010 7.174zm5.275-9.35a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" fillRule="evenodd"></path></svg>
                                 </a>
+                                <button
+                                    className="w-10 h-10 rounded-full bg-contact-background shadow-contact-convex flex items-center justify-center text-contact-secondary hover:text-contact-primary hover:scale-110 transition-all duration-300"
+                                    onClick={() => openConsent(CONTACT_INFO.telegram, 'telegram')}
+                                    aria-label="Telegram"
+                                >
+                                    <TelegramIcon className="w-4 h-4" />
+                                </button>
                                 <a className="w-10 h-10 rounded-full bg-contact-background shadow-contact-convex flex items-center justify-center text-contact-secondary hover:text-contact-primary hover:scale-110 transition-all duration-300" href="#" aria-label="LinkedIn">
                                     <svg aria-hidden="true" className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path clipRule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" fillRule="evenodd"></path></svg>
                                 </a>
@@ -242,22 +276,43 @@ export default function ContactPage() {
                     </div>
 
                     <div className="relative w-full h-64 rounded-xl overflow-hidden shadow-contact-convex border border-white/5 map-grayscale-filter group">
-                        <div className="absolute inset-0 z-10 pointer-events-none ring-1 ring-inset ring-white/10 rounded-xl"></div>
-                        <div className="absolute inset-0 bg-contact-primary/5 z-10 pointer-events-none mix-blend-overlay"></div>
-                        <iframe
-                            allowFullScreen
-                            className="w-full h-full grayscale"
-                            loading="lazy"
-                            referrerPolicy="no-referrer-when-downgrade"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d357597.0223594193!2d-122.9231804473872!3d45.542241511210156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54950b0b7da97427%3A0x1c36b9e6f6d18591!2sPortland%2C%20OR!5e0!3m2!1sen!2sus!4v1684346765000!5m2!1sen!2sus"
-                            style={{ border: 0 }}
-                            title="Office Location Map"
-                        ></iframe>
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-full z-20">
-                            <div className="relative">
-                                <span className="w-4 h-4 bg-contact-primary rounded-full block animate-ping absolute"></span>
-                                <span className="w-4 h-4 bg-contact-primary rounded-full block relative shadow-[0_0_15px_#d2b48c]"></span>
-                                <div className="w-0.5 h-8 bg-gradient-to-t from-transparent to-contact-primary mx-auto"></div>
+                        <div className="relative w-full h-64 rounded-xl overflow-hidden shadow-contact-convex border border-white/5 map-grayscale-filter group">
+                            {consent ? (
+                                <>
+                                    <div className="absolute inset-0 z-10 pointer-events-none ring-1 ring-inset ring-white/10 rounded-xl"></div>
+                                    <div className="absolute inset-0 bg-contact-primary/5 z-10 pointer-events-none mix-blend-overlay"></div>
+                                    <iframe
+                                        allowFullScreen
+                                        className="w-full h-full grayscale"
+                                        loading="lazy"
+                                        referrerPolicy="no-referrer-when-downgrade"
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d357597.0223594193!2d-122.9231804473872!3d45.542241511210156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54950b0b7da97427%3A0x1c36b9e6f6d18591!2sPortland%2C%20OR!5e0!3m2!1sen!2sus!4v1684346765000!5m2!1sen!2sus"
+                                        style={{ border: 0 }}
+                                        title="Office Location Map"
+                                    ></iframe>
+                                </>
+                            ) : (
+                                <div className="absolute inset-0 flex flex-col items-center justify-center bg-contact-surface/80 p-6 text-center z-20">
+                                    <span className="material-icons-round text-contact-muted text-3xl mb-2">map</span>
+                                    <p className="text-sm text-contact-muted mb-4">
+                                        {locale === 'ru' ? 'Карта недоступна. Пожалуйста, примите cookies для просмотра.' : 'Map is disabled. Please accept cookies to view.'}
+                                    </p>
+                                    <button
+                                        onClick={acceptCookies}
+                                        className="px-4 py-2 rounded-lg bg-contact-primary/10 text-contact-primary text-xs font-bold hover:bg-contact-primary/20 transition-colors"
+                                    >
+                                        {locale === 'ru' ? 'Принять Cookies' : 'Accept Cookies'}
+                                    </button>
+                                </div>
+                            )}
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-full z-20 pointer-events-none">
+                                {consent && (
+                                    <div className="relative">
+                                        <span className="w-4 h-4 bg-contact-primary rounded-full block animate-ping absolute"></span>
+                                        <span className="w-4 h-4 bg-contact-primary rounded-full block relative shadow-[0_0_15px_#d2b48c]"></span>
+                                        <div className="w-0.5 h-8 bg-gradient-to-t from-transparent to-contact-primary mx-auto"></div>
+                                    </div>
+                                )}
                             </div>
                         </div>
                     </div>

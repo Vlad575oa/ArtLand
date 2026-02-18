@@ -30,11 +30,12 @@ export async function POST(request: Request) {
         // - Push to CRM (HubSpot, Airtable)
         // - Send Telegram notification
 
-        console.log('Contact form submission:', {
-            name,
-            email,
+        // Simulate email sending
+        console.log(`[Email Service] Sending inquiry to ${process.env.CONTACT_EMAIL || 'hello@terraform.design'}`)
+        console.log(`[Email Service] From: ${name} <${email}>`)
+        console.log(`[Email Service] Subject: New Inquiry - ${budget}`)
+        console.log(`[Email Service] Body:`, {
             location,
-            budget,
             vision,
             timestamp: new Date().toISOString(),
         })

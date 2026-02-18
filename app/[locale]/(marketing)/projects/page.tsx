@@ -17,49 +17,55 @@ export default function PortfolioPage() {
 
     const projects = [
         {
-            title: 'Terracotta Gardens',
+            slug: 'kyoto-zen',
+            title: t('items.kyoto.title'),
             category: t('categories.residential'),
-            desc: 'Restoring arid soil for a lush Mediterranean oasis.',
+            desc: t('items.kyoto.desc'),
+            img: '/images/projects/kyoto-zen.png',
+            theme: 'from-[#1c1c1c]/95 via-[#1c1c1c]/40',
+            accent: '#8fa87a'
+        },
+        {
+            slug: 'terracotta-gardens',
+            title: t('items.terracotta.title'),
+            category: t('categories.residential'),
+            desc: t('items.terracotta.desc'),
             img: '/images/projects/project-1.jpg',
             theme: 'from-[#3d2c1f]/95 via-[#3d2c1f]/40',
             accent: '#8c6b50'
         },
         {
-            title: 'Emerald Forest',
-            category: t('categories.estate'),
-            desc: 'Integrating modern living into a dense woodland slope.',
+            slug: 'emerald-forest',
+            title: t('items.emerald.title'),
+            category: t('categories.residential'),
+            desc: t('items.emerald.desc'),
             img: '/images/projects/project-2.jpg',
             theme: 'from-[#1c2e24]/95 via-[#1c2e24]/40',
             accent: '#8fa87a'
         },
         {
-            title: 'Skyline Roof Deck',
+            slug: 'skyline-roof-deck',
+            title: t('items.skyline.title'),
             category: t('categories.commercial'),
-            desc: 'Creating privacy and wind protection at 40 stories.',
+            desc: t('items.skyline.desc'),
             img: '/images/projects/project-3.jpg',
             theme: 'from-[#2c353d]/95 via-[#2c353d]/40',
             accent: '#8fa87a'
         },
         {
-            title: 'The Zen Courtyard',
-            category: t('categories.urban'),
-            desc: 'Maximizing natural light in a minimalist urban atrium.',
+            slug: 'zen-courtyard',
+            title: t('items.zen.title'),
+            category: t('categories.residential'),
+            desc: t('items.zen.desc'),
             img: '/images/projects/project-4.jpg',
             theme: 'from-[#3a3e36]/95 via-[#3a3e36]/40',
             accent: '#8fa87a'
         },
         {
-            title: 'Coastal Dune Villa',
-            category: t('categories.coastal'),
-            desc: 'Sustainable native planting for salt-heavy environments.',
-            img: '/images/projects/project-5.jpg',
-            theme: 'from-[#42484e]/95 via-[#42484e]/40',
-            accent: '#89aeb2'
-        },
-        {
-            title: 'Heritage Manor',
+            slug: 'heritage-manor',
+            title: t('items.heritage.title'),
             category: t('categories.restoration'),
-            desc: 'Preserving historical ancient trees while modernizing pathways.',
+            desc: t('items.heritage.desc'),
             img: '/images/projects/project-6.jpg',
             theme: 'from-[#3d382e]/95 via-[#3d382e]/40',
             accent: '#d4a883'
@@ -67,7 +73,7 @@ export default function PortfolioPage() {
     ]
 
     const filteredProjects = projects.filter(p =>
-        activeCategory === t('categories.all') || p.category === activeCategory || (activeCategory === t('categories.restoration') && p.category === t('categories.restoration'))
+        activeCategory === t('categories.all') || p.category === activeCategory
     )
 
     return (
@@ -114,8 +120,9 @@ export default function PortfolioPage() {
                 {/* Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                     {filteredProjects.map((project, i) => (
-                        <div
+                        <Link
                             key={project.title}
+                            href={`/projects/${project.slug}`}
                             className="group relative rounded-[2.5rem] bg-forest-deep/30 p-3 shadow-portfolio-convex hover:shadow-portfolio-pressed transition-all duration-500 animate-slide-up"
                             style={{ animationDelay: `${(i + 6) * 100}ms` }}
                         >
@@ -147,7 +154,7 @@ export default function PortfolioPage() {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
 

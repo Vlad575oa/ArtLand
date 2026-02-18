@@ -1,16 +1,19 @@
 'use client'
 
 import { useModal } from '@/context/ModalContext'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { useEffect, useState, FormEvent } from 'react'
+import { Link } from '@/i18n/routing'
 
 export const ConsultationModal = () => {
     const { isOpen, closeModal, subject } = useModal()
     const t = useTranslations('Contacts')
+    const locale = useLocale()
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [isSuccess, setIsSuccess] = useState(false)
     const [error, setError] = useState('')
     const [budget, setBudget] = useState('')
+    const [consentChecked, setConsentChecked] = useState(false)
 
     // Reset state when modal opens
     useEffect(() => {
@@ -190,10 +193,31 @@ export const ConsultationModal = () => {
                                 </div>
                             )}
 
+                            <div className="flex items-start gap-3 py-2">
+                                <div className="flex items-center h-5">
+                                    <input
+                                        id="privacy-consent"
+                                        name="privacy-consent"
+                                        type="checkbox"
+                                        required
+                                        checked={consentChecked}
+                                        onChange={(e) => setConsentChecked(e.target.checked)}
+                                        className="w-4 h-4 rounded border-white/10 bg-white/5 text-contact-primary focus:ring-contact-primary/50 cursor-pointer"
+                                    />
+                                </div>
+                                <label htmlFor="privacy-consent" className="text-[10px] text-contact-muted/70 leading-tight cursor-pointer select-none">
+                                    {locale === 'ru' ? (
+                                        <>Я даю свое согласие на обработку персональных данных в соответствии с <a href="/privacy" target="_blank" className="text-contact-primary hover:underline">Политикой конфиденциальности</a>.</>
+                                    ) : (
+                                        <>I agree to the processing of my personal data in accordance with the <a href="/privacy" target="_blank" className="text-contact-primary hover:underline">Privacy Policy</a>.</>
+                                    )}
+                                </label>
+                            </div>
+
                             <div className="pt-2">
                                 <button
                                     type="submit"
-                                    disabled={isSubmitting}
+                                    disabled={isSubmitting || !consentChecked}
                                     className="w-full bg-contact-primary hover:bg-contact-primary/90 text-background-dark font-bold py-4 rounded-lg transition-all shadow-lg shadow-contact-primary/20 disabled:opacity-50 flex items-center justify-center gap-2"
                                 >
                                     {isSubmitting ? (
