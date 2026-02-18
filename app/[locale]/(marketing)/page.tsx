@@ -28,16 +28,16 @@ export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
       <main className="flex-grow">
-        {/* Background Gradients */}
+        {/* Background Gradients - Reduced on mobile */}
         <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-          <div className="absolute -top-20 -left-20 w-96 h-96 bg-primary/5 rounded-full blur-[100px]" />
-          <div className="absolute top-1/3 -right-20 w-[500px] h-[500px] bg-[#4A6756]/20 rounded-full blur-[120px]" />
-          <div className="absolute bottom-0 left-1/4 w-[600px] h-[400px] bg-terracotta/10 rounded-full blur-[100px]" />
+          <div className="absolute -top-20 -left-20 w-96 h-96 bg-primary/5 rounded-full blur-[100px] opacity-50 lg:opacity-100" />
+          <div className="absolute top-1/3 -right-20 w-[500px] h-[500px] bg-[#4A6756]/10 lg:bg-[#4A6756]/20 rounded-full blur-[120px] hidden lg:block" />
+          <div className="absolute bottom-0 left-1/4 w-[600px] h-[400px] bg-terracotta/5 lg:bg-terracotta/10 rounded-full blur-[100px] hidden lg:block" />
         </div>
 
         {/* Header/Hero Section */}
         <header className="relative min-h-screen flex items-center justify-center pt-28 pb-32 overflow-hidden bg-hero-gradient">
-          <svg className="absolute top-0 right-0 w-[60%] h-full opacity-[0.03] pointer-events-none" fill="none" viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+          <svg className="absolute top-0 right-0 w-[60%] h-full opacity-[0.02] lg:opacity-[0.03] pointer-events-none hidden lg:block" fill="none" viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
             <path d="M200,0 C300,100 400,300 350,600 L0,600 C50,400 100,200 200,0 Z" fill="white" />
           </svg>
 

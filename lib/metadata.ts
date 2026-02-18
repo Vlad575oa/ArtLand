@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 
-const BASE_URL = 'https://terra.art'
+const BASE_URL = 'https://art-land.vercel.app'
 
 type PageMetaConfig = {
     titleRu: string
