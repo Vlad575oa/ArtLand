@@ -62,7 +62,7 @@ export default function HomePage() {
       <main className="flex-grow">
         {/* Background Gradients - Reduced on mobile */}
         <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-          <div className="absolute -top-20 -left-20 w-96 h-96 bg-primary/5 rounded-full blur-[60px] lg:blur-[100px] opacity-30 lg:opacity-100" />
+          <div className="absolute -top-20 -left-20 w-96 h-96 bg-primary/5 rounded-full blur-[100px] opacity-100 hidden lg:block" />
           <div className="absolute top-1/3 -right-20 w-[500px] h-[500px] bg-[#4A6756]/10 lg:bg-[#4A6756]/20 rounded-full blur-[80px] lg:blur-[120px] hidden lg:block" />
           <div className="absolute bottom-0 left-1/4 w-[600px] h-[400px] bg-terracotta/5 lg:bg-terracotta/10 rounded-full blur-[70px] lg:blur-[100px] hidden lg:block" />
         </div>
@@ -82,7 +82,7 @@ export default function HomePage() {
                 {t('badge')}
               </span>
 
-              <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.05] text-[#F0F2F0] drop-shadow-2xl animate-slide-up delay-200">
+              <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.05] text-[#F0F2F0] animate-slide-up delay-200">
                 {t.rich('title', {
                   living: (chunks) => (
                     <span

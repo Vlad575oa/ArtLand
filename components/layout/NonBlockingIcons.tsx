@@ -6,7 +6,7 @@ export function NonBlockingIcons() {
     return (
         <Script
             id="material-icons"
-            strategy="afterInteractive"
+            strategy="lazyOnload"
             dangerouslySetInnerHTML={{
                 __html: `
                     var link = document.createElement('link');

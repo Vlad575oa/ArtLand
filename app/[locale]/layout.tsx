@@ -55,16 +55,8 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className={`dark ${manrope.variable} ${playfair.variable}`} suppressHydrationWarning>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <noscript>
-          <link
-            href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Round&display=swap"
-            rel="stylesheet"
-          />
-        </noscript>
-      </head>
+      <head />
+
       <body className="font-display bg-background-light dark:bg-background-dark text-slate-800 dark:text-[#E0E5E2] antialiased selection:bg-primary selection:text-olive-deep">
         <NonBlockingIcons />
         <OrganizationSchema />
