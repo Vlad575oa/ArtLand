@@ -58,7 +58,7 @@ export default async function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* Preload critical fonts if possible */}
+        {/* Preload critical icons to improve LCP/FCP */}
         <link
           rel="preload"
           href="https://fonts.googleapis.com/icon?family=Material+Icons+Round&display=swap"
@@ -67,12 +67,7 @@ export default async function RootLayout({
         <link
           href="https://fonts.googleapis.com/icon?family=Material+Icons+Round&display=swap"
           rel="stylesheet"
-          media="print"
-          onLoad={(e) => { (e.target as any).media = 'all'; }}
         />
-        <noscript>
-          <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round&display=swap" rel="stylesheet" />
-        </noscript>
       </head>
       <body className="font-display bg-background-light dark:bg-background-dark text-slate-800 dark:text-[#E0E5E2] antialiased selection:bg-primary selection:text-olive-deep">
         <OrganizationSchema />
