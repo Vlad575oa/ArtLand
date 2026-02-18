@@ -5,6 +5,7 @@ import { generatePageMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 import { HeroCTA } from '@/components/features/HeroCTA';
 import dynamic from 'next/dynamic';
+import { EcoIcon, ArrowForwardIcon, VerifiedIcon } from '@/components/ui/SVGIcons';
 
 const ApproachSection = dynamic(() => import('@/components/features/home/ApproachSection').then(mod => mod.ApproachSection), {
   ssr: true,
@@ -61,9 +62,9 @@ export default function HomePage() {
       <main className="flex-grow">
         {/* Background Gradients - Reduced on mobile */}
         <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-          <div className="absolute -top-20 -left-20 w-96 h-96 bg-primary/5 rounded-full blur-[100px] opacity-50 lg:opacity-100" />
-          <div className="absolute top-1/3 -right-20 w-[500px] h-[500px] bg-[#4A6756]/10 lg:bg-[#4A6756]/20 rounded-full blur-[120px] hidden lg:block" />
-          <div className="absolute bottom-0 left-1/4 w-[600px] h-[400px] bg-terracotta/5 lg:bg-terracotta/10 rounded-full blur-[100px] hidden lg:block" />
+          <div className="absolute -top-20 -left-20 w-96 h-96 bg-primary/5 rounded-full blur-[60px] lg:blur-[100px] opacity-30 lg:opacity-100" />
+          <div className="absolute top-1/3 -right-20 w-[500px] h-[500px] bg-[#4A6756]/10 lg:bg-[#4A6756]/20 rounded-full blur-[80px] lg:blur-[120px] hidden lg:block" />
+          <div className="absolute bottom-0 left-1/4 w-[600px] h-[400px] bg-terracotta/5 lg:bg-terracotta/10 rounded-full blur-[70px] lg:blur-[100px] hidden lg:block" />
         </div>
 
         {/* Header/Hero Section */}
@@ -76,12 +77,12 @@ export default function HomePage() {
             <div className="lg:col-span-7 flex flex-col gap-8 text-left relative">
               <div className="absolute -left-12 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-primary/30 to-transparent hidden lg:block" />
 
-              <span className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/5 border border-primary/20 w-fit text-xs tracking-[0.2em] uppercase text-primary font-bold backdrop-blur-md shadow-lg">
-                <span className="material-icons-round text-sm text-primary">eco</span>
+              <span className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/5 border border-primary/20 w-fit text-xs tracking-[0.2em] uppercase text-primary font-bold backdrop-blur-sm shadow-lg animate-slide-up delay-100">
+                <EcoIcon className="w-4 h-4 text-primary" />
                 {t('badge')}
               </span>
 
-              <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.05] text-[#F0F2F0] drop-shadow-2xl">
+              <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.05] text-[#F0F2F0] drop-shadow-2xl animate-slide-up delay-200">
                 {t.rich('title', {
                   living: (chunks) => (
                     <span
@@ -98,16 +99,16 @@ export default function HomePage() {
                 })}
               </h1>
 
-              <p className="text-lg md:text-xl text-[#B0B8B4] max-w-2xl font-light leading-relaxed pl-1 border-l-2 border-primary/30">
+              <p className="text-lg md:text-xl text-[#B0B8B4] max-w-2xl font-light leading-relaxed pl-1 border-l-2 border-primary/30 animate-slide-up delay-300">
                 {t('subtitle')}
               </p>
 
-              <div className="flex flex-wrap items-center gap-6 mt-6">
+              <div className="flex flex-wrap items-center gap-6 mt-6 animate-slide-up delay-500">
                 <HeroCTA
                   text={t('cta')}
                   className="gold-btn group relative px-10 py-5 text-olive-deep rounded-full flex items-center gap-3 font-bold text-sm tracking-wide"
                 >
-                  <span className="material-icons-round group-hover:translate-x-1 transition-transform" aria-hidden="true">arrow_forward</span>
+                  <ArrowForwardIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </HeroCTA>
               </div>
             </div>
@@ -120,7 +121,7 @@ export default function HomePage() {
                     alt="Minimalist modern garden path with concrete steps and lush green ferns"
                     className="object-cover leaf-shape-wide opacity-90 hover:opacity-100 transition-opacity duration-500"
                     fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    sizes="(max-width: 768px) 95vw, (max-width: 1024px) 100vw, 50vw"
                     priority
                     fetchPriority="high"
                     loading="eager"
@@ -128,9 +129,9 @@ export default function HomePage() {
                 </div>
                 <div className="absolute top-10 -right-8 w-3/4 h-3/4 bg-[#3D5246] leaf-shape-wide -z-0 opacity-40 rotate-6" />
 
-                <div className="absolute bottom-6 md:bottom-12 -left-6 md:-left-12 glass-panel p-6 md:p-8 rounded-2xl max-w-[200px] md:max-w-[240px] z-20 shadow-2xl backdrop-blur-2xl">
+                <div className="absolute bottom-6 md:bottom-12 -left-6 md:-left-12 glass-panel p-6 md:p-8 rounded-2xl max-w-[200px] md:max-w-[240px] z-20 shadow-2xl backdrop-blur-lg animate-slide-up delay-700">
                   <div className="flex items-center gap-3 mb-2">
-                    <span className="material-icons-round text-primary text-xl md:text-2xl">verified</span>
+                    <VerifiedIcon className="w-5 h-5 text-primary" />
                     <span className="text-[10px] md:text-xs uppercase tracking-widest text-primary font-bold">
                       {t('experience_label')}
                     </span>

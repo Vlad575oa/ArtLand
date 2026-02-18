@@ -30,20 +30,20 @@ export default function PhilosophyPage() {
                 <section className="max-w-7xl mx-auto px-6 lg:px-12 mb-32">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <div className="space-y-8">
-                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-forest-light border border-white/5 text-xs text-primary font-semibold tracking-wider uppercase shadow-soft-neumorph">
+                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-forest-light border border-white/5 text-xs text-primary font-semibold tracking-wider uppercase shadow-soft-neumorph animate-slide-up delay-100">
                                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                                 {t('badge')}
                             </div>
-                            <h1 className="text-5xl lg:text-7xl font-light text-white leading-[1.1]">
+                            <h1 className="text-5xl lg:text-7xl font-light text-white leading-[1.1] animate-slide-up delay-200">
                                 {t.rich('title_part1', {
                                     br: () => <br />
                                 })}
                                 <span className="font-bold text-terracotta">{t('title_part2')}</span>
                             </h1>
-                            <p className="text-lg text-sand-dark max-w-md leading-relaxed">
+                            <p className="text-lg text-sand-dark max-w-md leading-relaxed animate-slide-up delay-300">
                                 {t('description')}
                             </p>
-                            <div className="flex items-center gap-6 lg:gap-12 pt-4 animate-slide-up delay-400">
+                            <div className="flex items-center gap-6 lg:gap-12 pt-4">
                                 <div className="p-4 rounded-2xl bg-forest-light/40 shadow-soft-neumorph-inset border border-white/5">
                                     <p className="text-3xl font-bold text-primary">150+</p>
                                     <p className="text-xs text-sand-dark uppercase tracking-wide">{t('stats.acres')}</p>
@@ -84,7 +84,7 @@ export default function PhilosophyPage() {
                 <div className="leaf-divider" />
 
                 <section className="max-w-7xl mx-auto px-6 lg:px-12 mb-32">
-                    <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 animate-slide-up delay-200">
+                    <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                         <h2 className="text-3xl md:text-4xl font-light text-white">
                             {t.rich('section2_title', {
                                 nature: (chunks) => <span className="font-bold text-primary">{chunks}</span>
@@ -96,7 +96,7 @@ export default function PhilosophyPage() {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div className="group relative rounded-[2rem] bg-forest-light shadow-inflated overflow-hidden transition-all duration-500 hover:-translate-y-2 animate-slide-up delay-300">
+                        <div className="group relative rounded-[2rem] bg-forest-light shadow-inflated overflow-hidden transition-all duration-500 hover:-translate-y-2">
                             <div className="p-10 lg:p-14 relative z-10">
                                 <div className="absolute top-[-20px] right-[-20px] opacity-10 group-hover:opacity-15 transition-opacity transform rotate-12">
                                     <span className="material-icons text-[12rem] text-primary">spa</span>
@@ -121,7 +121,7 @@ export default function PhilosophyPage() {
                             </div>
                         </div>
 
-                        <div className="group relative rounded-[2rem] bg-forest-light shadow-inflated overflow-hidden transition-all duration-500 hover:-translate-y-2 animate-slide-up delay-400">
+                        <div className="group relative rounded-[2rem] bg-forest-light shadow-inflated overflow-hidden transition-all duration-500 hover:-translate-y-2">
                             <div className="p-10 lg:p-14 relative z-10">
                                 <div className="absolute top-[-20px] right-[-20px] opacity-10 group-hover:opacity-15 transition-opacity transform rotate-12">
                                     <span className="material-icons text-[12rem] text-terracotta">wb_sunny</span>
@@ -163,7 +163,7 @@ export default function PhilosophyPage() {
                         <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-2 bg-forest-light rounded-full shadow-soft-neumorph-inset hidden md:block" />
                         <div className="space-y-12 md:space-y-24">
                             {(t.raw('timeline_items') as Array<{ year: string, title: string, desc: string, color?: string }>).map((item, i) => (
-                                <div key={i} className="relative flex flex-col md:flex-row items-center md:justify-between group animate-slide-up delay-200">
+                                <div key={i} className="relative flex flex-col md:flex-row items-center md:justify-between group">
                                     <div className={`md:w-5/12 text-center ${i % 2 === 0 ? 'md:text-right' : 'md:text-left order-3'} mt-4 md:mt-0 px-6`}>
                                         <div className={`p-6 bg-forest-light rounded-2xl shadow-inflated border-b-4 border-${item.color} inline-block w-full text-left`}>
                                             <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
@@ -235,7 +235,7 @@ export default function PhilosophyPage() {
                 <section className="max-w-7xl mx-auto px-6 lg:px-12">
                     <div className="relative rounded-[3rem] overflow-hidden bg-forest-light p-12 lg:p-24 text-center shadow-inflated border border-white/5">
                         <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(#8fa86e 1.5px, transparent 1.5px)', backgroundSize: '24px 24px' }} />
-                        <div className="relative z-10 max-w-2xl mx-auto animate-slide-up delay-200">
+                        <div className="relative z-10 max-w-2xl mx-auto">
                             <h2 className="text-4xl lg:text-5xl font-light text-white mb-6">
                                 {t.rich('cta_title', {
                                     ecosystem: (chunks) => <span className="font-bold text-terracotta">{chunks}</span>,

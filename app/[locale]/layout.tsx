@@ -9,6 +9,7 @@ import { OrganizationSchema } from '@/components/seo/StructuredData';
 import { ModalProvider } from '@/context/ModalContext';
 import { Providers } from '@/components/providers/Providers';
 import { ConsultationModal } from '@/components/features/ConsultationModal';
+import { NonBlockingIcons } from '@/components/layout/NonBlockingIcons';
 
 const manrope = Manrope({
   subsets: ['latin', 'cyrillic'],
@@ -57,18 +58,15 @@ export default async function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* Preload critical icons to improve LCP/FCP */}
-        <link
-          rel="preload"
-          href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Round&display=swap"
-          as="style"
-        />
-        <link
-          href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Round&display=swap"
-          rel="stylesheet"
-        />
+        <noscript>
+          <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Round&display=swap"
+            rel="stylesheet"
+          />
+        </noscript>
       </head>
       <body className="font-display bg-background-light dark:bg-background-dark text-slate-800 dark:text-[#E0E5E2] antialiased selection:bg-primary selection:text-olive-deep">
+        <NonBlockingIcons />
         <OrganizationSchema />
         <Providers messages={messages} locale={locale}>
           {children}

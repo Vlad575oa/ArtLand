@@ -28,15 +28,15 @@ export default function ServicesPage() {
           Actually, the marketing layout already provides the Navbar. */}
 
             <header className="relative py-20 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto w-full text-center">
-                <span className="inline-block py-1.5 px-4 rounded-full bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase border border-primary/20 shadow-sm">
+                <span className="inline-block py-1.5 px-4 rounded-full bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase border border-primary/20 shadow-sm animate-slide-up delay-100">
                     {t('badge')}
                 </span>
-                <h1 className="text-4xl md:text-6xl lg:text-8xl font-black text-white tracking-tighter leading-none">
+                <h1 className="text-4xl md:text-6xl lg:text-8xl font-black text-white tracking-tighter leading-none animate-slide-up delay-200">
                     {t.rich('title', {
                         sanctuary: (chunks) => <span className="text-primary block">{chunks}</span>
                     })}
                 </h1>
-                <p className="text-lg md:text-xl text-sand-dark/80 max-w-xl mx-auto leading-relaxed font-light">
+                <p className="text-lg md:text-xl text-sand-dark/80 max-w-xl mx-auto leading-relaxed font-light animate-slide-up delay-300">
                     {t('description')}
                 </p>
             </header>
@@ -44,7 +44,7 @@ export default function ServicesPage() {
             <main className="flex-grow px-6 md:px-12 lg:px-24 py-12 max-w-7xl mx-auto w-full">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
                     {/* Service Card 1: Relief Work */}
-                    <div className="group service-card relative overflow-hidden rounded-[2.5rem] bg-earth-moss shadow-soft-volume hover:-translate-y-2 transition-all duration-500 animate-slide-up delay-400">
+                    <div className="group service-card relative overflow-hidden rounded-[2.5rem] bg-earth-moss shadow-soft-volume hover:-translate-y-2 transition-all duration-500">
                         <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
                         <div className="relative z-10 h-full p-8 flex flex-col items-center text-center min-h-[420px]">
                             <div className="mb-8 mt-4 relative">
@@ -70,7 +70,7 @@ export default function ServicesPage() {
                     </div>
 
                     {/* Service Card 2: Hydro Systems */}
-                    <div className="group service-card relative overflow-hidden rounded-[2.5rem] bg-earth-terra shadow-soft-volume hover:-translate-y-2 transition-all duration-500 animate-slide-up delay-500">
+                    <div className="group service-card relative overflow-hidden rounded-[2.5rem] bg-earth-terra shadow-soft-volume hover:-translate-y-2 transition-all duration-500">
                         <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-black/10 pointer-events-none" />
                         <div className="relative z-10 h-full p-8 flex flex-col items-center text-center min-h-[420px]">
                             <div className="mb-8 mt-4 relative">
@@ -96,7 +96,7 @@ export default function ServicesPage() {
                     </div>
 
                     {/* Service Card 3: Lumination */}
-                    <div className="group service-card relative overflow-hidden rounded-[2.5rem] bg-earth-sand shadow-soft-volume hover:-translate-y-2 transition-all duration-500 animate-slide-up delay-600">
+                    <div className="group service-card relative overflow-hidden rounded-[2.5rem] bg-earth-sand shadow-soft-volume hover:-translate-y-2 transition-all duration-500">
                         <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
                         <div className="relative z-10 h-full p-8 flex flex-col items-center text-center min-h-[420px]">
                             <div className="mb-8 mt-4 relative">
@@ -125,7 +125,7 @@ export default function ServicesPage() {
                     </div>
 
                     {/* Service Card 4: Flora Select */}
-                    <div className="group service-card relative overflow-hidden rounded-[2.5rem] bg-earth-stone shadow-soft-volume hover:shadow-lg transition-all duration-500 animate-slide-up delay-700">
+                    <div className="group service-card relative overflow-hidden rounded-[2.5rem] bg-earth-stone shadow-soft-volume hover:shadow-lg transition-all duration-500">
                         <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-black/10 pointer-events-none" />
                         <div className="relative z-10 h-full p-8 flex flex-col items-center text-center min-h-[420px]">
                             <div className="mb-8 mt-4 relative">
@@ -154,21 +154,21 @@ export default function ServicesPage() {
 
             <section className="py-20 px-6 md:px-12 lg:px-24 border-t border-white/5 bg-background-dark/30">
                 <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
-                    <div className="p-8 rounded-3xl bg-forest-light/30 border border-white/5 shadow-soft-neumorph animate-slide-up delay-400 group hover:-translate-y-2 hover:shadow-soft-volume transition-all duration-500">
+                    <div className="p-8 rounded-3xl bg-forest-light/30 border border-white/5 shadow-soft-neumorph group hover:-translate-y-2 hover:shadow-soft-volume transition-all duration-500">
                         <div className="w-10 h-10 rounded-full bg-earth-moss/20 flex items-center justify-center text-earth-moss font-bold text-xs mb-6 border border-earth-moss/30 group-hover:scale-110 transition-transform duration-300">01</div>
                         <h4 className="text-white font-bold text-lg mb-2">{t('process_01_title')}</h4>
                         <p className="text-sand-dark text-sm font-light leading-relaxed">
                             {t('process_01_desc')}
                         </p>
                     </div>
-                    <div className="p-8 rounded-3xl bg-forest-light/30 border border-white/5 shadow-soft-neumorph animate-slide-up delay-500 group hover:-translate-y-2 hover:shadow-soft-volume transition-all duration-500">
+                    <div className="p-8 rounded-3xl bg-forest-light/30 border border-white/5 shadow-soft-neumorph group hover:-translate-y-2 hover:shadow-soft-volume transition-all duration-500">
                         <div className="w-10 h-10 rounded-full bg-terracotta/20 flex items-center justify-center text-terracotta font-bold text-xs mb-6 border border-terracotta/30 group-hover:scale-110 transition-transform duration-300">02</div>
                         <h4 className="text-white font-bold text-lg mb-2">{t('process_02_title')}</h4>
                         <p className="text-sand-dark text-sm font-light leading-relaxed">
                             {t('process_02_desc')}
                         </p>
                     </div>
-                    <div className="p-8 rounded-3xl bg-forest-light/30 border border-white/5 shadow-soft-neumorph animate-slide-up delay-600 group hover:-translate-y-2 hover:shadow-soft-volume transition-all duration-500">
+                    <div className="p-8 rounded-3xl bg-forest-light/30 border border-white/5 shadow-soft-neumorph group hover:-translate-y-2 hover:shadow-soft-volume transition-all duration-500">
                         <div className="w-10 h-10 rounded-full bg-forest-deep flex items-center justify-center text-primary font-bold text-xs mb-6 border border-primary/30 group-hover:scale-110 transition-transform duration-300">03</div>
                         <h4 className="text-white font-bold text-lg mb-2">{t('process_03_title')}</h4>
                         <p className="text-sand-dark text-sm font-light leading-relaxed">
@@ -182,7 +182,7 @@ export default function ServicesPage() {
             <section className="relative py-32 px-6 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background-dark/50 z-0" />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
-                <div className="relative z-10 p-12 lg:p-20 text-center animate-slide-up delay-200">
+                <div className="relative z-10 p-12 lg:p-20 text-center">
                     <h3 className="text-4xl lg:text-6xl font-black text-white mb-8 tracking-tighter">
                         {t.rich('cta_title', {
                             exterior: (chunks) => <span className="text-primary italic block md:inline">{chunks}</span>

@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { ServiceSchema } from '@/components/seo/StructuredData';
 import { useTranslations } from 'next-intl';
+import { generatePageMetadata } from '@/lib/metadata';
+import type { Metadata } from 'next';
 
 type Props = { params: Promise<{ locale: string }> }
 

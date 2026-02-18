@@ -66,21 +66,21 @@ export default function ContactPage() {
             <main className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-32 pb-20 lg:pb-32 grid lg:grid-cols-12 gap-12 lg:gap-24 items-start">
                 <div className="lg:col-span-7 flex flex-col gap-10">
                     <div className="space-y-4">
-                        <span className="inline-block py-1 px-3 rounded-full bg-contact-primary/10 text-contact-primary text-xs font-bold tracking-widest uppercase border border-contact-primary/20 shadow-sm">
+                        <span className="inline-block py-1 px-3 rounded-full bg-contact-primary/10 text-contact-primary text-xs font-bold tracking-widest uppercase border border-contact-primary/20 shadow-sm animate-slide-up delay-100">
                             {t('badge')}
                         </span>
-                        <h1 className="text-4xl md:text-6xl font-extrabold text-[#f0f2ef] tracking-tight leading-[1.1]">
+                        <h1 className="text-4xl md:text-6xl font-extrabold text-[#f0f2ef] tracking-tight leading-[1.1] animate-slide-up delay-200">
                             {t.rich('title', {
                                 living_space: (chunks) => <span className="text-transparent bg-clip-text bg-gradient-to-r from-contact-primary to-[#dccbb5]">{chunks}</span>
                             })}
                         </h1>
-                        <p className="text-lg text-contact-muted max-w-xl leading-relaxed">
+                        <p className="text-lg text-contact-muted max-w-xl leading-relaxed animate-slide-up delay-300">
                             {t('description')}
                         </p>
                     </div>
 
                     {isSuccess ? (
-                        <div className="bg-primary/10 border border-primary/20 rounded-xl p-10 text-center animate-slide-up">
+                        <div className="bg-primary/10 border border-primary/20 rounded-xl p-10 text-center">
                             <span className="material-icons-round text-primary text-5xl mb-4 block">check_circle</span>
                             <h2 className="text-2xl font-bold text-white mb-2">Thank you!</h2>
                             <p className="text-contact-muted">We&apos;ll get back to you within 24 hours.</p>
@@ -229,7 +229,7 @@ export default function ContactPage() {
                     )}
                 </div>
 
-                <div className="lg:col-span-5 flex flex-col gap-8 lg:pt-20 animate-slide-up delay-600">
+                <div className="lg:col-span-5 flex flex-col gap-8 lg:pt-20">
                     <div className="grid gap-6">
                         <div className="bg-contact-surface p-6 rounded-xl shadow-contact-convex flex items-start gap-5 border border-white/5 hover:border-white/10 transition-colors group relative overflow-hidden">
                             <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>

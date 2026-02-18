@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { Link, usePathname, useRouter } from '@/i18n/routing'
 import { useTranslations, useLocale } from 'next-intl'
-import { TelegramIcon } from '@/components/ui/SVGIcons'
+import { TelegramIcon, ChatIcon } from '@/components/ui/SVGIcons'
 import { CONTACT_INFO } from '@/lib/constants'
 import { useMessengerConsent } from '@/components/features/MessengerConsent'
 
@@ -116,7 +116,7 @@ export const MobileMenu = () => {
                                 onClick={() => { openConsent(CONTACT_INFO.whatsapp, 'whatsapp'); setIsOpen(false) }}
                                 className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-white/10 transition-colors relative"
                             >
-                                <span className="material-icons-round text-xl">chat</span>
+                                <ChatIcon className="w-6 h-6" />
                                 <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-primary text-[#1a2922] text-[10px] flex items-center justify-center font-bold shadow-sm border border-[#1a2922]">
                                     i
                                 </div>
