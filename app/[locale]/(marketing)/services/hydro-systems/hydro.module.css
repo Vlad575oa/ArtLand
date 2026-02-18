@@ -1,0 +1,19 @@
+/* AquaTech Utilities (Hydro Systems) */
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(20, 184, 116, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.neumorphic-inset {
+    background: #11211a;
+    box-shadow: inset 2px 2px 5px #0b1611, inset -2px -2px 5px #172c23;
+}
+
+.text-gradient {
+    background: linear-gradient(to right, #ffffff, #d4cbb8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

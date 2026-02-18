@@ -7,6 +7,7 @@ type PageMetaConfig = {
     titleEn: string
     descriptionRu: string
     descriptionEn: string
+    keywords?: string | string[] | null
     path: string
     image?: string
 }
@@ -25,6 +26,7 @@ export function generatePageMetadata(
         metadataBase: new URL(BASE_URL),
         title,
         description,
+        keywords: config.keywords,
         alternates: {
             canonical,
             languages: {

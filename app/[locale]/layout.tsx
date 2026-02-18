@@ -20,7 +20,7 @@ const manrope = Manrope({
 const playfair = Playfair_Display({
   subsets: ['latin', 'cyrillic'],
   variable: '--font-playfair',
-  display: 'swap',
+  display: 'optional',
 })
 
 export function generateStaticParams() {
@@ -33,6 +33,7 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.ico',
   },
+  keywords: ['ландшафтный дизайн', 'ландшафтная архитектура', 'благоустройство', 'озеленение', 'проектирование участков'],
 }
 
 export default async function RootLayout({

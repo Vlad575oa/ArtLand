@@ -33,6 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     descriptionEn: 'Cultivating living art on your land. Premium landscape architecture by TERRA.ART. 150+ completed projects.',
     path: '',
     image: '/images/hero/hero-main.jpg',
+    keywords: ['ландшафтный дизайн', 'ландшафтная архитектура', 'благоустройство территории', 'озеленение', 'премиум сад', 'проектирование ландшафта', 'студия ландшафтного дизайна'],
   }, locale);
 }
 

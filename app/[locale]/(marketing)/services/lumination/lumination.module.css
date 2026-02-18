@@ -1,0 +1,48 @@
+/* Lumination Theme */
+.theme {
+    --color-lumination-gold: #FFD700;
+    --color-lumination-amber: #FFBF00;
+    --color-lumination-night: #050A08;
+    --color-lumination-accent: #DAA520;
+    --shadow-lumination-glow: 0 0 30px rgba(255, 215, 0, 0.3), 0 0 60px rgba(255, 215, 0, 0.1);
+    --shadow-lumination-shimmer: inset 0 0 20px rgba(218, 165, 32, 0.2);
+}
+
+.mist-layer {
+    mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+}
+
+.bg-leaf-texture {
+    background-image:
+        radial-gradient(circle at 50% 0, rgba(255, 255, 255, 0.03) 0%, transparent 70%),
+        linear-gradient(45deg, transparent 48%, rgba(255, 255, 255, 0.02) 50%, transparent 52%);
+    background-size: 100% 100%, 40px 40px;
+}
+
+.bg-night-surface {
+    background-color: #050A08;
+    /* Fallback */
+    background-color: var(--color-lumination-night, #050A08);
+    background-image: radial-gradient(circle at 50% 10%, rgba(218, 165, 32, 0.08) 0%, transparent 60%);
+}
+
+@keyframes lumination-shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.shimmer-text {
+    background: linear-gradient(90deg, #3d322a 0%, #fff 50%, #3d322a 100%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: lumination-shimmer 2.5s infinite linear;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}

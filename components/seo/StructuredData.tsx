@@ -7,25 +7,25 @@ export function OrganizationSchema() {
         description: 'Premium landscape architecture studio specializing in sustainable garden design, hardscaping, hydro systems, and landscape lighting.',
         url: 'https://terra.art',
         logo: 'https://terra.art/favicon.ico',
-        telephone: '+1 (555) 0123-4567',
-        email: 'hello@terraform.design',
+        telephone: '+7 (999) 000-00-00', // Placeholder, pending user input
+        email: 'info@terra.art',
         address: {
             '@type': 'PostalAddress',
-            streetAddress: '1280 Eco Park Blvd',
-            addressLocality: 'Seattle',
-            addressRegion: 'WA',
-            postalCode: '98101',
-            addressCountry: 'US',
+            streetAddress: 'ул. Лесная, 10, оф. 402',
+            addressLocality: 'Москва',
+            addressRegion: 'Москва',
+            postalCode: '125047',
+            addressCountry: 'RU',
         },
         priceRange: '$$$',
         areaServed: {
             '@type': 'GeoCircle',
             geoMidpoint: {
                 '@type': 'GeoCoordinates',
-                latitude: 47.6062,
-                longitude: -122.3321,
+                latitude: 55.7784,
+                longitude: 37.5878,
             },
-            geoRadius: '100000',
+            geoRadius: '50000',
         },
         hasOfferCatalog: {
             '@type': 'OfferCatalog',
@@ -129,10 +129,10 @@ export function ServiceSchema({
             '@type': 'GeoCircle',
             geoMidpoint: {
                 '@type': 'GeoCoordinates',
-                latitude: 47.6062,
-                longitude: -122.3321,
+                latitude: 55.7784,
+                longitude: 37.5878,
             },
-            geoRadius: '100000',
+            geoRadius: '50000',
         },
         ...(offers && {
             hasOfferCatalog: {

@@ -1,0 +1,13 @@
+/* Hardscaping Theme Tokens */
+.theme {
+    --color-hardscaping-primary: #d4a373;
+    --color-hardscaping-accent: #6b8c6e;
+    --color-hardscaping-bg: #1f2b25;
+    --color-hardscaping-surface: #2c3b32;
+    --color-hardscaping-wood: #8b5e3c;
+
+    --shadow-hardscaping-neumorphic: 12px 12px 24px #151d19, -12px -12px 24px #293931;
+    --shadow-hardscaping-inset: inset 4px 4px 8px #18231e, inset -4px -4px 8px #324339;
+    --shadow-hardscaping-btn: 6px 6px 12px #18221d, -6px -6px 12px #26342d;
+    --shadow-hardscaping-glow: 0 0 25px rgba(212, 163, 115, 0.4);
+}

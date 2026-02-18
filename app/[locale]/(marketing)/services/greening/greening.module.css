@@ -1,0 +1,13 @@
+/* Greening Theme Tokens */
+.theme {
+    --color-greening-moss: #6FAE7F;
+    --color-greening-moss-light: #8bc499;
+    --color-greening-terracotta: #8C4F35;
+    --color-greening-soil: #4A3B32;
+    --color-greening-background: #0B1410;
+    --color-greening-surface: #13231C;
+    --background-image-golden-sand: linear-gradient(135deg, #E6CFA5 0%, #C4A474 100%);
+    --shadow-greening-neumorphic: 20px 20px 60px #09100d, -20px -20px 60px #15261e;
+    --shadow-greening-neumorphic-sm: 5px 5px 10px #0d1612, -5px -5px 10px #192e24;
+    --shadow-greening-golden: 0 10px 30px -5px rgba(196, 164, 116, 0.4);
+}

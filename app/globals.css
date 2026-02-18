@@ -50,56 +50,7 @@
   --background-image-pill-gradient-3: linear-gradient(145deg, #d7ccc8, #bcaaa4);
   --background-image-pill-gradient-4: linear-gradient(145deg, #a5d6a7, #81c784);
 
-  /* Greening Theme Tokens */
-  --color-greening-moss: #6FAE7F;
-  --color-greening-moss-light: #8bc499;
-  --color-greening-terracotta: #8C4F35;
-  --color-greening-soil: #4A3B32;
-  --color-greening-background: #0B1410;
-  --color-greening-surface: #13231C;
 
-  --background-image-golden-sand: linear-gradient(135deg, #E6CFA5 0%, #C4A474 100%);
-
-  --shadow-greening-neumorphic: 20px 20px 60px #09100d, -20px -20px 60px #15261e;
-  --shadow-greening-neumorphic-sm: 5px 5px 10px #0d1612, -5px -5px 10px #192e24;
-  --shadow-greening-golden: 0 10px 30px -5px rgba(196, 164, 116, 0.4);
-
-  /* Hardscaping Theme Tokens */
-  --color-hardscaping-primary: #d4a373;
-  --color-hardscaping-accent: #6b8c6e;
-  --color-hardscaping-bg: #1f2b25;
-  --color-hardscaping-surface: #2c3b32;
-  --color-hardscaping-wood: #8b5e3c;
-
-  --shadow-hardscaping-neumorphic: 12px 12px 24px #151d19, -12px -12px 24px #293931;
-  --shadow-hardscaping-inset: inset 4px 4px 8px #18231e, inset -4px -4px 8px #324339;
-  --shadow-hardscaping-btn: 6px 6px 12px #18221d, -6px -6px 12px #26342d;
-  --shadow-hardscaping-glow: 0 0 25px rgba(212, 163, 115, 0.4);
-
-  /* Contact Page Theme Tokens */
-  --color-contact-primary: #d2b48c;
-  --color-contact-background: #2a3b32;
-  --color-contact-surface: #33453b;
-  --color-contact-secondary: #5c7c64;
-
-  --shadow-contact-convex: 8px 8px 16px #223029, -8px -8px 16px #3e564b;
-  --shadow-contact-concave: inset 6px 6px 12px #202d26, inset -6px -6px 12px #465d50;
-  --shadow-contact-convex-sand: 6px 6px 12px #b0997a, -6px -6px 12px #f4e8d2;
-
-  /* 404 Page Theme Tokens */
-  --color-404-accent: #dcbfa4;
-  --color-404-mist: #2a4036;
-
-  --shadow-404-convex-sand-hover: inset 1px 1px 2px rgba(255, 255, 255, 0.4), inset -1px -1px 2px rgba(0, 0, 0, 0.1), 4px 8px 15px rgba(0, 0, 0, 0.5);
-
-  /* Lumination Theme Tokens */
-  --color-lumination-gold: #FFD700;
-  --color-lumination-amber: #FFBF00;
-  --color-lumination-night: #050A08;
-  --color-lumination-accent: #DAA520;
-
-  --shadow-lumination-glow: 0 0 30px rgba(255, 215, 0, 0.3), 0 0 60px rgba(255, 215, 0, 0.1);
-  --shadow-lumination-shimmer: inset 0 0 20px rgba(218, 165, 32, 0.2);
 }
 
 @layer utilities {
@@ -215,25 +166,7 @@
     z-index: 1;
   }
 
-  /* AquaTech Utilities */
-  .glass-card {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(20, 184, 116, 0.1);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  }
 
-  .neumorphic-inset {
-    background: #11211a;
-    box-shadow: inset 2px 2px 5px #0b1611, inset -2px -2px 5px #172c23;
-  }
-
-  .text-gradient {
-    background: linear-gradient(to right, #ffffff, #d4cbb8);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
 
   .leaf-texture {
     background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.828-1.415 1.415-.828-.828-.828.828-1.415-1.415.828-.828-.828-.828 1.415-1.415.828.828.828-.828 1.415 1.415-.828.828zM22.485 0l.83.828-1.415 1.415-.828-.828-.828.828-1.415-1.415.828-.828-.828-.828 1.415-1.415.828.828.828-.828 1.415 1.415-.828.828zM0 22.485l.828.83-1.415 1.415-.828-.828-.828.828L-2.83 22.485l.828-.828-.828-.828 1.415-1.415.828.828.828-.828 1.415 1.415-.828.828zM0 54.627l.828.83-1.415 1.415-.828-.828-.828.828L-2.83 54.627l.828-.828-.828-.828 1.415-1.415.828.828.828-.828 1.415 1.415-.828.828zM54.627 60l.83.828-1.415 1.415-.828-.828-.828.828-1.415-1.415.828-.828-.828-.828 1.415-1.415.828.828.828-.828 1.415 1.415-.828.828zM22.485 60l.83.828-1.415 1.415-.828-.828-.828.828-1.415-1.415.828-.828-.828-.828 1.415-1.415.828.828.828-.828 1.415 1.415-.828.828z' fill='%232d4a3e' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
@@ -252,63 +185,9 @@
     color: rgba(255, 255, 255, 0.8);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8), -1px -1px 2px rgba(255, 255, 255, 0.05);
   }
-
-  .bg-grain-texture {
-    position: relative;
-  }
-
-  .bg-grain-texture::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  .map-grayscale-filter {
-    filter: grayscale(100%) sepia(20%) hue-rotate(90deg) brightness(0.7) contrast(1.1);
-  }
-
-  .mist-layer {
-    mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
-    -webkit-mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
-  }
-
-  .bg-leaf-texture {
-    background-image:
-      radial-gradient(circle at 50% 0, rgba(255, 255, 255, 0.03) 0%, transparent 70%),
-      linear-gradient(45deg, transparent 48%, rgba(255, 255, 255, 0.02) 50%, transparent 52%);
-    background-size: 100% 100%, 40px 40px;
-  }
-
-  .bg-night-surface {
-    background-color: var(--color-lumination-night);
-    background-image: radial-gradient(circle at 50% 10%, rgba(218, 165, 32, 0.08) 0%, transparent 60%);
-  }
 }
 
-@keyframes lumination-shimmer {
-  0% {
-    background-position: -200% 0;
-  }
 
-  100% {
-    background-position: 200% 0;
-  }
-}
-
-.shimmer-text {
-  background: linear-gradient(90deg, #3d322a 0%, #fff 50%, #3d322a 100%);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: lumination-shimmer 2.5s infinite linear;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-}
 
 :root {
   --background: var(--color-background-light);
