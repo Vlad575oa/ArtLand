@@ -31,9 +31,9 @@ export default function ServicesPage() {
                 <span className="inline-block py-1.5 px-4 rounded-full bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase border border-primary/20 shadow-sm animate-slide-up delay-100">
                     {t('badge')}
                 </span>
-                <h1 className="text-4xl md:text-6xl lg:text-8xl font-black text-white tracking-tighter leading-none animate-slide-up delay-200">
+                <h1 className="text-3xl md:text-5xl lg:text-7xl font-serif text-[#F0F2F0] tracking-tighter leading-tight animate-slide-up delay-200">
                     {t.rich('title', {
-                        sanctuary: (chunks) => <span className="text-primary block">{chunks}</span>
+                        sanctuary: (chunks) => <span className="text-primary italic block">{chunks}</span>
                     })}
                 </h1>
                 <p className="text-lg md:text-xl text-sand-dark/80 max-w-xl mx-auto leading-relaxed font-light animate-slide-up delay-300">
