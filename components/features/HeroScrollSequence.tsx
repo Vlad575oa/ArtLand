@@ -34,13 +34,26 @@ export const HeroScrollSequence = ({ title, subtitle, ctaText, onCtaClick }: Her
                     <p className="text-lg md:text-xl text-[#B0B8B4] max-w-2xl font-light leading-relaxed pl-1 border-l-2 border-primary/30">
                         {subtitle}
                     </p>
+
+                    {/* CTA Button */}
+                    <div className="flex flex-wrap items-center gap-6 mt-2">
+                        <button
+                            onClick={onCtaClick}
+                            className="group relative px-10 py-5 text-olive-deep rounded-full flex items-center gap-3 font-bold text-base md:text-lg tracking-wide bg-[#8fa86e]/15 hover:bg-[#8fa86e]/25 backdrop-blur-md transition-all shadow-lg hover:shadow-xl border border-[#8fa86e]/30 animate-button-pulse overflow-hidden"
+                        >
+                            {/* Subtle shine effect */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                            {ctaText}
+                            <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
 
                 {/* Right Column - Client Interactive Component */}
-                <HeroVideoInteractive
-                    ctaText={ctaText}
-                    onCtaClick={onCtaClick}
-                />
+                <HeroVideoInteractive onCtaClick={onCtaClick} />
             </div>
 
             {/* Scroll Indicator */}

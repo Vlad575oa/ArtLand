@@ -1,18 +1,15 @@
 'use client'
 
-import { useRef, useState, useEffect, useCallback } from 'react'
+import { useRef, useState } from 'react'
 
 interface HeroVideoInteractiveProps {
-    ctaText: string
     onCtaClick?: () => void
 }
 
-export const HeroVideoInteractive = ({ ctaText, onCtaClick }: HeroVideoInteractiveProps) => {
+export const HeroVideoInteractive = ({ onCtaClick }: HeroVideoInteractiveProps) => {
     const [isPlaying, setIsPlaying] = useState(true)
     const [isMuted, setIsMuted] = useState(true)
-    const [buttonTransform, setButtonTransform] = useState({ x: 0, y: 0 })
     const videoRef = useRef<HTMLVideoElement>(null)
-    const buttonRef = useRef<HTMLButtonElement>(null)
 
     const handleVideoEnded = () => {
         setIsPlaying(false)
@@ -33,27 +30,6 @@ export const HeroVideoInteractive = ({ ctaText, onCtaClick }: HeroVideoInteracti
             setIsMuted(!isMuted)
         }
     }
-
-    const handleMouseMove = useCallback((e: MouseEvent) => {
-        if (!buttonRef.current) return
-
-        const rect = buttonRef.current.getBoundingClientRect()
-        const buttonCenterX = rect.left + rect.width / 2
-        const buttonCenterY = rect.top + rect.height / 2
-
-        const deltaX = (e.clientX - buttonCenterX) / 30
-        const deltaY = (e.clientY - buttonCenterY) / 30
-
-        setButtonTransform({
-            x: Math.max(-10, Math.min(10, deltaX)),
-            y: Math.max(-10, Math.min(10, deltaY))
-        })
-    }, [])
-
-    useEffect(() => {
-        document.addEventListener('mousemove', handleMouseMove)
-        return () => document.removeEventListener('mousemove', handleMouseMove)
-    }, [handleMouseMove])
 
     return (
         <div className="lg:col-span-5 flex flex-col items-center mt-12 lg:mt-0">
@@ -129,27 +105,6 @@ export const HeroVideoInteractive = ({ ctaText, onCtaClick }: HeroVideoInteracti
                         дизайн Terra Art
                     </span>
                 </div>
-            </div>
-
-            {/* CTA Button with Parallax */}
-            <div className="w-full flex justify-center lg:justify-start mt-8">
-                <button
-                    ref={buttonRef}
-                    onClick={onCtaClick}
-                    className="group relative px-10 py-5 text-olive-deep rounded-full flex items-center gap-3 font-bold text-base md:text-lg tracking-wide bg-[#8fa86e]/15 hover:bg-[#8fa86e]/25 backdrop-blur-md transition-all shadow-lg hover:shadow-xl border border-[#8fa86e]/30 animate-button-pulse overflow-hidden"
-                    style={{
-                        transform: `translate(${buttonTransform.x}px, ${buttonTransform.y}px)`,
-                        transition: 'transform 0.1s ease-out'
-                    }}
-                >
-                    {/* Subtle shine effect */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                    {ctaText}
-                    <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                </button>
             </div>
         </div>
     )
