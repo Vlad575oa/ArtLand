@@ -67,7 +67,7 @@ export const CookieConsentProvider = ({ children }: { children: ReactNode }) => 
                         <div className="flex gap-4">
                             <button
                                 onClick={acceptCookies}
-                                className="px-6 py-2.5 rounded-full bg-contact-primary text-[#1a2922] font-bold text-sm hover:bg-contact-primary/90 transition-colors whitespace-nowrap shadow-lg shadow-contact-primary/20"
+                                className="px-6 py-2.5 rounded-full bg-contact-primary text-white font-bold text-sm hover:bg-contact-primary/90 transition-colors whitespace-nowrap shadow-lg shadow-contact-primary/20"
                             >
                                 {locale === 'ru' ? 'Принять' : 'Accept'}
                             </button>

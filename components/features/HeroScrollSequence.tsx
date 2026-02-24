@@ -39,7 +39,7 @@ export const HeroScrollSequence = ({ title, subtitle, ctaText, onCtaClick }: Her
                     <div className="flex flex-wrap items-center gap-6 mt-2">
                         <button
                             onClick={onCtaClick}
-                            className="group relative px-10 py-5 text-olive-deep rounded-full flex items-center gap-3 font-bold text-base md:text-lg tracking-wide bg-[#8fa86e]/15 hover:bg-[#8fa86e]/25 backdrop-blur-md transition-all shadow-lg hover:shadow-xl border border-[#8fa86e]/30 animate-button-pulse overflow-hidden"
+                            className="group relative px-10 py-5 text-white rounded-full flex items-center gap-3 font-bold text-base md:text-lg tracking-wide bg-[#8fa86e]/15 hover:bg-[#8fa86e]/25 backdrop-blur-md transition-all shadow-lg hover:shadow-xl border border-[#8fa86e]/30 animate-button-pulse overflow-hidden"
                         >
                             {/* Subtle shine effect */}
                             <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

@@ -314,5 +314,22 @@
     "Terms": {
         "title": "Terms of Service",
         "content": "By using our website and services, you agree to comply with our terms and conditions. We reserve the right to update these terms at any time."
+    },
+    "Cookies": {
+        "title": "Cookie Policy",
+        "intro": "Our website uses cookies to improve your experience and provide personalized content. Below we explain what cookies are, what data we collect, and how you can manage them.",
+        "section1_title": "1. What are cookies?",
+        "section1_content": "Cookies are small text files that are saved on your device (computer, tablet, or phone) when you visit a website. They allow the site to remember your actions and preferences (such as language, font size) for a certain period of time.",
+        "section2_title": "2. What types of cookies do we use?",
+        "section2_technical_title": "Technical (necessary) cookies:",
+        "section2_technical_desc": "These files are necessary for the proper functioning of the website. They allow you to navigate the site and use its basic features. Without them, the site may not work correctly.",
+        "section2_analytics_title": "Analytics cookies:",
+        "section2_analytics_desc": "We use services (such as Yandex.Metrica) to understand how visitors interact with the site. This helps us improve the structure and content. Data is collected anonymously.",
+        "section2_marketing_title": "Marketing cookies:",
+        "section2_marketing_desc": "May be used to display advertisements that are most relevant to your interests.",
+        "section3_title": "3. Managing cookies",
+        "section3_content": "You can manage cookies and delete them through your browser settings. You can also block the saving of cookies, however this may affect the functionality of some parts of the site.",
+        "section4_title": "4. Changes to the Policy",
+        "section4_content": "We may update this Policy as necessary. We recommend periodically checking this page."
     }
 }
