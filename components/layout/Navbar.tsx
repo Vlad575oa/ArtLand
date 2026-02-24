@@ -61,18 +61,18 @@ export const Navbar = () => {
                 >
                     <div className="w-6 h-6 rounded-full overflow-hidden border border-white/20 shadow-sm group-hover:shadow-[0_0_10px_rgba(255,255,255,0.2)] group-hover:scale-110 transition-all duration-300">
                         {locale === 'ru' ? (
+                            <svg viewBox="0 0 9 6" xmlns="http://www.w3.org/2000/svg" className="w-full h-full object-cover">
+                                <rect width="9" height="6" fill="#fff" />
+                                <rect width="9" height="4" y="2" fill="#0039a6" />
+                                <rect width="9" height="2" y="4" fill="#d52b1e" />
+                            </svg>
+                        ) : (
                             <svg viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" className="w-full h-full object-cover">
                                 <rect width="60" height="30" fill="#012169" />
                                 <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" strokeWidth="6" />
                                 <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" strokeWidth="4" />
                                 <path d="M30,0 v30 M0,15 h60" stroke="#fff" strokeWidth="10" />
                                 <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" strokeWidth="6" />
-                            </svg>
-                        ) : (
-                            <svg viewBox="0 0 9 6" xmlns="http://www.w3.org/2000/svg" className="w-full h-full object-cover">
-                                <rect width="9" height="6" fill="#fff" />
-                                <rect width="9" height="4" y="2" fill="#0039a6" />
-                                <rect width="9" height="2" y="4" fill="#d52b1e" />
                             </svg>
                         )}
                     </div>
