@@ -116,7 +116,7 @@ export const HeroVideoInteractive = ({ onCtaClick }: HeroVideoInteractiveProps) 
                 {/* Labels Below Video */}
                 <div className="flex justify-end items-center mt-8 px-1">
                     <span className="text-xs md:text-sm text-[#8fa86e] font-medium tracking-wide">
-                        дизайн Terra Art
+                        {t('video_design_label')}
                     </span>
                 </div>
             </div>
