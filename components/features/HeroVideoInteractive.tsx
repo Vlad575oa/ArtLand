@@ -9,10 +9,21 @@ interface HeroVideoInteractiveProps {
 export const HeroVideoInteractive = ({ onCtaClick }: HeroVideoInteractiveProps) => {
     const [isPlaying, setIsPlaying] = useState(true)
     const [isMuted, setIsMuted] = useState(true)
+    const [isLoaded, setIsLoaded] = useState(false)
     const videoRef = useRef<HTMLVideoElement>(null)
 
     const handleVideoEnded = () => {
         setIsPlaying(false)
+    }
+
+    const handleLoadedData = () => {
+        setIsLoaded(true)
+        if (videoRef.current) {
+            videoRef.current.play().catch(err => {
+                console.warn('Autoplay blocked:', err)
+                setIsPlaying(false)
+            })
+        }
     }
 
     const handlePlayClick = () => {
@@ -41,12 +52,13 @@ export const HeroVideoInteractive = ({ onCtaClick }: HeroVideoInteractiveProps) 
                             <video
                                 ref={videoRef}
                                 src="/images/hero/Hero.mp4"
-                                poster="/images/hero/hero-main.jpg"
+                                poster="/images/hero/hero-main.webp"
                                 autoPlay
                                 loop={false}
                                 muted={isMuted}
                                 playsInline
                                 preload="auto"
+                                onLoadedData={handleLoadedData}
                                 onEnded={handleVideoEnded}
                                 className="object-cover w-full h-full transition-all duration-700"
                                 style={{ filter: isPlaying ? 'none' : 'blur(8px)' }}
@@ -61,7 +73,7 @@ export const HeroVideoInteractive = ({ onCtaClick }: HeroVideoInteractiveProps) 
                                             Преобразим ваш участок в идеальный ландшафт
                                         </p>
                                         <p className="text-[#8fa86e] text-4xl md:text-6xl font-serif tracking-wide">
-                                            ТарраАрт
+                                            ТерраАрт
                                         </p>
                                     </div>
                                     <div className="flex items-center gap-4 mt-auto mb-8">

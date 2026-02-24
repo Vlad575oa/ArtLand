@@ -36,6 +36,10 @@ export const metadata: Metadata = {
   keywords: ['ландшафтный дизайн', 'ландшафтная архитектура', 'благоустройство', 'озеленение', 'проектирование участков'],
 }
 
+export const viewport: Metadata = {
+  themeColor: '#2C3E34',
+}
+
 export default async function RootLayout({
   children,
   params
