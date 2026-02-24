@@ -1,12 +1,14 @@
 'use client'
 
 import { useRef, useState } from 'react'
+import { useTranslations } from 'next-intl'
 
 interface HeroVideoInteractiveProps {
     onCtaClick?: () => void
 }
 
 export const HeroVideoInteractive = ({ onCtaClick }: HeroVideoInteractiveProps) => {
+    const t = useTranslations('Hero')
     const [isPlaying, setIsPlaying] = useState(true)
     const [isMuted, setIsMuted] = useState(true)
     const [isLoaded, setIsLoaded] = useState(false)
@@ -70,10 +72,10 @@ export const HeroVideoInteractive = ({ onCtaClick }: HeroVideoInteractiveProps) 
                                     {/* Text with fade + lift animation */}
                                     <div className="text-center mt-10 animate-fade-up-slow">
                                         <p className="text-white text-2xl md:text-4xl font-light mb-3">
-                                            Преобразим ваш участок в идеальный ландшафт
+                                            {t('video_overlay_text')}
                                         </p>
                                         <p className="text-[#8fa86e] text-4xl md:text-6xl font-serif tracking-wide">
-                                            ТерраАрт
+                                            {t('video_brand')}
                                         </p>
                                     </div>
                                     <div className="flex items-center gap-4 mt-auto mb-8">
