@@ -12,6 +12,18 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 60,
   },
 
+  // Optimize CSS delivery - remove console in production
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+
+  // Reduce CSS chunk size by optimizing package imports
+  experimental: {
+    optimizePackageImports: ['next-intl'],
+  },
+
+  // Security & performance
+  poweredByHeader: false,
 };
 
 export default withNextIntl(nextConfig);

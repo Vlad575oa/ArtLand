@@ -11,6 +11,7 @@
   --color-sand-dark: #b0a99e;
   --color-forest-deep: #1f2b22;
   --color-forest-light: #3d4f40;
+  --color-olive-deep: #2d3a2f;
 
   --font-display: "Manrope", sans-serif;
   --font-serif: "Playfair Display", serif;
@@ -25,32 +26,7 @@
   --background-image-gold-gradient: linear-gradient(135deg, #E6C6A0 0%, #D8B38A 50%, #C49B70 100%);
   --background-image-leaf-pattern: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M30 0C13.431 0 0 13.431 0 30c0 16.569 13.431 30 30 30 16.569 0 30-13.431 30-30C60 13.431 46.569 0 30 0zm0 50c-11.046 0-20-8.954-20-20 0-11.046 8.954-20 20-20 11.046 0 20 8.954 20 20 0 11.046-8.954 20-20 20z" fill="%23ffffff" fill-opacity="0.03"/%3E%3C/svg%3E');
 
-  /* Shadows from Snippet */
-  --shadow-soft-neumorph: 12px 12px 24px #1f2b22, -12px -12px 24px #394b3a;
-  --shadow-soft-neumorph-inset: inset 6px 6px 12px #223026, inset -6px -6px 12px #485e4a;
-  --shadow-inflated: 8px 8px 16px #1f2b22, -8px -8px 16px #3d4f40, inset 2px 2px 4px rgba(255, 255, 255, 0.1);
-  --shadow-inflated-terra: 8px 8px 16px #1f2b22, -8px -8px 16px #3d4f40;
-  --shadow-glow: 0 0 25px rgba(143, 168, 110, 0.25);
-
-  /* New Shadows for Services */
-  --shadow-convex: 8px 8px 16px rgba(0, 0, 0, 0.25), -4px -4px 12px rgba(255, 255, 255, 0.05);
-  --shadow-concave: inset 8px 8px 16px rgba(0, 0, 0, 0.25), inset -4px -4px 12px rgba(255, 255, 255, 0.05);
-  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  --shadow-soft-volume: 20px 20px 60px #0e1b15, -20px -20px 60px #223d31;
-  --shadow-icon-float: 0 10px 20px rgba(0, 0, 0, 0.2);
-
-  /* Portfolio Neumorphism */
-  --shadow-portfolio-convex: 20px 20px 60px #151d19, -20px -20px 60px #293933;
-  --shadow-portfolio-pressed: inset 10px 10px 20px #151d19, inset -10px -10px 20px #293933;
-  --shadow-portfolio-light-convex: 20px 20px 60px #c5c7bd, -20px -20px 60px #ffffff;
-
   --background-image-forest-gradient: linear-gradient(135deg, #0f2e21 0%, #1a3c2e 50%, #2d4a3e 100%);
-  --background-image-pill-gradient-1: linear-gradient(145deg, #6c8c64, #4a6741);
-  --background-image-pill-gradient-2: linear-gradient(145deg, #795548, #5d4037);
-  --background-image-pill-gradient-3: linear-gradient(145deg, #d7ccc8, #bcaaa4);
-  --background-image-pill-gradient-4: linear-gradient(145deg, #a5d6a7, #81c784);
-
-
 }
 
 @layer utilities {
