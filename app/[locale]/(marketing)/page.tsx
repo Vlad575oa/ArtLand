@@ -47,12 +47,12 @@ export default function HomePage() {
   ];
 
   const services = [
-    { icon: 'landscape', title: t('service1_title'), desc: t('service1_desc'), img: '/images/services/service-1.jpg' },
-    { icon: 'water_drop', title: t('service2_title'), desc: t('service2_desc'), img: '/images/services/service-2.jpg' },
-    { icon: 'lightbulb', title: t('service3_title'), desc: t('service3_desc'), img: '/images/services/service-3.jpg' },
-    { icon: 'forest', title: t('service4_title'), desc: t('service4_desc'), img: '/images/services/service-4.jpg' },
-    { icon: 'waves', title: t('service5_title'), desc: t('service5_desc'), img: '/images/services/service-5.jpg' },
-    { icon: 'deck', title: t('service6_title'), desc: t('service6_desc'), img: '/images/services/service-6.jpg' }
+    { icon: 'landscape', title: t('service1_title'), desc: t('service1_desc'), img: '/images/services/service-1.jpg', slug: 'hardscaping' },
+    { icon: 'water_drop', title: t('service2_title'), desc: t('service2_desc'), img: '/images/services/service-2.jpg', slug: 'irrigation' },
+    { icon: 'lightbulb', title: t('service3_title'), desc: t('service3_desc'), img: '/images/services/service-3.jpg', slug: 'lumination' },
+    { icon: 'forest', title: t('service4_title'), desc: t('service4_desc'), img: '/images/services/service-4.jpg', slug: 'plants' },
+    { icon: 'waves', title: t('service5_title'), desc: t('service5_desc'), img: '/images/services/service-5.jpg', slug: 'water' },
+    { icon: 'deck', title: t('service6_title'), desc: t('service6_desc'), img: '/images/services/service-6.jpg', slug: 'small-forms' }
   ];
 
   return (
@@ -67,22 +67,22 @@ export default function HomePage() {
 
         {/* Header/Hero Section */}
         <HeroScrollSequence
-            title={t.rich('title', {
-                living: (chunks) => (
-                    <span
-                        className="italic text-[#8fa86e] relative inline-block"
-                        style={locale === 'ru' ? { fontSize: 'calc(1em - 2px)', paddingRight: '0.1em' } : undefined}
-                    >
-                        {chunks}
-                        <svg className="absolute w-full h-3 -bottom-1 left-0 text-[#8fa86e] opacity-40" fill="none" viewBox="0 0 200 9" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M2.00025 6.99997C25.7501 2.99999 52.4462 0.999954 87.5002 0.999954C122.554 0.999954 153.75 3.00001 198 7" stroke="currentColor" strokeWidth="2" />
-                        </svg>
-                    </span>
-                ),
-                breakLine: () => <br />
-            })}
-            subtitle={t('subtitle')}
-            ctaText={t('cta')}
+          title={t.rich('title', {
+            living: (chunks) => (
+              <span
+                className="italic text-[#8fa86e] relative inline-block"
+                style={locale === 'ru' ? { fontSize: 'calc(1em - 2px)', paddingRight: '0.1em' } : undefined}
+              >
+                {chunks}
+                <svg className="absolute w-full h-3 -bottom-1 left-0 text-[#8fa86e] opacity-40" fill="none" viewBox="0 0 200 9" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2.00025 6.99997C25.7501 2.99999 52.4462 0.999954 87.5002 0.999954C122.554 0.999954 153.75 3.00001 198 7" stroke="currentColor" strokeWidth="2" />
+                </svg>
+              </span>
+            ),
+            breakLine: () => <br />
+          })}
+          subtitle={t('subtitle')}
+          ctaText={t('cta')}
         />
 
         {/* Content Area */}

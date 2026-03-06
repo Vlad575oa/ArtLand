@@ -7,6 +7,7 @@ import { useState, FormEvent } from 'react'
 import { useCookieConsent } from '@/components/layout/CookieConsent';
 import { useMessengerConsent } from '@/components/features/MessengerConsent';
 import { Link } from '@/i18n/routing';
+import { OrganizationSchema } from '@/components/seo/StructuredData';
 
 export default function ContactPage() {
     const t = useTranslations('Contacts');
@@ -57,6 +58,7 @@ export default function ContactPage() {
 
     return (
         <div className="bg-contact-background text-[#f0f2ef] font-display antialiased leading-relaxed min-h-screen relative overflow-x-hidden bg-grain-texture">
+            <OrganizationSchema />
             {/* Ambient Background Elements */}
             <div className="fixed inset-0 pointer-events-none z-0">
                 <div className="absolute top-0 right-0 w-[900px] h-[900px] bg-contact-secondary/10 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/4"></div>

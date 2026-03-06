@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 
-const BASE_URL = 'https://art-land.vercel.app'
+const BASE_URL = 'https://terra.art'
 
 type PageMetaConfig = {
     titleRu: string
@@ -41,7 +41,9 @@ export function generatePageMetadata(
             siteName: 'TERRA.ART',
             locale: isRu ? 'ru_RU' : 'en_US',
             type: 'website',
-            images: config.image ? [{ url: config.image, width: 1200, height: 630 }] : undefined,
+            images: config.image
+                ? [{ url: config.image, width: 1200, height: 630 }]
+                : [{ url: '/images/hero/hero-main.webp', width: 1200, height: 630 }],
         },
         twitter: {
             card: 'summary_large_image',

@@ -40,6 +40,17 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/20 to-transparent" />
 
+                {/* Back Button Overlay */}
+                <div className="absolute top-32 left-6 md:left-12 lg:left-24 z-20">
+                    <Link
+                        href="/projects"
+                        className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors uppercase tracking-widest text-xs font-bold bg-black/20 backdrop-blur-md px-5 py-2.5 rounded-full border border-white/10 hover:border-white/30"
+                    >
+                        <span className="material-icons-round text-sm">arrow_back</span>
+                        {t('labels.back')}
+                    </Link>
+                </div>
+
                 <div className="absolute inset-0 flex items-center justify-center pt-20">
                     <div className="container mx-auto px-6 text-center">
                         <span className="inline-block px-4 py-1 rounded-full bg-primary/20 border border-primary/30 text-primary text-xs font-bold uppercase tracking-widest mb-6 backdrop-blur-md">

@@ -20,7 +20,7 @@ const manrope = Manrope({
 const playfair = Playfair_Display({
   subsets: ['latin', 'cyrillic'],
   variable: '--font-playfair',
-  display: 'optional',
+  display: 'swap',
 })
 
 export function generateStaticParams() {
@@ -28,12 +28,16 @@ export function generateStaticParams() {
 }
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://terra.art'),
   title: 'TERRA.ART | Premium Landscape Architecture',
   description: 'Гармония природы и архитектуры. Мы проектируем пространства, которые дышат вместе с вами, объединяя эстетику и экологичность.',
   icons: {
     icon: '/favicon.ico',
   },
   keywords: ['ландшафтный дизайн', 'ландшафтная архитектура', 'благоустройство', 'озеленение', 'проектирование участков'],
+  alternates: {
+    canonical: '/',
+  },
 }
 
 export const viewport: Metadata = {
@@ -62,7 +66,7 @@ export default async function RootLayout({
     <html lang={locale} className={`dark ${manrope.variable} ${playfair.variable}`} suppressHydrationWarning>
       <head />
 
-      <body className="font-display bg-background-light dark:bg-background-dark text-slate-800 dark:text-[#E0E5E2] antialiased selection:bg-primary selection:text-olive-deep">
+      <body suppressHydrationWarning className="font-display bg-background-light dark:bg-background-dark text-slate-800 dark:text-[#E0E5E2] antialiased selection:bg-primary selection:text-olive-deep">
         <NonBlockingIcons />
         <OrganizationSchema />
         <Providers messages={messages} locale={locale}>

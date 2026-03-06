@@ -1,7 +1,8 @@
 'use client'
 
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
+import ReactDOM from 'react-dom'
 
 interface HeroVideoInteractiveProps {
     onCtaClick?: () => void
@@ -13,6 +14,11 @@ export const HeroVideoInteractive = ({ onCtaClick }: HeroVideoInteractiveProps) 
     const [isMuted, setIsMuted] = useState(true)
     const [isLoaded, setIsLoaded] = useState(false)
     const videoRef = useRef<HTMLVideoElement>(null)
+
+    // Preload poster image for LCP optimization
+    if (typeof window === 'undefined') {
+        ReactDOM.preload('/images/hero/hero-main.webp', { as: 'image', fetchPriority: 'high' })
+    }
 
     const handleVideoEnded = () => {
         setIsPlaying(false)
@@ -47,8 +53,8 @@ export const HeroVideoInteractive = ({ onCtaClick }: HeroVideoInteractiveProps) 
     return (
         <div className="lg:col-span-5 flex flex-col items-center mt-12 lg:mt-0">
             <div className="relative w-full">
-                {/* Video Container */}
                 <div className="relative h-[500px] md:h-[650px] w-full">
+                    <link rel="preload" as="image" href="/images/hero/hero-main.webp" fetchPriority="high" />
                     <div className="absolute inset-0 leaf-shape-wide overflow-hidden convex-card p-2 z-10 transition-all duration-700 ease-out">
                         <div className="relative w-full h-full overflow-hidden rounded-[2rem] bg-[#1a2520]">
                             <video

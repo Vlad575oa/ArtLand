@@ -57,13 +57,15 @@ export default function ServicesPage() {
                                 {t('hardscaping_desc')}
                             </p>
                             <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none mix-blend-overlay">
-                                <img
+                                <Image
                                     alt={t('hardscaping_alt')}
-                                    className="w-full h-full object-cover"
+                                    className="object-cover"
                                     src="/images/services/hardscaping-hero.jpg"
+                                    fill
+                                    sizes="(max-width: 1024px) 100vw, 33vw"
                                 />
                             </div>
-                            <Link className="inline-flex items-center text-xs text-white font-bold tracking-widest uppercase border border-white/30 px-5 py-2 rounded-full hover:bg-white hover:text-earth-moss transition-colors duration-300" href="/services/hardscaping">
+                            <Link className="inline-flex items-center text-xs text-white font-bold tracking-widest uppercase border border-white/30 px-5 py-2 rounded-full hover:bg-white hover:text-earth-moss transition-colors duration-300" href="/services/category/hardscaping">
                                 {t('explore')}
                             </Link>
                         </div>
@@ -83,13 +85,15 @@ export default function ServicesPage() {
                                 {t('hydro_desc')}
                             </p>
                             <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none mix-blend-overlay">
-                                <img
+                                <Image
                                     alt={t('hydro_alt')}
-                                    className="w-full h-full object-cover"
+                                    className="object-cover"
                                     src="/images/services/hydro-systems-hero.jpg"
+                                    fill
+                                    sizes="(max-width: 1024px) 100vw, 33vw"
                                 />
                             </div>
-                            <Link className="inline-flex items-center text-xs text-white font-bold tracking-widest uppercase border border-white/30 px-5 py-2 rounded-full hover:bg-white hover:text-earth-terra transition-colors duration-300" href="/services/hydro-systems">
+                            <Link className="inline-flex items-center text-xs text-white font-bold tracking-widest uppercase border border-white/30 px-5 py-2 rounded-full hover:bg-white hover:text-earth-terra transition-colors duration-300" href="/services/category/hydro-systems">
                                 {t('details')}
                             </Link>
                         </div>
@@ -112,13 +116,15 @@ export default function ServicesPage() {
                                 {t('lumination_subtitle')}
                             </span>
                             <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none mix-blend-overlay">
-                                <img
+                                <Image
                                     alt={t('lumination_alt')}
-                                    className="w-full h-full object-cover"
+                                    className="object-cover"
                                     src="/images/services/lumination.png"
+                                    fill
+                                    sizes="(max-width: 1024px) 100vw, 33vw"
                                 />
                             </div>
-                            <Link className="inline-flex items-center text-xs text-white font-bold tracking-widest uppercase border border-white/30 px-5 py-2 rounded-full hover:bg-white hover:text-earth-sand transition-all duration-300 group-hover:shimmer-text" href="/services/lumination">
+                            <Link className="inline-flex items-center text-xs text-white font-bold tracking-widest uppercase border border-white/30 px-5 py-2 rounded-full hover:bg-white hover:text-earth-sand transition-all duration-300 group-hover:shimmer-text" href="/services/category/lumination">
                                 {t('view')}
                             </Link>
                         </div>
@@ -138,13 +144,15 @@ export default function ServicesPage() {
                                 {t('greening_desc')}
                             </p>
                             <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none mix-blend-overlay">
-                                <img
+                                <Image
                                     alt={t('greening_alt')}
-                                    className="w-full h-full object-cover"
+                                    className="object-cover"
                                     src="/images/services/greening.png"
+                                    fill
+                                    sizes="(max-width: 1024px) 100vw, 33vw"
                                 />
                             </div>
-                            <Link className="inline-flex items-center text-xs text-white font-bold tracking-widest uppercase border border-white/30 px-5 py-2 rounded-full hover:bg-white hover:text-earth-stone transition-colors duration-300" href="/services/greening">
+                            <Link className="inline-flex items-center text-xs text-white font-bold tracking-widest uppercase border border-white/30 px-5 py-2 rounded-full hover:bg-white hover:text-earth-stone transition-colors duration-300" href="/services/category/greening">
                                 {t('browse')}
                             </Link>
                         </div>

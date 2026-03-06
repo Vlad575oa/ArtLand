@@ -24,6 +24,7 @@ const nextConfig: NextConfig = {
 
   // Security & performance
   poweredByHeader: false,
+  compress: true,
 };
 
 export default withNextIntl(nextConfig);

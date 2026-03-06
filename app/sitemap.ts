@@ -30,6 +30,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
                 lastModified: new Date(),
                 changeFrequency: page.changeFrequency,
                 priority: page.priority,
+                alternates: {
+                    languages: {
+                        ru: `${BASE_URL}${page.path}`,
+                        en: `${BASE_URL}/en${page.path}`,
+                        'x-default': `${BASE_URL}${page.path}`,
+                    },
+                },
             })
         }
     }

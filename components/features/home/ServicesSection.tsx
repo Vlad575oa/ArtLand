@@ -1,12 +1,14 @@
 'use client'
 
 import Image from 'next/image'
+import { Link } from '@/i18n/routing'
 
 type Service = {
     icon: string
     title: string
     desc: string
     img: string
+    slug: string
 }
 
 type ServicesSectionProps = {
@@ -26,7 +28,7 @@ export function ServicesSection({ badge, title, services }: ServicesSectionProps
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {services.map((service, i) => (
-                    <div key={i} className="group relative h-[450px] rounded-[2rem] overflow-hidden cursor-pointer convex-card p-2">
+                    <Link href={`/services/${service.slug}`} key={i} className="group relative h-[450px] rounded-[2rem] overflow-hidden cursor-pointer convex-card p-2 block">
                         <div className="w-full h-full rounded-[1.5rem] overflow-hidden relative">
                             <div className="absolute inset-0 will-change-transform">
                                 <Image
@@ -49,7 +51,7 @@ export function ServicesSection({ badge, title, services }: ServicesSectionProps
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </div>
